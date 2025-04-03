@@ -180,6 +180,9 @@ function getCookie(name) {
  * Load the selected language
  */
 function loadSelectedLanguage() {
+  // 清除现有可能存在的localStorage语言设置
+  localStorage.removeItem('lang');
+  
   // 优先检查URL参数中的语言设置
   const urlParams = new URLSearchParams(window.location.search);
   const urlLang = urlParams.get('lang');
@@ -193,10 +196,11 @@ function loadSelectedLanguage() {
   const userLang = urlLang || langCookie || languageCookie || 'en';
   const lang = userLang.substring(0, 2) === 'zh' ? 'zh-CN' : userLang.substring(0, 2);
   
-  // 将确定的语言保存到所有cookie中以确保一致性
+  // 将确定的语言保存到所有cookie和localStorage中以确保一致性
   if (lang && ['en', 'zh-CN', 'es', 'fr'].includes(lang)) {
     setCookie('lang', lang, 30);
     setCookie('language', lang, 30);
+    localStorage.setItem('lang', lang);
   }
   
   // Update language selector UI
@@ -282,8 +286,8 @@ function loadGames(containerId, category) {
     .then(data => {
       let filteredGames = [];
       
-      // 获取当前语言
-      const currentLang = localStorage.getItem('lang') || 'en';
+      // 获取当前语言，从cookie中获取而不是localStorage
+      const currentLang = getCookie('lang') || 'en';
       
       // Filter games based on category
       if (category === 'featured') {
@@ -304,16 +308,31 @@ function loadGames(containerId, category) {
         const emptyMessage = document.createElement('div');
         emptyMessage.className = 'empty-message';
         
-        // 根据语言显示不同的提示
+        // 默认使用英文提示
+        let noGamesText = 'No games available';
+        
+        // 根据语言显示不同的提示，避免硬编码中文
         if (currentLang === 'zh-CN') {
-          emptyMessage.textContent = '暂无游戏';
+          noGamesText = 'No games available';
+          // 从服务器加载翻译后应用正确的文本
+          fetch('/assets/js/translations/zh-CN.json')
+            .then(response => response.json())
+            .then(translations => {
+              if (translations['no_games_available']) {
+                emptyMessage.textContent = translations['no_games_available'];
+              }
+            })
+            .catch(() => {
+              // 翻译加载失败，继续使用默认英文
+            });
         } else if (currentLang === 'es') {
-          emptyMessage.textContent = 'No hay juegos disponibles';
+          noGamesText = 'No hay juegos disponibles';
         } else if (currentLang === 'fr') {
-          emptyMessage.textContent = 'Pas de jeux disponibles';
-        } else {
-          emptyMessage.textContent = 'No games available';
+          noGamesText = 'Pas de jeux disponibles';
         }
+        
+        // 先设置默认文本
+        emptyMessage.textContent = noGamesText;
         
         container.appendChild(emptyMessage);
         return;
@@ -326,11 +345,14 @@ function loadGames(containerId, category) {
         
         // 创建图片元素
         const img = document.createElement('img');
+        img.className = 'loading'; // 添加loading类用于样式识别
+        
+        // 预先设置占位符图片，避免空白
+        img.src = '/assets/images/game-placeholder.svg';
         
         // 确保图片路径有效，添加时间戳避免缓存问题
         const timestamp = new Date().getTime();
-        const imgSrc = game.thumbnail || `/assets/images/games/${game.id}.jpg?t=${timestamp}`;
-        img.src = imgSrc;
+        const gameImgSrc = game.thumbnail || `/assets/images/games/${game.id}.jpg?t=${timestamp}`;
         
         // 根据当前语言获取游戏标题
         let gameTitle = '';
@@ -352,11 +374,22 @@ function loadGames(containerId, category) {
         img.style.minHeight = '150px';
         img.style.background = '#f0f0f0';
         
-        // 处理图片加载失败的情况
-        img.onerror = function() {
-          console.log('Game image failed to load:', img.src);
-          img.src = '/assets/images/game-placeholder.svg';
+        // 尝试加载真实游戏图片
+        const realImg = new Image();
+        realImg.onload = function() {
+          // 真实图片加载成功，替换显示
+          img.src = gameImgSrc;
+          img.classList.remove('loading');
         };
+        
+        realImg.onerror = function() {
+          // 真实图片加载失败，保持占位符显示
+          console.log('Game image failed to load:', gameImgSrc);
+          img.classList.remove('loading');
+        };
+        
+        // 开始加载真实图片
+        realImg.src = gameImgSrc;
         
         // 创建游戏标题元素
         const title = document.createElement('p');
@@ -374,13 +407,6 @@ function loadGames(containerId, category) {
         // 添加到游戏卡片
         gameCard.appendChild(link);
         container.appendChild(gameCard);
-        
-        // 检查图片是否已加载完成
-        if (img.complete) {
-          if (img.naturalWidth === 0) {
-            img.onerror();
-          }
-        }
       });
       
       // 在添加游戏卡片后应用图片修复
@@ -438,4 +464,92 @@ function applyTranslations(translations) {
   if (translations['page_title']) {
     document.title = translations['page_title'];
   }
+}
+
+// Load Featured Games
+function loadFeaturedGames() {
+  fetch('/assets/data/featured-games.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(games => {
+      displayGames(games, 'featured-games-container', 6);
+    })
+    .catch(error => {
+      console.error('Error loading featured games:', error);
+      document.getElementById('featured-games-container').innerHTML = '<p>Error loading games</p>';
+    });
+}
+
+// Load New Games
+function loadNewGames() {
+  fetch('/assets/data/new-games.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(games => {
+      displayGames(games, 'new-games-container', 6);
+    })
+    .catch(error => {
+      console.error('Error loading new games:', error);
+      document.getElementById('new-games-container').innerHTML = '<p>Error loading games</p>';
+    });
+}
+
+// Load Popular Games
+function loadPopularGames() {
+  fetch('/assets/data/popular-games.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(games => {
+      displayGames(games, 'popular-games-container', 6);
+    })
+    .catch(error => {
+      console.error('Error loading popular games:', error);
+      document.getElementById('popular-games-container').innerHTML = '<p>Error loading games</p>';
+    });
+}
+
+// Display games in a container
+function displayGames(games, containerId, limit = -1) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  container.innerHTML = '';
+  
+  let filteredGames = games;
+  if (limit > 0 && games.length > limit) {
+    filteredGames = games.slice(0, limit);
+  }
+  
+  if (filteredGames.length === 0) {
+    const emptyMessage = document.createElement('div');
+    emptyMessage.className = 'empty-message';
+    
+    // Default to English message
+    let noGamesText = 'No games available';
+    
+    // Use translated message if available
+    if (currentLang && translations[currentLang]) {
+      if (translations[currentLang].no_games_available) {
+        noGamesText = translations[currentLang].no_games_available;
+      }
+    }
+    
+    emptyMessage.textContent = noGamesText;
+    container.appendChild(emptyMessage);
+    return;
+  }
+
+  // ... existing code ...
 }

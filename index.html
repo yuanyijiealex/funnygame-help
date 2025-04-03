@@ -623,6 +623,15 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // 确保清除localStorage中的语言设置，强制使用cookie
+      localStorage.removeItem('lang');
+      localStorage.removeItem('language');
+      
+      // 设置默认语言为英文
+      if (!getCookie('lang')) {
+        setCookie('lang', 'en', 30);
+      }
+      
       // 加载各分类的游戏
       loadGames('featured-games', 'featured');
       loadGames('new-games', 'new');

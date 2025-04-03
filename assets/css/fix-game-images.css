@@ -4,58 +4,68 @@
  */
 
 /* 确保游戏卡片中的图片能正确显示 */
+.game-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
 .game-card img {
   width: 100%;
-  height: auto;
-  min-height: 150px;
-  display: block;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  background-color: #f0f0f0;
-  transition: opacity 0.3s ease;
-  position: relative;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
-/* 为游戏图片添加加载动画 */
-.game-card img:not([src]), 
-.game-card img[src=""], 
 .game-card img.loading {
   position: relative;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.game-card img:not([src])::before,
-.game-card img[src=""]::before,
-.game-card img.loading::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  margin: -15px 0 0 -15px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #2281C1;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  z-index: 1;
-}
-
-.game-card img:not([src])::after,
-.game-card img[src=""]::after,
 .game-card img.loading::after {
   content: "Loading game image...";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 20px);
-  color: #999;
-  font-size: 12px;
-  text-align: center;
-  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #888;
+}
+
+.game-card .game-info {
+  padding: 1rem;
+  background-color: white;
+}
+
+.game-card .game-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.game-card .game-info p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #666;
 }
 
 /* 占位符SVG样式覆盖 */
 img[src*="game-placeholder.svg"] {
-  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/images/game-placeholder.svg');
 }
 
 /* 修复图片加载失败样式 */
