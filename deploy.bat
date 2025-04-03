@@ -39,6 +39,7 @@ COPY "public\service-worker.js" "dist\"
 COPY "public\manifest.json" "dist\"
 COPY "public\favicon.ico" "dist\"
 COPY "public\*.png" "dist\"
+COPY "public\sw-test.html" "dist\"
 
 ECHO [5/6] 更新Service Worker版本...
 ECHO // 更新缓存版本号... > temp.js
@@ -48,7 +49,8 @@ ECHO const fs = require('fs'); >> temp.js
 ECHO if (fs.existsSync('dist/service-worker.js')) { >> temp.js
 ECHO   const swContent = fs.readFileSync('dist/service-worker.js', 'utf8'); >> temp.js
 ECHO   const updatedContent = swContent.replace(/funnygame-cache-v\d+/, 'funnygame-cache-' + version); >> temp.js
-ECHO   fs.writeFileSync('dist/service-worker.js', updatedContent); >> temp.js
+ECHO   const versionUpdatedContent = updatedContent.replace(/SW_VERSION = ['"].*?['"]/, `SW_VERSION = '${version}'`); >> temp.js
+ECHO   fs.writeFileSync('dist/service-worker.js', versionUpdatedContent); >> temp.js
 ECHO   console.log('Service Worker 版本已更新到: ' + version); >> temp.js
 ECHO } else { >> temp.js
 ECHO   console.log('警告: 未找到 service-worker.js 文件'); >> temp.js
@@ -60,6 +62,7 @@ ECHO [6/6] 生成部署报告...
 ECHO { > "dist\build-info.json"
 ECHO   "buildDate": "%DATE% %TIME%", >> "dist\build-info.json"
 ECHO   "version": "1.0.0", >> "dist\build-info.json"
+ECHO   "serviceWorkerVersion": "%version%", >> "dist\build-info.json"
 ECHO   "deployedBy": "%USERNAME%" >> "dist\build-info.json"
 ECHO } >> "dist\build-info.json"
 
@@ -72,6 +75,7 @@ ECHO 您现在可以：
 ECHO 1. 将 dist 目录中的文件上传到您的Web服务器
 ECHO 2. 使用 firebase deploy 或其他部署工具
 ECHO 3. 直接在本地测试: npx serve dist
+ECHO 4. 测试Service Worker: http://localhost:3000/sw-test.html
 ECHO.
 
 PAUSE 
