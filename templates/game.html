@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - FunnyGame.help</title>
+    <meta name="description" content="{{description}}">
+    <meta property="og:title" content="{{title}} - FunnyGame.help">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{ogUrl}}">
+    <meta property="og:image" content="https://funnygame.help{{thumbnail}}">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/logo.png" alt="FunnyGame.help">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/categories/action.html">动作游戏</a></li>
+                    <li><a href="/categories/puzzle.html">益智游戏</a></li>
+                    <li><a href="/search">搜索</a></li>
+                    <li><a href="/favorites.html">我的收藏</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="search-toggle">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="theme-toggle" title="切换深色/浅色模式">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-overlay">
+        <div class="container">
+            <form action="/search" method="get" class="search-form">
+                <input type="text" name="q" placeholder="搜索游戏...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="search-close"><i class="fas fa-times"></i></div>
+        </div>
+    </div>
+
+    <main class="container game-detail">
+        <div class="breadcrumbs">
+            <a href="/">首页</a> &raquo;
+            {{#each categories}}
+            <a href="/categories/{{this}}.html">{{this}}</a>
+            {{#unless @last}} &raquo; {{/unless}}
+            {{/each}}
+            &raquo; <span>{{title}}</span>
+        </div>
+
+        <div class="game-header">
+            <div class="game-cover-container">
+                <picture>
+                    <source srcset="{{webpPath thumbnail}}" type="image/webp">
+                    <img src="{{thumbnail}}" alt="{{title}}" class="game-cover">
+                </picture>
+                {{#if isNew}}<span class="badge new-badge">新游戏</span>{{/if}}
+                {{#if isFeatured}}<span class="badge featured-badge">精选</span>{{/if}}
+            </div>
+            <div class="game-info">
+                <h1>{{title}}</h1>
+                <div class="game-meta">
+                    <div class="rating" data-rating="{{rating}}">
+                        <div class="stars">
+                            <span class="stars-filled" style="width: {{multiply rating 20}}%"></span>
+                        </div>
+                        <span class="rating-value">{{rating}}</span>
+                        <span class="rating-count">({{playCount}}人玩过)</span>
+                    </div>
+                    <div class="game-categories">
+                        {{#each categories}}
+                        <a href="/categories/{{this}}.html" class="category-tag">{{this}}</a>
+                        {{/each}}
+                    </div>
+                    <div class="game-date">添加日期: {{formatDate addedDate}}</div>
+                </div>
+                <p class="game-description">{{description}}</p>
+                <div class="game-tags">
+                    {{#each tags}}
+                    <span class="tag">{{this}}</span>
+                    {{/each}}
+                </div>
+                <div class="game-actions">
+                    <a href="#game-container" class="btn btn-primary play-btn">开始游戏</a>
+                    <button class="btn btn-outline favorite-btn" data-game-id="{{id}}">
+                        <i class="far fa-heart"></i> <span class="favorite-text">收藏</span>
+                    </button>
+                    <div class="user-rating">
+                        <span>为游戏评分:</span>
+                        <div class="user-stars" data-game-id="{{id}}">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-container" id="game-container">
+            <div class="game-controls">
+                <button class="control-btn fullscreen-btn" title="全屏">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button class="control-btn favorite-btn" data-game-id="{{id}}" title="收藏">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="control-btn share-btn" title="分享">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                <button class="control-btn report-btn" title="报告问题">
+                    <i class="fas fa-flag"></i>
+                </button>
+            </div>
+            <div class="game-frame-container">
+                <iframe src="{{embedUrl}}" class="game-frame" allowfullscreen allow="autoplay; fullscreen"></iframe>
+            </div>
+        </div>
+
+        <div class="game-details-tabs">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="description">游戏介绍</button>
+                <button class="tab-btn" data-tab="controls">操作说明</button>
+                <button class="tab-btn" data-tab="achievements">成就</button>
+                <button class="tab-btn" data-tab="screenshots">截图</button>
+            </div>
+
+            <div class="tab-content active" id="description">
+                <h2>游戏介绍</h2>
+                <p>{{longDescription}}</p>
+                <h3>游戏特点</h3>
+                <ul class="features-list">
+                    {{#each features}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="tab-content" id="controls">
+                <h2>操作说明</h2>
+                <div class="controls-list">
+                    {{#each controls}}
+                    <div class="control-item">
+                        <div class="control-key">{{@key}}</div>
+                        <div class="control-action">{{this}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="device-support">
+                    <p>支持设备：PC
+                    {{#if isMobileCompatible}}
+                    , 移动设备
+                    {{/if}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="achievements">
+                <h2>游戏成就</h2>
+                {{#if achievements}}
+                <div class="achievements-list">
+                    {{#each achievements}}
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h3>{{title}}</h3>
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{else}}
+                <p>此游戏暂无成就。</p>
+                {{/if}}
+            </div>
+
+            <div class="tab-content" id="screenshots">
+                <h2>游戏截图</h2>
+                <div class="screenshots-grid">
+                    {{#each screenshots}}
+                    <div class="screenshot">
+                        <picture>
+                            <source srcset="{{webpPath this}}" type="image/webp">
+                            <img src="{{this}}" alt="{{../title}} 截图">
+                        </picture>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        {{#if similarGames}}
+        <div class="similar-games">
+            <h2>类似游戏</h2>
+            <div class="games-grid">
+                {{#each similarGames}}
+                <div class="game-card">
+                    <a href="/games/{{this}}.html" class="game-card-link">
+                        <div class="game-card-cover">
+                            <picture>
+                                <source srcset="/assets/images/games/{{this}}.webp" type="image/webp">
+                                <img src="/assets/images/games/{{this}}.jpg" alt="{{this}}">
+                            </picture>
+                        </div>
+                        <div class="game-card-info">
+                            <h3 class="game-card-title">{{this}}</h3>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>导航</h3>
+                    <ul>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/categories/action.html">动作游戏</a></li>
+                        <li><a href="/categories/puzzle.html">益智游戏</a></li>
+                        <li><a href="/categories/strategy.html">策略游戏</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>关于</h3>
+                    <ul>
+                        <li><a href="/about.html">关于我们</a></li>
+                        <li><a href="/contact.html">联系我们</a></li>
+                        <li><a href="/sitemap.html">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <p>有任何问题或建议？请通过邮件联系我们:</p>
+                    <a href="mailto:info@funnygame.help">info@funnygame.help</a>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2023</span> FunnyGame.help. 保留所有权利.</p>
+                <div class="footer-links">
+                    <a href="/terms.html">服务条款</a>
+                    <a href="/privacy.html">隐私政策</a>
+                    <a href="/cookie.html">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span class="notification-message"></span>
+        </div>
+        <button class="notification-close">&times;</button>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/user-interactions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新页脚中的年份
+            document.querySelector('.current-year').textContent = new Date().getFullYear();
+            
+            // 初始化标签页
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    
+                    // 移除所有活动类
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // 添加活动类到当前选中的标签
+                    btn.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // 全屏按钮
+            const fullscreenBtn = document.querySelector('.fullscreen-btn');
+            const gameFrame = document.querySelector('.game-frame-container');
+            
+            fullscreenBtn.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    gameFrame.requestFullscreen().catch(err => {
+                        console.error(`全屏错误: ${err.message}`);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+            
+            // 游戏已加载，记录游戏播放
+            recordGamePlay('{{id}}');
+            
+            // 检查游戏是否已收藏
+            checkFavoriteStatus('{{id}}');
+            
+            // 检查用户之前的评分
+            checkUserRating('{{id}}');
+        });
+    </script>
+    <!-- 注册Service Worker以支持离线功能 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker 注册成功，范围: ', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('Service Worker 注册失败: ', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

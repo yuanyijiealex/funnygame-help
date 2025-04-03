@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的收藏 - FunnyGame.help</title>
+  <meta name="description" content="查看您收藏的游戏，快速访问您喜爱的HTML5游戏">
+  
+  <!-- 样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/fix-flags.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#D12035">
+</head>
+<body class="bg-gray-100">
+  <!-- 顶部导航栏 -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" data-translate="site_name">FunnyGame.help</a>
+      
+      <ul class="nav-links">
+        <li><a href="/" data-translate="nav_home">首页</a></li>
+        <li><a href="/featured-games.html" data-translate="nav_featured">特色游戏</a></li>
+        <li><a href="/new-games.html" data-translate="nav_new">新游戏</a></li>
+        <li><a href="/popular-games.html" data-translate="nav_popular">热门游戏</a></li>
+        <li><a href="/favorites.html" class="active" data-translate="nav_favorites">我的收藏</a></li>
+      </ul>
+      
+      <div class="nav-right">
+        <!-- 语言选择器 -->
+        <div class="language-selector">
+          <div class="language-selector-btn" id="language-selector-btn">
+            <img src="/assets/images/flags/en.png" alt="English" style="display:inline-block !important; width:20px; height:15px; margin-right:5px; visibility:visible !important; opacity:1 !important;" />
+            <span>EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="language-dropdown" id="language-dropdown">
+            <div class="language-option" data-lang="en">
+              <img src="/assets/images/flags/en.png" alt="English" style="display:inline-block !important; width:20px; height:15px; margin-right:10px; visibility:visible !important; opacity:1 !important;" />
+              <span>English</span>
+            </div>
+            <div class="language-option" data-lang="zh-CN">
+              <img src="/assets/images/flags/cn.png" alt="简体中文" style="display:inline-block !important; width:20px; height:15px; margin-right:10px; visibility:visible !important; opacity:1 !important;" />
+              <span>简体中文</span>
+            </div>
+            <div class="language-option" data-lang="es">
+              <img src="/assets/images/flags/es.png" alt="Español" style="display:inline-block !important; width:20px; height:15px; margin-right:10px; visibility:visible !important; opacity:1 !important;" />
+              <span>Español</span>
+            </div>
+            <div class="language-option" data-lang="fr">
+              <img src="/assets/images/flags/fr.png" alt="Français" style="display:inline-block !important; width:20px; height:15px; margin-right:10px; visibility:visible !important; opacity:1 !important;" />
+              <span>Français</span>
+            </div>
+          </div>
+        </div>
+        
+        <a href="/search" class="nav-icon">
+          <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </a>
+        <a href="/user" class="nav-icon">
+          <svg class="user-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+    
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">我的收藏</h1>
+    
+    <div id="favorites-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- 收藏的游戏将在这里动态显示 -->
+    </div>
+    
+    <div id="no-favorites-message" class="bg-white rounded-lg shadow-lg p-8 text-center my-12" style="display: none;">
+      <h2 class="text-2xl font-bold mb-4">您尚未收藏任何游戏</h2>
+      <p class="text-gray-600 mb-6">浏览游戏并点击"收藏"按钮，您喜爱的游戏将显示在这里。</p>
+      <a href="/" class="px-6 py-3 bg-primary-red text-white font-bold rounded-md hover:bg-red-700 transition-colors shadow-md">浏览游戏</a>
+    </div>
+  </main>
+  
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-gray-300 py-10">
+    <div class="container mx-auto px-4">
+      <div class="footer-columns">
+        <!-- 站点信息 -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="site_name">FunnyGame.help</div>
+          <p data-translate="footer_description">FunnyGame.help提供免费的HTML5游戏，无需下载，直接在浏览器中玩。</p>
+        </div>
+        
+        <!-- 快速链接 -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="quick_links">快速链接</div>
+          <ul class="footer-links">
+            <li><a href="/" data-translate="nav_home">首页</a></li>
+            <li><a href="/featured-games.html" data-translate="nav_featured">特色游戏</a></li>
+            <li><a href="/new-games.html" data-translate="nav_new">新游戏</a></li>
+            <li><a href="/popular-games.html" data-translate="nav_popular">热门游戏</a></li>
+            <li><a href="/favorites.html" data-translate="nav_favorites">我的收藏</a></li>
+          </ul>
+        </div>
+        
+        <!-- 联系信息 -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="contact_us">联系我们</div>
+          <p data-translate="contact_description">有问题或建议？欢迎联系我们。</p>
+          <a href="mailto:info@funnygame.help" class="contact-link">info@funnygame.help</a>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <p data-translate="copyright">&copy; <span id="current-year">2023</span> FunnyGame.help. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/user-interactions.js"></script>
+  <script src="/assets/js/offline.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 更新当前年份
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      
+      // 加载并显示收藏的游戏
+      const favoritesData = JSON.parse(localStorage.getItem('favorites') || '{}');
+      const favoritesContainer = document.getElementById('favorites-container');
+      const noFavoritesMessage = document.getElementById('no-favorites-message');
+      
+      // 如果没有收藏的游戏，显示提示信息
+      if (Object.keys(favoritesData).length === 0) {
+        noFavoritesMessage.style.display = 'block';
+        return;
+      }
+      
+      // 为每个收藏的游戏创建HTML元素
+      Object.values(favoritesData).forEach(game => {
+        const gameCard = document.createElement('div');
+        gameCard.className = 'game-card bg-white rounded-lg shadow-lg overflow-hidden';
+        
+        gameCard.innerHTML = `
+          <a href="${game.url || '/games/' + game.id + '.html'}">
+            <img src="${game.thumbnail || '/assets/images/games/' + game.id + '.jpg'}" 
+                 alt="${game.title}" 
+                 class="w-full h-48 object-cover"
+                 onerror="this.onerror=null; this.src='/assets/images/game-placeholder.svg';">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-2">${game.title}</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-500 text-sm">收藏于 ${new Date(game.dateAdded).toLocaleDateString()}</span>
+                <button class="favorite-button active" data-game-id="${game.id}" aria-label="取消收藏">
+                  <i class="fas fa-heart text-red-500"></i> <span class="favorite-text">已收藏</span>
+                </button>
+              </div>
+            </div>
+          </a>
+        `;
+        
+        favoritesContainer.appendChild(gameCard);
+      });
+    });
+  </script>
+  
+  <!-- 注册Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker 注册成功，范围: ', registration.scope);
+        })
+        .catch(function(error) {
+          console.log('Service Worker 注册失败: ', error);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

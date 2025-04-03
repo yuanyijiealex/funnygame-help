@@ -1,0 +1,49 @@
+{
+  "home": "首页",
+  "featured_games": "特色游戏",
+  "new_games": "新游戏",
+  "popular_games": "热门游戏",
+  "about_us": "关于我们",
+  "contact_us": "联系我们",
+  "search": "搜索",
+  
+  "hero_title": "发现并享受免费的HTML5游戏",
+  "hero_description": "在FunnyGame.help上找到最好玩的免费在线游戏。直接在浏览器中玩，无需下载，随时随地享受游戏乐趣。",
+  
+  "action_games": "动作游戏",
+  "puzzle_games": "益智游戏",
+  "strategy_games": "策略游戏",
+  "racing_games": "赛车游戏",
+  "shooting_games": "射击游戏",
+  "rpg_games": "角色扮演游戏",
+  "platformer_games": "平台游戏",
+  "casual_games": "休闲游戏",
+  
+  "view_all": "查看全部",
+  
+  "site_description": "FunnyGame.help提供免费的HTML5游戏，无需下载，直接在浏览器中玩。",
+  "quick_links": "快速链接",
+  "legal_info": "法律信息",
+  "privacy_policy": "隐私政策",
+  "terms_of_use": "使用条款",
+  "cookie_policy": "Cookie政策",
+  "sitemap": "网站地图",
+  
+  "all_rights_reserved": "保留所有权利",
+  
+  "start_game": "开始游戏",
+  "favorite": "收藏",
+  "rate_game": "为游戏评分",
+  "game_description": "游戏介绍",
+  "controls": "操作说明",
+  "achievements": "成就",
+  "screenshots": "截图",
+  "similar_games": "类似游戏",
+  
+  "fullscreen": "全屏",
+  "share": "分享",
+  "report": "报告问题",
+  
+  "supported_devices": "支持设备",
+  "features": "游戏特点"
+} 

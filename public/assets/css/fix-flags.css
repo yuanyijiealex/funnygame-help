@@ -1,0 +1,51 @@
+/* 修复国旗图标显示问题的CSS */
+.language-selector-btn img,
+.language-option img,
+img[src*="/assets/images/flags/"] {
+  display: inline-block !important;
+  width: 20px !important;
+  height: 15px !important;
+  margin-right: 5px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  border: 1px solid #ddd !important;
+  /* 添加过渡效果，使图标加载更平滑 */
+  transition: opacity 0.2s ease;
+  /* 增加优先级，确保图标样式不被覆盖 */
+  z-index: 1 !important;
+}
+
+/* 处理加载失败的图标 */
+img[src*="/assets/images/flags/"].load-error {
+  /* 使用灰色背景替代加载失败的图标 */
+  background-color: #eee !important;
+  position: relative !important;
+}
+
+/* 为语言选项中的图标添加额外的样式 */
+.language-option img {
+  margin-right: 10px !important;
+}
+
+/* 强制显示游戏缩略图 */
+.game-image,
+img[src*="/assets/images/games/"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 150px !important;
+  background-color: #f0f0f0 !important;
+}
+
+/* 添加动画效果，使图片加载更平滑 */
+img[src*="/assets/images/flags/"] {
+  opacity: 0 !important;
+  animation: fadeIn 0.3s ease forwards !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 !important; }
+  to { opacity: 1 !important; }
+} 

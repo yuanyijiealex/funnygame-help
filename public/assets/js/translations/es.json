@@ -1,0 +1,49 @@
+{
+  "home": "Inicio",
+  "featured_games": "Juegos Destacados",
+  "new_games": "Juegos Nuevos",
+  "popular_games": "Juegos Populares",
+  "about_us": "Sobre Nosotros",
+  "contact_us": "Contáctenos",
+  "search": "Buscar",
+  
+  "hero_title": "Descubre y Disfruta Juegos HTML5 Gratuitos",
+  "hero_description": "Encuentra los mejores juegos en línea gratuitos en FunnyGame.help. Juega directamente en tu navegador, sin descargas, y disfruta de los juegos en cualquier momento y lugar.",
+  
+  "action_games": "Juegos de Acción",
+  "puzzle_games": "Juegos de Rompecabezas",
+  "strategy_games": "Juegos de Estrategia",
+  "racing_games": "Juegos de Carreras",
+  "shooting_games": "Juegos de Disparos",
+  "rpg_games": "Juegos de Rol",
+  "platformer_games": "Juegos de Plataformas",
+  "casual_games": "Juegos Casuales",
+  
+  "view_all": "Ver Todos",
+  
+  "site_description": "FunnyGame.help ofrece juegos HTML5 gratuitos que puedes jugar directamente en tu navegador sin descargar.",
+  "quick_links": "Enlaces Rápidos",
+  "legal_info": "Información Legal",
+  "privacy_policy": "Política de Privacidad",
+  "terms_of_use": "Términos de Uso",
+  "cookie_policy": "Política de Cookies",
+  "sitemap": "Mapa del Sitio",
+  
+  "all_rights_reserved": "Todos los derechos reservados",
+  
+  "start_game": "Iniciar Juego",
+  "favorite": "Favorito",
+  "rate_game": "Calificar Juego",
+  "game_description": "Descripción del Juego",
+  "controls": "Controles",
+  "achievements": "Logros",
+  "screenshots": "Capturas de Pantalla",
+  "similar_games": "Juegos Similares",
+  
+  "fullscreen": "Pantalla Completa",
+  "share": "Compartir",
+  "report": "Reportar Problema",
+  
+  "supported_devices": "Dispositivos Compatibles",
+  "features": "Características"
+} 

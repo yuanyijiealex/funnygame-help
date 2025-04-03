@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新游戏 - FunnyGame.help</title>
+  <meta name="description" content="在FunnyGame.help上探索最新上线的HTML5游戏。每周更新，无需下载，直接在浏览器中畅玩。">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="新游戏 - FunnyGame.help">
+  <meta property="og:description" content="在FunnyGame.help上探索最新上线的HTML5游戏。每周更新，无需下载，直接在浏览器中畅玩。">
+  <meta property="og:image" content="https://funnygame.help/assets/images/og-new-games.jpg">
+  <meta property="og:url" content="https://funnygame.help/new-games.html">
+  <meta property="og:type" content="website">
+  
+  <!-- 样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/fix-flags.css">
+  
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 基础样式 */
+    :root {
+      --primary-red: #D12035;
+      --primary-blue: #2281C1;
+      --accent-yellow: #FFC107;
+      --light-gray: #F8F8F8;
+      --text-dark: #222222;
+      --text-light: #FFFFFF;
+      --background: #FFFFFF;
+      --border-color: #E0E0E0;
+      --category-bg: #F0F0F0;
+      --footer-bg: #222;
+      --footer-text: #bbb;
+    }
+    
+    body {
+      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light-gray);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* 顶部导航栏 */
+    .header {
+      background-color: var(--background);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary-red);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 25px;
+    }
+    
+    .nav-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary-blue);
+    }
+    
+    .nav-links a.active {
+      color: var(--primary-blue);
+      font-weight: 500;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-icon {
+      margin-left: 20px;
+      font-size: 18px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    
+    /* 页面标题区域 */
+    .page-title {
+      background-color: var(--primary-blue);
+      color: var(--text-light);
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    .page-title h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .page-description {
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* 游戏网格 */
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px 0;
+    }
+    
+    .game-card {
+      background-color: var(--background);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .game-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    
+    .game-info {
+      padding: 15px;
+    }
+    
+    .game-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    
+    .game-category {
+      color: var(--primary-blue);
+      font-size: 14px;
+    }
+    
+    /* 图标样式 */
+    .search-icon, .user-icon {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-dark);
+    }
+    
+    .search-icon:hover, .user-icon:hover {
+      fill: var(--primary-blue);
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+      
+      .page-title h1 {
+        font-size: 24px;
+      }
+      
+      .page-description {
+        font-size: 14px;
+      }
+    }
+    
+    /* 加载动画 */
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 5px solid var(--primary-blue);
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* 新游戏标签 */
+    .new-badge {
+      background-color: var(--primary-red);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 顶部导航栏 -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo">FunnyGame.help</a>
+      
+      <ul class="nav-links">
+        <li><a href="/" data-translate="home">首页</a></li>
+        <li><a href="/featured-games.html" data-translate="featured_games">特色游戏</a></li>
+        <li><a href="/new-games.html" class="active" data-translate="new_games">新游戏</a></li>
+        <li><a href="/popular-games.html" data-translate="popular_games">热门游戏</a></li>
+        <li><a href="/about.html" data-translate="about_us">关于我们</a></li>
+      </ul>
+      
+      <div class="nav-right">
+        <a href="/search" class="nav-icon">
+          <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </a>
+        <a href="/user" class="nav-icon">
+          <svg class="user-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </a>
+        <div class="language-selector">
+          <div class="language-selector-btn" id="language-selector-btn">
+            <img src="/assets/images/flags/en.png" alt="English" />
+            <span>EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="language-dropdown" id="language-dropdown">
+            <div class="language-option" data-lang="en">
+              <img src="/assets/images/flags/en.png" alt="English" />
+              <span>English</span>
+            </div>
+            <div class="language-option" data-lang="zh-CN">
+              <img src="/assets/images/flags/cn.png" alt="简体中文" />
+              <span>简体中文</span>
+            </div>
+            <div class="language-option" data-lang="es">
+              <img src="/assets/images/flags/es.png" alt="Español" />
+              <span>Español</span>
+            </div>
+            <div class="language-option" data-lang="fr">
+              <img src="/assets/images/flags/fr.png" alt="Français" />
+              <span>Français</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- 页面标题 -->
+  <section class="page-title">
+    <div class="container">
+      <h1 data-translate="new_games">新游戏</h1>
+      <p class="page-description">发现最新上线的精彩HTML5游戏，我们会定期更新新的内容来满足您的游戏需求。</p>
+    </div>
+  </section>
+  
+  <!-- 游戏列表 -->
+  <main class="container">
+    <div id="games-container" class="games-grid">
+      <!-- 加载动画 -->
+      <div class="flex justify-center items-center col-span-full py-12">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-gray-300 py-10">
+    <div class="container mx-auto px-4">
+      <div class="footer-columns">
+        <!-- 站点信息 -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="site_info">FunnyGame.help</div>
+          <p data-translate="site_description">FunnyGame.help提供免费的HTML5游戏，无需下载，直接在浏览器中玩。</p>
+        </div>
+        
+        <!-- 快速链接 -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="quick_links">快速链接</div>
+          <ul class="footer-links">
+            <li><a href="/" data-translate="home">首页</a></li>
+            <li><a href="/featured-games.html" data-translate="featured_games">特色游戏</a></li>
+            <li><a href="/new-games.html" data-translate="new_games">新游戏</a></li>
+            <li><a href="/popular-games.html" data-translate="popular_games">热门游戏</a></li>
+            <li><a href="/about.html" data-translate="about_us">关于我们</a></li>
+            <li><a href="/contact.html" data-translate="contact_us">联系我们</a></li>
+          </ul>
+        </div>
+        
+        <!-- 法律信息 -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="legal_info">法律信息</div>
+          <ul class="footer-links">
+            <li><a href="/privacy.html" data-translate="privacy_policy">隐私政策</a></li>
+            <li><a href="/terms.html" data-translate="terms_of_use">使用条款</a></li>
+            <li><a href="/cookies.html" data-translate="cookie_policy">Cookie政策</a></li>
+            <li><a href="/sitemap.html" data-translate="sitemap">网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; <span id="current-year">2023</span> FunnyGame.help. <span data-translate="all_rights_reserved">保留所有权利。</span></p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 加载新游戏
+      loadGames('games-container', 'new');
+      
+      // 语言选择器
+      const langSelectorBtn = document.getElementById('language-selector-btn');
+      const langDropdown = document.getElementById('language-dropdown');
+      const langOptions = document.querySelectorAll('.language-option');
+      
+      // 切换语言下拉菜单
+      langSelectorBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
+        langDropdown.classList.toggle('active');
+      });
+      
+      // 点击外部区域关闭下拉菜单
+      document.addEventListener('click', function(event) {
+        if (!langSelectorBtn.contains(event.target) && !langDropdown.contains(event.target)) {
+          langDropdown.classList.remove('active');
+        }
+      });
+      
+      // 选择语言
+      langOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          const langImg = this.querySelector('img').getAttribute('src');
+          
+          // 设置cookie
+          setCookie('lang', lang, 30);
+          
+          // 更新按钮显示
+          langSelectorBtn.querySelector('img').setAttribute('src', langImg);
+          langSelectorBtn.querySelector('span').textContent = lang.toUpperCase();
+          
+          // 关闭下拉菜单
+          langDropdown.classList.remove('active');
+          
+          // 重新加载页面应用语言更改
+          window.location.reload();
+        });
+      });
+      
+      // 根据cookie或浏览器语言加载当前语言
+      loadSelectedLanguage();
+      
+      // 更新当前年份
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    });
+    
+    // Cookie辅助函数
+    function setCookie(name, value, days) {
+      let expires = '';
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = '; expires=' + date.toUTCString();
+      }
+      document.cookie = name + '=' + value + expires + '; path=/';
+    }
+    
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+    
+    function loadSelectedLanguage() {
+      const userLang = getCookie('lang') || navigator.language || navigator.userLanguage;
+      const lang = userLang.substring(0, 2) === 'zh' ? 'zh-CN' : userLang.substring(0, 2);
+      
+      // 更新语言选择器UI
+      const langSelector = document.getElementById('language-selector-btn');
+      if (langSelector && ['en', 'zh-CN', 'es', 'fr'].includes(lang)) {
+        const flagImg = `/assets/images/flags/${lang === 'zh-CN' ? 'cn' : lang}.png`;
+        langSelector.querySelector('img').setAttribute('src', flagImg);
+        langSelector.querySelector('span').textContent = lang === 'zh-CN' ? 'CN' : lang.toUpperCase();
+      }
+    }
+    
+    // 注册Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker 注册成功，范围: ', registration.scope);
+        })
+        .catch(function(error) {
+          console.log('Service Worker 注册失败: ', error);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

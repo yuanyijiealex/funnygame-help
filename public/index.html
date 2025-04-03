@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FunnyGame.help - 免费HTML5游戏平台</title>
+  <meta name="description" content="FunnyGame.help提供各种免费HTML5游戏，包括动作、休闲、益智和冒险游戏，无需下载即可在线玩。">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="FunnyGame.help - 免费HTML5游戏平台">
+  <meta property="og:description" content="FunnyGame.help提供各种免费HTML5游戏，包括动作、休闲、益智和冒险游戏，无需下载即可在线玩。">
+  <meta property="og:image" content="https://funnygame.help/assets/images/logo.png">
+  <meta property="og:url" content="https://funnygame.help/">
+  <meta property="og:type" content="website">
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="/assets/images/flags/en.png" as="image" type="image/png">
+  <link rel="preload" href="/assets/images/flags/cn.png" as="image" type="image/png">
+  <link rel="preload" href="/assets/images/flags/es.png" as="image" type="image/png">
+  <link rel="preload" href="/assets/images/flags/fr.png" as="image" type="image/png">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/fix-flags.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Base styles */
+    :root {
+      --primary-red: #D12035;
+      --primary-blue: #2281C1;
+      --accent-yellow: #FFC107;
+      --light-gray: #F8F8F8;
+      --text-dark: #222222;
+      --text-light: #FFFFFF;
+      --background: #FFFFFF;
+      --border-color: #E0E0E0;
+      --category-bg: #F0F0F0;
+      --footer-bg: #222;
+      --footer-text: #bbb;
+    }
+    
+    body {
+      font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light-gray);
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Top navigation bar */
+    .header {
+      background-color: var(--background);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary-red);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 25px;
+    }
+    
+    .nav-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-blue);
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-icon {
+      margin-left: 20px;
+      font-size: 18px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    
+    /* Language selector */
+    .language-selector {
+      position: relative;
+      margin-left: 20px;
+    }
+    
+    .language-selector-btn {
+      display: flex;
+      align-items: center;
+      color: var(--text-dark);
+      font-size: 14px;
+      cursor: pointer;
+    }
+    
+    .language-selector-btn img {
+      width: 20px;
+      height: 14px;
+      margin-right: 4px;
+    }
+    
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      background-color: var(--background);
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 8px 0;
+      min-width: 150px;
+      z-index: 50;
+      display: none;
+    }
+    
+    .language-dropdown.active {
+      display: block;
+    }
+    
+    .language-option {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .language-option:hover {
+      background-color: var(--light-gray);
+    }
+    
+    .language-option img {
+      width: 20px;
+      height: 14px;
+      margin-right: 8px;
+    }
+    
+    /* Red banner area */
+    .hero-banner {
+      background-color: var(--primary-red);
+      color: var(--text-light);
+      padding: 30px 0; /* Height reduced by half */
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .hero-description {
+      font-size: 16px;
+      margin-bottom: 0;
+      opacity: 0.9;
+    }
+    
+    /* Icon styles */
+    .search-icon, .user-icon {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-dark);
+    }
+    
+    .search-icon:hover, .user-icon:hover {
+      fill: var(--primary-blue);
+    }
+    
+    /* Notification container */
+    #notification-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero-title {
+        font-size: 24px;
+      }
+      
+      .hero-description {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col">
+  <!-- Notification container -->
+  <div id="notification-container" class="fixed top-0 right-0 p-4 z-50"></div>
+  
+  <!-- Top navigation bar -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo">FunnyGame.help</a>
+      
+      <ul class="nav-links">
+        <li><a href="/" class="active" data-translate="home">Home</a></li>
+        <li><a href="/featured-games.html" data-translate="featured_games">Featured Games</a></li>
+        <li><a href="/new-games.html" data-translate="new_games">New Games</a></li>
+        <li><a href="/popular-games.html" data-translate="popular_games">Popular Games</a></li>
+        <li><a href="/about.html" data-translate="about_us">About Us</a></li>
+      </ul>
+      
+      <div class="nav-right">
+        <a href="/search" class="nav-icon">
+          <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </a>
+        <a href="/user" class="nav-icon">
+          <svg class="user-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </a>
+        <div class="language-selector">
+          <div class="language-selector-btn" id="language-selector-btn">
+            <img src="/assets/images/flags/en.png" alt="English" style="display:inline-block !important; width:20px !important; height:15px !important; margin-right:5px !important; visibility:visible !important; opacity:1 !important; max-width:none !important; object-fit:cover !important;" />
+            <span>EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="language-dropdown" id="language-dropdown">
+            <div class="language-option" data-lang="en">
+              <img src="/assets/images/flags/en.png" alt="English" style="display:inline-block !important; width:20px !important; height:15px !important; margin-right:10px !important; visibility:visible !important; opacity:1 !important; max-width:none !important; object-fit:cover !important;" />
+              <span>English</span>
+            </div>
+            <div class="language-option" data-lang="zh-CN">
+              <img src="/assets/images/flags/cn.png" alt="简体中文" style="display:inline-block !important; width:20px !important; height:15px !important; margin-right:10px !important; visibility:visible !important; opacity:1 !important; max-width:none !important; object-fit:cover !important;" />
+              <span>简体中文</span>
+            </div>
+            <div class="language-option" data-lang="es">
+              <img src="/assets/images/flags/es.png" alt="Español" style="display:inline-block !important; width:20px !important; height:15px !important; margin-right:10px !important; visibility:visible !important; opacity:1 !important; max-width:none !important; object-fit:cover !important;" />
+              <span>Español</span>
+            </div>
+            <div class="language-option" data-lang="fr">
+              <img src="/assets/images/flags/fr.png" alt="Français" style="display:inline-block !important; width:20px !important; height:15px !important; margin-right:10px !important; visibility:visible !important; opacity:1 !important; max-width:none !important; object-fit:cover !important;" />
+              <span>Français</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Red banner area -->
+  <section class="hero-banner">
+    <div class="container hero-content">
+      <h1 class="hero-title" data-translate="hero_title">Discover and Enjoy Free HTML5 Games</h1>
+      <p class="hero-description" data-translate="hero_description">Find the best free online games at FunnyGame.help. Play directly in your browser, no downloads required, and enjoy gaming anytime, anywhere.</p>
+    </div>
+  </section>
+  
+  <!-- Main content -->
+  <main class="flex-grow">
+    <!-- Game categories area -->
+    <section class="game-categories">
+      <div class="container">
+        <style>
+          /* Game categories area */
+          .game-categories {
+            padding: 30px 0;
+          }
+          
+          .category-row {
+            background-color: var(--background);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            display: flex;
+            overflow: hidden;
+          }
+          
+          .category-label {
+            width: 150px;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            font-weight: bold;
+            text-align: center;
+          }
+          
+          .category-label::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-style: solid;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--primary-blue);
+          }
+          
+          .category-games {
+            flex: 1;
+            display: flex;
+            padding: 15px;
+            overflow-x: auto;
+            align-items: center;
+          }
+          
+          .game-card {
+            min-width: 120px;
+            margin-right: 15px;
+            text-align: center;
+          }
+          
+          .game-card img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.2s;
+          }
+          
+          .game-card:hover img {
+            transform: translateY(-5px);
+          }
+          
+          .game-card p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--text-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          
+          .view-all {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid var(--border-color);
+          }
+          
+          .view-all a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+          }
+          
+          .view-all a::after {
+            content: '›';
+            font-size: 20px;
+            margin-left: 5px;
+          }
+          
+          /* Special category styles */
+          .featured .category-label {
+            background-color: var(--primary-red);
+          }
+          
+          .featured .category-label::after {
+            border-color: transparent transparent transparent var(--primary-red);
+          }
+          
+          .new-games .category-label {
+            background-color: var(--accent-yellow);
+            color: var(--text-dark);
+          }
+          
+          .new-games .category-label::after {
+            border-color: transparent transparent transparent var(--accent-yellow);
+          }
+          
+          .popular .category-label {
+            background-color: #28A745; /* Green */
+          }
+          
+          .popular .category-label::after {
+            border-color: transparent transparent transparent #28A745;
+          }
+          
+          /* Hide scrollbar but keep functionality */
+          .category-games::-webkit-scrollbar {
+            height: 4px;
+          }
+          
+          .category-games::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 2px;
+          }
+          
+          /* Responsive adjustments */
+          @media (max-width: 768px) {
+            .category-row {
+              flex-direction: column;
+            }
+            
+            .category-label {
+              width: 100%;
+              padding: 15px;
+            }
+            
+            .category-label::after {
+              display: none;
+            }
+          }
+        </style>
+        
+        <!-- Featured Games -->
+        <div class="category-row featured">
+          <div class="category-label">
+            <span data-translate="featured_games">Featured Games</span>
+          </div>
+          <div class="category-games" id="featured-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/featured-games.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+        
+        <!-- New Games -->
+        <div class="category-row new-games">
+          <div class="category-label">
+            <span data-translate="new_games">New Games</span>
+          </div>
+          <div class="category-games" id="new-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/new-games.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+        
+        <!-- Popular Games -->
+        <div class="category-row popular">
+          <div class="category-label">
+            <span data-translate="popular_games">Popular Games</span>
+          </div>
+          <div class="category-games" id="popular-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/popular-games.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+        
+        <!-- Action Games -->
+        <div class="category-row">
+          <div class="category-label">
+            <span data-translate="action_games">Action Games</span>
+          </div>
+          <div class="category-games" id="action-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/categories/action.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+        
+        <!-- Puzzle Games -->
+        <div class="category-row">
+          <div class="category-label">
+            <span data-translate="puzzle_games">Puzzle Games</span>
+          </div>
+          <div class="category-games" id="puzzle-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/categories/puzzle.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+        
+        <!-- Strategy Games -->
+        <div class="category-row">
+          <div class="category-label">
+            <span data-translate="strategy_games">Strategy Games</span>
+          </div>
+          <div class="category-games" id="strategy-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/categories/strategy.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+        
+        <!-- Racing Games -->
+        <div class="category-row">
+          <div class="category-label">
+            <span data-translate="racing_games">Racing Games</span>
+          </div>
+          <div class="category-games" id="racing-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/categories/racing.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+        
+        <!-- Shooting Games -->
+        <div class="category-row">
+          <div class="category-label">
+            <span data-translate="shooting_games">Shooting Games</span>
+          </div>
+          <div class="category-games" id="shooting-games">
+            <!-- Game cards will be loaded here -->
+          </div>
+          <div class="view-all">
+            <a href="/categories/shooting.html" data-translate="view_all">View All</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-10">
+    <div class="container mx-auto px-4">
+      <div class="footer-columns">
+        <!-- Site Information -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="site_info">FunnyGame.help</div>
+          <p data-translate="site_description">FunnyGame.help offers free HTML5 games that you can play directly in your browser without downloading.</p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="quick_links">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="/" data-translate="home">Home</a></li>
+            <li><a href="/featured-games.html" data-translate="featured_games">Featured Games</a></li>
+            <li><a href="/new-games.html" data-translate="new_games">New Games</a></li>
+            <li><a href="/popular-games.html" data-translate="popular_games">Popular Games</a></li>
+            <li><a href="/about.html" data-translate="about_us">About Us</a></li>
+            <li><a href="/contact.html" data-translate="contact_us">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Legal Information -->
+        <div class="footer-column">
+          <div class="footer-title" data-translate="legal_info">Legal Information</div>
+          <ul class="footer-links">
+            <li><a href="/privacy.html" data-translate="privacy_policy">Privacy Policy</a></li>
+            <li><a href="/terms.html" data-translate="terms_of_use">Terms of Use</a></li>
+            <li><a href="/cookies.html" data-translate="cookie_policy">Cookie Policy</a></li>
+            <li><a href="/sitemap.html" data-translate="sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; <span id="current-year">2023</span> FunnyGame.help. <span data-translate="all_rights_reserved">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/user-interactions.js"></script>
+  <script src="/assets/js/offline.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 加载各分类的游戏
+      loadGames('featured-games', 'featured');
+      loadGames('new-games', 'new');
+      loadGames('popular-games', 'popular');
+      loadGames('action-games', 'action');
+      loadGames('puzzle-games', 'puzzle');
+      loadGames('strategy-games', 'strategy');
+      loadGames('racing-games', 'racing');
+      loadGames('shooting-games', 'shooting');
+      
+      // 更新当前年份
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

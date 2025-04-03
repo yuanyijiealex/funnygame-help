@@ -1,0 +1,36 @@
+[
+  {
+    "id": "monster-survivors",
+    "title": "怪物幸存者",
+    "description": "在这款刺激的生存游戏中对抗无尽的怪物浪潮，升级你的角色并尽可能长时间地存活下来。",
+    "longDescription": "《怪物幸存者》是一款充满挑战的生存游戏，你将面对无尽的怪物浪潮。每一波怪物都比前一波更强大，你需要不断升级你的角色，获取新的技能和武器来应对越来越困难的挑战。游戏提供多种角色选择，每个角色都有独特的技能和属性。通过击败怪物获得经验值来升级，并选择强化你的攻击力、防御力或特殊能力。《怪物幸存者》简单易上手，但要掌握游戏的所有策略和技巧则需要时间和耐心。你能在怪物的围攻中存活多久？",
+    "embedUrl": "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html",
+    "thumbnail": "/assets/images/games/monster-survivors.jpg",
+    "categories": ["action", "rpg"],
+    "tags": ["生存", "角色扮演", "升级系统", "怪物", "战斗"],
+    "rating": 4.8,
+    "playCount": 58642,
+    "addedDate": "2023-06-15",
+    "isFeatured": true,
+    "isNew": false,
+    "isMobileCompatible": true,
+    "controls": {
+      "WASD": "移动",
+      "鼠标": "瞄准和攻击",
+      "空格键": "特殊技能",
+      "1-5": "使用物品"
+    },
+    "features": ["无尽模式", "多角色选择", "技能树系统", "多种武器", "成就系统"],
+    "screenshots": [
+      "/assets/images/games/monster-survivors-1.jpg",
+      "/assets/images/games/monster-survivors-2.jpg",
+      "/assets/images/games/monster-survivors-3.jpg"
+    ],
+    "achievements": [
+      { "id": "first-win", "title": "初战告捷", "description": "在怪物幸存者中存活超过5分钟" },
+      { "id": "monster-slayer", "title": "怪物杀手", "description": "击败超过100只怪物" },
+      { "id": "ultimate-survivor", "title": "终极幸存者", "description": "在一局游戏中存活超过30分钟" }
+    ],
+    "similarGames": []
+  }
+] 

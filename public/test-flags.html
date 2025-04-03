@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试国旗图标 - FunnyGame.help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .flag-test {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #D12035;
+        }
+        h2 {
+            color: #2281C1;
+        }
+        .test-row {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .test-row span {
+            margin-left: 10px;
+        }
+        img {
+            display: inline-block;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>国旗图标测试页面</h1>
+        <p>此页面用于测试国旗图标是否正确加载。</p>
+        
+        <div class="flag-test">
+            <h2>相对路径测试</h2>
+            <div class="test-row">
+                <img src="assets/images/flags/en.png" width="20" height="15" alt="英语">
+                <span>英语 (en.png)</span>
+            </div>
+            <div class="test-row">
+                <img src="assets/images/flags/cn.png" width="20" height="15" alt="中文">
+                <span>中文 (cn.png)</span>
+            </div>
+            <div class="test-row">
+                <img src="assets/images/flags/es.png" width="20" height="15" alt="西班牙语">
+                <span>西班牙语 (es.png)</span>
+            </div>
+            <div class="test-row">
+                <img src="assets/images/flags/fr.png" width="20" height="15" alt="法语">
+                <span>法语 (fr.png)</span>
+            </div>
+        </div>
+        
+        <div class="flag-test">
+            <h2>绝对路径测试</h2>
+            <div class="test-row">
+                <img src="/assets/images/flags/en.png" width="20" height="15" alt="英语">
+                <span>英语 (/assets/images/flags/en.png)</span>
+            </div>
+            <div class="test-row">
+                <img src="/assets/images/flags/cn.png" width="20" height="15" alt="中文">
+                <span>中文 (/assets/images/flags/cn.png)</span>
+            </div>
+            <div class="test-row">
+                <img src="/assets/images/flags/es.png" width="20" height="15" alt="西班牙语">
+                <span>西班牙语 (/assets/images/flags/es.png)</span>
+            </div>
+            <div class="test-row">
+                <img src="/assets/images/flags/fr.png" width="20" height="15" alt="法语">
+                <span>法语 (/assets/images/flags/fr.png)</span>
+            </div>
+        </div>
+        
+        <div class="flag-test">
+            <h2>内联样式测试</h2>
+            <div class="test-row">
+                <img src="/assets/images/flags/en.png" width="20" height="15" alt="英语" style="display:inline-block !important; visibility:visible !important; opacity:1 !important;">
+                <span>英语 (带内联样式)</span>
+            </div>
+        </div>
+        
+        <div class="flag-test">
+            <h2>背景图片测试</h2>
+            <div class="test-row">
+                <div style="width:20px; height:15px; background-image:url('/assets/images/flags/en.png'); background-size:cover;"></div>
+                <span>英语 (背景图片)</span>
+            </div>
+        </div>
+        
+        <p><a href="/">返回首页</a></p>
+    </div>
+    
+    <script>
+        // 测试国旗是否加载完成
+        window.onload = function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.complete) {
+                    console.log(`图片 ${img.alt} 已加载完成，尺寸: ${img.naturalWidth}x${img.naturalHeight}`);
+                } else {
+                    console.log(`图片 ${img.alt} 加载失败`);
+                }
+            });
+        };
+    </script>
+</body>
+</html> 
