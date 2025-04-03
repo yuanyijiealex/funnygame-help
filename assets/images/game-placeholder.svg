@@ -1,4 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150" viewBox="0 0 200 150">
-  <rect width="200" height="150" fill="#f0f0f0"/>
-  <text x="100" y="75" font-family="Arial" font-size="14" text-anchor="middle" fill="#999">游戏图片加载中...</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <!-- 背景矩形 -->
+  <rect width="300" height="200" fill="#f5f5f5"/>
+  
+  <!-- 中心装饰图案 -->
+  <g transform="translate(150, 100)" stroke="#ddd" fill="none">
+    <circle cx="0" cy="0" r="40" stroke-width="2"/>
+    <circle cx="0" cy="0" r="50" stroke-width="1"/>
+    <circle cx="0" cy="0" r="60" stroke-width="0.5"/>
+  </g>
+  
+  <!-- 游戏手柄图标 -->
+  <g transform="translate(150, 85)" fill="#aaaaaa">
+    <!-- 手柄主体 -->
+    <path d="M-30,0 C-30,-10 -25,-15 -15,-15 L15,-15 C25,-15 30,-10 30,0 L30,20 C30,30 25,35 15,35 L-15,35 C-25,35 -30,30 -30,20 Z" stroke="#999" stroke-width="1"/>
+    
+    <!-- 左侧按钮组 -->
+    <circle cx="-17" cy="0" r="8" fill="#cccccc"/>
+    <circle cx="-17" cy="0" r="6" fill="#aaaaaa"/>
+    
+    <!-- 右侧按钮组 -->
+    <circle cx="17" cy="0" r="8" fill="#cccccc"/>
+    <circle cx="17" cy="0" r="6" fill="#aaaaaa"/>
+    
+    <!-- 方向键 -->
+    <rect x="-22" y="17" width="14" height="14" rx="2" fill="#cccccc"/>
+    <path d="M-15,18 L-15,30 M-21,24 L-9,24" stroke="#aaaaaa" stroke-width="2"/>
+    
+    <!-- 右侧小按钮 -->
+    <circle cx="10" cy="24" r="3" fill="#cccccc"/>
+    <circle cx="20" cy="24" r="3" fill="#cccccc"/>
+  </g>
+  
+  <!-- 文本标签 -->
+  <text x="150" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#888888">Loading game image...</text>
 </svg> 

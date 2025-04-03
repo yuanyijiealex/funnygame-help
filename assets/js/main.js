@@ -22,6 +22,9 @@ function fixImageDisplay() {
       // 图像加载失败时，设置错误状态
       console.log('Flag image failed to load:', img.src);
       img.classList.add('load-error');
+      // 尝试重新加载图片，使用不带缓存的URL
+      const newSrc = img.src.includes('?') ? img.src : img.src + '?t=' + new Date().getTime();
+      img.src = newSrc;
     };
     
     // 设置样式确保可见
@@ -36,16 +39,37 @@ function fixImageDisplay() {
   // 修复所有游戏缩略图
   const gameImages = document.querySelectorAll('img[src*="/assets/images/games/"]');
   gameImages.forEach(img => {
-    img.onerror = function() {
-      // 图像加载失败时，替换为通用图片
-      console.log('Game image failed to load:', img.src);
-      img.src = '/assets/images/game-placeholder.svg';
-    };
-    
-    // 设置样式确保可见
+    // 提前设置样式，避免闪烁
     img.style.display = 'block';
     img.style.visibility = 'visible';
     img.style.opacity = '1';
+    img.style.width = '100%';
+    img.style.height = 'auto';
+    img.style.minHeight = '150px';
+    img.style.background = '#f0f0f0';
+    
+    // 确保在图片加载失败时显示占位符
+    img.onerror = function() {
+      console.log('Game image failed to load:', img.src);
+      if (!img.src.includes('game-placeholder.svg')) {
+        img.src = '/assets/images/game-placeholder.svg';
+      }
+    };
+    
+    // 确保图片已经加载
+    if (img.complete) {
+      if (img.naturalWidth === 0) {
+        img.onerror();
+      }
+    }
+  });
+  
+  // 为所有游戏卡片添加占位符背景
+  const gameCards = document.querySelectorAll('.game-card');
+  gameCards.forEach(card => {
+    card.style.background = '#f9f9f9';
+    card.style.borderRadius = '8px';
+    card.style.overflow = 'hidden';
   });
 }
 
@@ -300,8 +324,13 @@ function loadGames(containerId, category) {
         const gameCard = document.createElement('div');
         gameCard.className = 'game-card';
         
-        // 确保图片路径有效
-        const imgSrc = game.thumbnail || `/assets/images/games/${game.id}.jpg`;
+        // 创建图片元素
+        const img = document.createElement('img');
+        
+        // 确保图片路径有效，添加时间戳避免缓存问题
+        const timestamp = new Date().getTime();
+        const imgSrc = game.thumbnail || `/assets/images/games/${game.id}.jpg?t=${timestamp}`;
+        img.src = imgSrc;
         
         // 根据当前语言获取游戏标题
         let gameTitle = '';
@@ -313,15 +342,45 @@ function loadGames(containerId, category) {
           gameTitle = game.title;
         }
         
-        gameCard.innerHTML = `
-          <a href="/games/${game.id}.html">
-            <img src="${imgSrc}" alt="${gameTitle}" 
-                 onerror="this.onerror=null; this.src='/assets/images/game-placeholder.svg';"
-                 style="display: block; visibility: visible; opacity: 1;">
-            <p>${gameTitle}</p>
-          </a>
-        `;
+        // 设置图片属性
+        img.alt = gameTitle;
+        img.style.display = 'block';
+        img.style.visibility = 'visible';
+        img.style.opacity = '1';
+        img.style.width = '100%';
+        img.style.height = 'auto';
+        img.style.minHeight = '150px';
+        img.style.background = '#f0f0f0';
+        
+        // 处理图片加载失败的情况
+        img.onerror = function() {
+          console.log('Game image failed to load:', img.src);
+          img.src = '/assets/images/game-placeholder.svg';
+        };
+        
+        // 创建游戏标题元素
+        const title = document.createElement('p');
+        title.textContent = gameTitle;
+        title.style.padding = '10px';
+        title.style.margin = '0';
+        title.style.textAlign = 'center';
+        
+        // 创建链接元素
+        const link = document.createElement('a');
+        link.href = `/games/${game.id}.html`;
+        link.appendChild(img);
+        link.appendChild(title);
+        
+        // 添加到游戏卡片
+        gameCard.appendChild(link);
         container.appendChild(gameCard);
+        
+        // 检查图片是否已加载完成
+        if (img.complete) {
+          if (img.naturalWidth === 0) {
+            img.onerror();
+          }
+        }
       });
       
       // 在添加游戏卡片后应用图片修复

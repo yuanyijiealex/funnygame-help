@@ -1,0 +1,86 @@
+/**
+ * 游戏图片修复样式
+ * 解决游戏图片无法正常加载的问题
+ */
+
+/* 确保游戏卡片中的图片能正确显示 */
+.game-card img {
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  display: block;
+  object-fit: cover;
+  background-color: #f0f0f0;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
+
+/* 为游戏图片添加加载动画 */
+.game-card img:not([src]), 
+.game-card img[src=""], 
+.game-card img.loading {
+  position: relative;
+}
+
+.game-card img:not([src])::before,
+.game-card img[src=""]::before,
+.game-card img.loading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2281C1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1;
+}
+
+.game-card img:not([src])::after,
+.game-card img[src=""]::after,
+.game-card img.loading::after {
+  content: "Loading game image...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* 占位符SVG样式覆盖 */
+img[src*="game-placeholder.svg"] {
+  padding: 20px;
+}
+
+/* 修复图片加载失败样式 */
+.game-card img.load-error {
+  background-image: url('/assets/images/game-placeholder.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+/* 针对不同分辨率的图片优化 */
+@media (max-width: 768px) {
+  .game-card img {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-card img {
+    min-height: 100px;
+  }
+}
+
+/* 加载动画 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
