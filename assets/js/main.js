@@ -164,8 +164,9 @@ function loadSelectedLanguage() {
   const langCookie = getCookie('lang');
   const languageCookie = getCookie('language');
   
-  // 确定使用的语言，优先级：URL > lang cookie > language cookie > 浏览器语言
-  const userLang = urlLang || langCookie || languageCookie || navigator.language || navigator.userLanguage;
+  // 确定使用的语言，优先级：URL > lang cookie > language cookie > 默认英文
+  // 将默认语言修改为英文，不再使用浏览器语言
+  const userLang = urlLang || langCookie || languageCookie || 'en';
   const lang = userLang.substring(0, 2) === 'zh' ? 'zh-CN' : userLang.substring(0, 2);
   
   // 将确定的语言保存到所有cookie中以确保一致性
@@ -182,9 +183,13 @@ function loadSelectedLanguage() {
     langSelector.querySelector('span').textContent = lang === 'zh-CN' ? 'CN' : lang.toUpperCase();
   }
   
-  // If not English, load language file and translate the page
+  // 如果不是英文，则加载并应用翻译
   if (lang !== 'en' && ['zh-CN', 'es', 'fr'].includes(lang)) {
     loadTranslations(lang);
+  } else if (lang === 'en') {
+    // 如果是英文，确保所有元素显示英文内容（防止之前的中文状态）
+    // 将页面的lang属性设置为en
+    document.documentElement.lang = 'en';
   }
 }
 
@@ -200,12 +205,36 @@ function loadTranslations(lang) {
       return response.json();
     })
     .then(translations => {
+      // 设置页面的语言属性
+      document.documentElement.lang = lang;
+      
+      // 应用翻译到所有带有data-translate属性的元素
       document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
         if (translations[key]) {
           element.textContent = translations[key];
+          
+          // 如果元素是输入框，也更新placeholder
+          if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+            element.setAttribute('placeholder', translations[key]);
+          }
+          
+          // 如果元素是链接，也更新title属性
+          if (element.tagName === 'A' && element.hasAttribute('title')) {
+            element.setAttribute('title', translations[key]);
+          }
         }
       });
+      
+      // 对于元素内部的文本节点，也应用翻译
+      document.querySelectorAll('[data-translate-content]').forEach(element => {
+        const key = element.getAttribute('data-translate-content');
+        if (translations[key]) {
+          element.innerHTML = translations[key];
+        }
+      });
+      
+      console.log(`页面已翻译为 ${lang}`);
     })
     .catch(error => {
       console.error('Error loading translations:', error);
