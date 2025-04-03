@@ -40,6 +40,7 @@ COPY "public\manifest.json" "dist\"
 COPY "public\favicon.ico" "dist\"
 COPY "public\*.png" "dist\"
 COPY "public\sw-test.html" "dist\"
+COPY ".nojekyll" "dist\"
 
 ECHO [5/6] 更新Service Worker版本...
 ECHO // 更新缓存版本号... > temp.js
