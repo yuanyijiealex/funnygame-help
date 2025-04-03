@@ -45,5 +45,24 @@
   "report": "Reportar Problema",
   
   "supported_devices": "Dispositivos Compatibles",
-  "features": "Características"
+  "features": "Características",
+  
+  "about_description": "Conozca la historia de FunnyGame.help, nuestra misión y cómo proporcionamos la mejor experiencia de juegos HTML5 en línea para nuestros usuarios.",
+  "about_platform_title": "Sobre FunnyGame.help",
+  "about_platform_p1": "FunnyGame.help es una plataforma enfocada en juegos HTML5, dedicada a proporcionar experiencias de juego en línea de calidad y diversión. Ya sea que disfrute resolviendo puzzles, juegos de acción-aventura o juegos de relajación casual, encontrará opciones adecuadas en nuestra plataforma.",
+  "about_platform_p2": "Nuestro objetivo es convertirnos en el mejor destino para juegos HTML5, ayudando a los usuarios a descubrir y disfrutar fácilmente de varios juegos excelentes a través de una cuidadosa selección y categorización. Todos los juegos se pueden jugar directamente en el navegador sin descargar, proporcionando una experiencia de juego conveniente.",
+  "about_platform_p3": "Gracias por elegir FunnyGame.help. Esperamos traer alegría y relajación a su tiempo libre. Si tiene alguna pregunta o sugerencia, no dude en contactarnos.",
+  "platform_features": "Características de la Plataforma",
+  "feature_curated_games": "Juegos Seleccionados",
+  "feature_curated_games_desc": "Juegos HTML5 de calidad cuidadosamente seleccionados que puede jugar instantáneamente sin instalación, ahorrándole tiempo en la búsqueda de juegos de calidad.",
+  "feature_recommendations": "Recomendaciones Personalizadas",
+  "feature_recommendations_desc": "Soporta funciones de colección de juegos, recomienda juegos similares basados en sus preferencias, facilitando encontrar contenido que ama.",
+  "feature_offline": "Acceso Offline",
+  "feature_offline_desc": "Proporciona soporte de acceso offline, algunas características están disponibles sin conexión a internet, para que pueda disfrutar de los juegos en cualquier momento y lugar.",
+  "feature_responsive": "Diseño Responsivo",
+  "feature_responsive_desc": "Experiencia fluida en teléfonos móviles, tabletas y computadoras, adaptándose a dispositivos con varios tamaños de pantalla.",
+  "feature_categories": "Categorías de Juegos",
+  "feature_categories_desc": "El sistema de categorización de juegos le ayuda a encontrar rápidamente el contenido que le interesa, mejorando la eficiencia del descubrimiento de juegos.",
+  "feature_updates": "Actualizaciones Regulares",
+  "feature_updates_desc": "Regularmente actualizado con nuevos juegos, continuamente trayéndole experiencias frescas y enriqueciendo el contenido de juegos de la plataforma."
 } 

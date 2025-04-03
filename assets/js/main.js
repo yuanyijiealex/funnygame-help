@@ -258,6 +258,9 @@ function loadGames(containerId, category) {
     .then(data => {
       let filteredGames = [];
       
+      // 获取当前语言
+      const currentLang = localStorage.getItem('lang') || 'en';
+      
       // Filter games based on category
       if (category === 'featured') {
         filteredGames = data.filter(game => game.isFeatured).slice(0, 6);
@@ -276,7 +279,18 @@ function loadGames(containerId, category) {
       if (filteredGames.length === 0) {
         const emptyMessage = document.createElement('div');
         emptyMessage.className = 'empty-message';
-        emptyMessage.textContent = '暂无游戏';
+        
+        // 根据语言显示不同的提示
+        if (currentLang === 'zh-CN') {
+          emptyMessage.textContent = '暂无游戏';
+        } else if (currentLang === 'es') {
+          emptyMessage.textContent = 'No hay juegos disponibles';
+        } else if (currentLang === 'fr') {
+          emptyMessage.textContent = 'Pas de jeux disponibles';
+        } else {
+          emptyMessage.textContent = 'No games available';
+        }
+        
         container.appendChild(emptyMessage);
         return;
       }
@@ -289,12 +303,22 @@ function loadGames(containerId, category) {
         // 确保图片路径有效
         const imgSrc = game.thumbnail || `/assets/images/games/${game.id}.jpg`;
         
+        // 根据当前语言获取游戏标题
+        let gameTitle = '';
+        if (typeof game.title === 'object') {
+          // 如果title是一个包含多语言版本的对象
+          gameTitle = game.title[currentLang] || game.title['en'] || Object.values(game.title)[0];
+        } else {
+          // 如果title是简单字符串
+          gameTitle = game.title;
+        }
+        
         gameCard.innerHTML = `
           <a href="/games/${game.id}.html">
-            <img src="${imgSrc}" alt="${game.title}" 
+            <img src="${imgSrc}" alt="${gameTitle}" 
                  onerror="this.onerror=null; this.src='/assets/images/game-placeholder.svg';"
                  style="display: block; visibility: visible; opacity: 1;">
-            <p>${game.title}</p>
+            <p>${gameTitle}</p>
           </a>
         `;
         container.appendChild(gameCard);
@@ -305,7 +329,54 @@ function loadGames(containerId, category) {
     })
     .catch(error => {
       console.error('Error loading games:', error);
+      
+      // 获取当前语言
+      const currentLang = localStorage.getItem('lang') || 'en';
+      
+      // 根据语言显示不同的错误消息
+      let errorMessage = 'Failed to load game data';
+      if (currentLang === 'zh-CN') {
+        errorMessage = '加载游戏数据失败';
+      } else if (currentLang === 'es') {
+        errorMessage = 'Error al cargar datos del juego';
+      } else if (currentLang === 'fr') {
+        errorMessage = 'Échec du chargement des données de jeu';
+      }
+      
       // 显示错误信息
-      container.innerHTML = '<div class="error-message">加载游戏数据失败</div>';
+      container.innerHTML = `<div class="error-message">${errorMessage}</div>`;
     });
+}
+
+/**
+ * Apply translations to the page
+ */
+function applyTranslations(translations) {
+  // Set the language attribute on the html element
+  document.documentElement.lang = currentLang;
+  
+  // 获取所有需要翻译的元素
+  const elements = document.querySelectorAll('[data-translate]');
+  
+  // 遍历每个元素并应用翻译
+  elements.forEach(element => {
+    const key = element.getAttribute('data-translate');
+    if (translations[key]) {
+      element.textContent = translations[key];
+    }
+  });
+  
+  // 翻译占位符文本
+  const elementsWithPlaceholders = document.querySelectorAll('[data-translate-placeholder]');
+  elementsWithPlaceholders.forEach(element => {
+    const key = element.getAttribute('data-translate-placeholder');
+    if (translations[key]) {
+      element.placeholder = translations[key];
+    }
+  });
+  
+  // 翻译页面标题
+  if (translations['page_title']) {
+    document.title = translations['page_title'];
+  }
 }

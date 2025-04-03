@@ -45,5 +45,24 @@
   "report": "Signaler un Problème",
   
   "supported_devices": "Appareils Pris en Charge",
-  "features": "Caractéristiques"
+  "features": "Caractéristiques",
+  
+  "about_description": "Découvrez l'histoire de FunnyGame.help, notre mission et comment nous offrons la meilleure expérience de jeu HTML5 en ligne pour nos utilisateurs.",
+  "about_platform_title": "À Propos de FunnyGame.help",
+  "about_platform_p1": "FunnyGame.help est une plateforme axée sur les jeux HTML5, dédiée à fournir des expériences de jeu en ligne de qualité et amusantes. Que vous aimiez résoudre des énigmes, les jeux d'action-aventure ou les jeux de détente occasionnels, vous trouverez des options adaptées sur notre plateforme.",
+  "about_platform_p2": "Notre objectif est de devenir la meilleure destination pour les jeux HTML5, aidant les utilisateurs à découvrir et à profiter facilement de divers jeux excellents grâce à une sélection et une catégorisation minutieuses. Tous les jeux peuvent être joués directement dans le navigateur sans téléchargement, offrant une expérience de jeu pratique.",
+  "about_platform_p3": "Merci d'avoir choisi FunnyGame.help. Nous espérons apporter joie et détente à votre temps libre. Si vous avez des questions ou des suggestions, n'hésitez pas à nous contacter.",
+  "platform_features": "Caractéristiques de la Plateforme",
+  "feature_curated_games": "Jeux Sélectionnés",
+  "feature_curated_games_desc": "Des jeux HTML5 de qualité soigneusement sélectionnés que vous pouvez jouer instantanément sans installation, vous faisant gagner du temps à rechercher des jeux de qualité.",
+  "feature_recommendations": "Recommandations Personnalisées",
+  "feature_recommendations_desc": "Prend en charge les fonctionnalités de collection de jeux, recommande des jeux similaires en fonction de vos préférences, facilitant la découverte de contenu que vous aimez.",
+  "feature_offline": "Accès Hors Ligne",
+  "feature_offline_desc": "Fournit un support d'accès hors ligne, certaines fonctionnalités sont disponibles sans connexion Internet, vous permettant de profiter des jeux n'importe quand, n'importe où.",
+  "feature_responsive": "Design Responsive",
+  "feature_responsive_desc": "Expérience fluide sur les téléphones mobiles, tablettes et ordinateurs, s'adaptant aux appareils de différentes tailles d'écran.",
+  "feature_categories": "Catégories de Jeux",
+  "feature_categories_desc": "Le système de catégorisation des jeux vous aide à trouver rapidement le contenu qui vous intéresse, améliorant l'efficacité de la découverte de jeux.",
+  "feature_updates": "Mises à Jour Régulières",
+  "feature_updates_desc": "Régulièrement mis à jour avec de nouveaux jeux, vous apportant continuellement des expériences fraîches et enrichissant le contenu de jeux de la plateforme."
 } 
