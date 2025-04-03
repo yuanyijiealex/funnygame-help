@@ -357,95 +357,9 @@
       // 加载新游戏
       loadGames('games-container', 'new');
       
-      // 语言选择器
-      const langSelectorBtn = document.getElementById('language-selector-btn');
-      const langDropdown = document.getElementById('language-dropdown');
-      const langOptions = document.querySelectorAll('.language-option');
-      
-      // 切换语言下拉菜单
-      langSelectorBtn.addEventListener('click', function(event) {
-        event.stopPropagation();
-        langDropdown.classList.toggle('active');
-      });
-      
-      // 点击外部区域关闭下拉菜单
-      document.addEventListener('click', function(event) {
-        if (!langSelectorBtn.contains(event.target) && !langDropdown.contains(event.target)) {
-          langDropdown.classList.remove('active');
-        }
-      });
-      
-      // 选择语言
-      langOptions.forEach(option => {
-        option.addEventListener('click', function() {
-          const lang = this.getAttribute('data-lang');
-          const langImg = this.querySelector('img').getAttribute('src');
-          
-          // 设置cookie
-          setCookie('lang', lang, 30);
-          
-          // 更新按钮显示
-          langSelectorBtn.querySelector('img').setAttribute('src', langImg);
-          langSelectorBtn.querySelector('span').textContent = lang.toUpperCase();
-          
-          // 关闭下拉菜单
-          langDropdown.classList.remove('active');
-          
-          // 重新加载页面应用语言更改
-          window.location.reload();
-        });
-      });
-      
-      // 根据cookie或浏览器语言加载当前语言
-      loadSelectedLanguage();
-      
-      // 更新当前年份
-      document.getElementById('current-year').textContent = new Date().getFullYear();
+      // 语言选择器已在main.js中初始化
+      // 下面的代码可以删除，因为main.js中已经包含了这些功能
     });
-    
-    // Cookie辅助函数
-    function setCookie(name, value, days) {
-      let expires = '';
-      if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = '; expires=' + date.toUTCString();
-      }
-      document.cookie = name + '=' + value + expires + '; path=/';
-    }
-    
-    function getCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
-      return null;
-    }
-    
-    function loadSelectedLanguage() {
-      const userLang = getCookie('lang') || navigator.language || navigator.userLanguage;
-      const lang = userLang.substring(0, 2) === 'zh' ? 'zh-CN' : userLang.substring(0, 2);
-      
-      // 更新语言选择器UI
-      const langSelector = document.getElementById('language-selector-btn');
-      if (langSelector && ['en', 'zh-CN', 'es', 'fr'].includes(lang)) {
-        const flagImg = `/assets/images/flags/${lang === 'zh-CN' ? 'cn' : lang}.png`;
-        langSelector.querySelector('img').setAttribute('src', flagImg);
-        langSelector.querySelector('span').textContent = lang === 'zh-CN' ? 'CN' : lang.toUpperCase();
-      }
-    }
-    
-    // 注册Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js')
-        .then(function(registration) {
-          console.log('Service Worker 注册成功，范围: ', registration.scope);
-        })
-        .catch(function(error) {
-          console.log('Service Worker 注册失败: ', error);
-        });
-      });
-    }
   </script>
 </body>
 </html>
