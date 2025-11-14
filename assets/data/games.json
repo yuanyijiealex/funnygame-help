@@ -200,13 +200,13 @@
       "en": "Prince of Persia"
     },
     "embedUrl": "https://archive.org/embed/msdos_Prince_of_Persia_1989",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "platformer",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 14440
+    "playCount": 14440,
+    "thumbnail": "/assets/images/games/prince-of-persia.jpg"
   },
   {
     "id": "doom-1993",
@@ -214,13 +214,13 @@
       "en": "DOOM (1993)"
     },
     "embedUrl": "https://archive.org/embed/msdos_DOOM_1993",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "shooting",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 36245
+    "playCount": 36245,
+    "thumbnail": "/assets/images/games/doom-1993.jpg"
   },
   {
     "id": "tetris-ibm-1986",
@@ -228,10 +228,10 @@
       "en": "Tetris (IBM 1986)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Tetris_IBM_1986",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "puzzle",
     "addedDate": "2025-11-06",
-    "playCount": 20866
+    "playCount": 20866,
+    "thumbnail": "/assets/images/games/tetris-ibm-1986.jpg"
   },
   {
     "id": "wolf3d-1992",
@@ -239,13 +239,13 @@
       "en": "Wolfenstein 3D"
     },
     "embedUrl": "https://archive.org/embed/msdos_Wolfenstein_3D_1992",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "shooting",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 35935
+    "playCount": 35935,
+    "thumbnail": "/assets/images/games/wolf3d-1992.jpg"
   },
   {
     "id": "lotus-iii-1992",
@@ -253,10 +253,10 @@
       "en": "Lotus III: The Ultimate Challenge"
     },
     "embedUrl": "https://archive.org/embed/msdos_Lotus_III_The_Ultimate_Challenge_1992",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "racing",
     "addedDate": "2025-11-06",
-    "playCount": 16627
+    "playCount": 16627,
+    "thumbnail": "/assets/images/games/lotus-iii-1992.jpg"
   },
   {
     "id": "msdos_Oregon_Trail_The_1990",
@@ -264,13 +264,13 @@
       "en": "The Oregon Trail (1990)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Oregon_Trail_The_1990",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "strategy",
       "casual"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 48176
+    "playCount": 48176,
+    "thumbnail": "/assets/images/games/msdos_Oregon_Trail_The_1990.jpg"
   },
   {
     "id": "msdos_Oregon_Trail_Deluxe_The_1992",
@@ -278,12 +278,12 @@
       "en": "The Oregon Trail Deluxe (1992)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Oregon_Trail_Deluxe_The_1992",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "strategy"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 21649
+    "playCount": 21649,
+    "thumbnail": "/assets/images/games/msdos_Oregon_Trail_Deluxe_The_1992.jpg"
   },
   {
     "id": "msdos_Pac-Man_1983",
@@ -291,13 +291,13 @@
       "en": "Pac-Man (1983)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Pac-Man_1983",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "casual",
       "puzzle"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 31837
+    "playCount": 31837,
+    "thumbnail": "/assets/images/games/msdos_Pac-Man_1983.jpg"
   },
   {
     "id": "msdos_SimCity_1989",
@@ -305,12 +305,12 @@
       "en": "SimCity (1989)"
     },
     "embedUrl": "https://archive.org/embed/msdos_SimCity_1989",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "strategy"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 20603
+    "playCount": 20603,
+    "thumbnail": "/assets/images/games/msdos_SimCity_1989.jpg"
   },
   {
     "id": "msdos_Mario_Teaches_Typing_1992",
@@ -318,12 +318,12 @@
       "en": "Mario Teaches Typing (1992)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Mario_Teaches_Typing_1992",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "casual"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 40446
+    "playCount": 40446,
+    "thumbnail": "/assets/images/games/msdos_Mario_Teaches_Typing_1992.jpg"
   },
   {
     "id": "msdos_Prehistorik_2_1993",
@@ -331,13 +331,13 @@
       "en": "Prehistorik 2 (1993)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Prehistorik_2_1993",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "platformer",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 47615
+    "playCount": 47615,
+    "thumbnail": "/assets/images/games/msdos_Prehistorik_2_1993.jpg"
   },
   {
     "id": "msdos_Disneys_Aladdin_1994",
@@ -345,13 +345,13 @@
       "en": "Disney's Aladdin (1994)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Disneys_Aladdin_1994",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "platformer",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 46830
+    "playCount": 46830,
+    "thumbnail": "/assets/images/games/msdos_Disneys_Aladdin_1994.jpg"
   },
   {
     "id": "Doom-2",
@@ -359,13 +359,13 @@
       "en": "DOOM II (1994)"
     },
     "embedUrl": "https://archive.org/embed/Doom-2",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "shooting",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 20812
+    "playCount": 20812,
+    "thumbnail": "/assets/images/games/Doom-2.jpg"
   },
   {
     "id": "msdos_4D_Prince_of_Persia_1994",
@@ -373,13 +373,13 @@
       "en": "4D Prince of Persia (1994)"
     },
     "embedUrl": "https://archive.org/embed/msdos_4D_Prince_of_Persia_1994",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "platformer",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 12067
+    "playCount": 12067,
+    "thumbnail": "/assets/images/games/msdos_4D_Prince_of_Persia_1994.jpg"
   },
   {
     "id": "msdos_Stunts_1990",
@@ -387,12 +387,12 @@
       "en": "Stunts (1990)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Stunts_1990",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "racing"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 39828
+    "playCount": 39828,
+    "thumbnail": "/assets/images/games/msdos_Stunts_1990.jpg"
   },
   {
     "id": "msdos_Ms._Pac-Man_1983",
@@ -400,13 +400,13 @@
       "en": "Ms. Pac-Man (1983)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Ms._Pac-Man_1983",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "casual",
       "puzzle"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 31305
+    "playCount": 31305,
+    "thumbnail": "/assets/images/games/msdos_Ms._Pac-Man_1983.jpg"
   },
   {
     "id": "msdos_Donkey_Kong_1983",
@@ -414,12 +414,12 @@
       "en": "Donkey Kong (1983)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Donkey_Kong_1983",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "platformer"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 33898
+    "playCount": 33898,
+    "thumbnail": "/assets/images/games/msdos_Donkey_Kong_1983.jpg"
   },
   {
     "id": "msdos_Dune_2_-_The_Building_of_a_Dynasty_1992",
@@ -427,12 +427,12 @@
       "en": "Dune II (1992)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Dune_2_-_The_Building_of_a_Dynasty_1992",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "strategy"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 49131
+    "playCount": 49131,
+    "thumbnail": "/assets/images/games/msdos_Dune_2_-_The_Building_of_a_Dynasty_1992.jpg"
   },
   {
     "id": "msdos_Scorched_Earth_1991",
@@ -440,12 +440,12 @@
       "en": "Scorched Earth (1991)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Scorched_Earth_1991",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "strategy"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 3195
+    "playCount": 3195,
+    "thumbnail": "/assets/images/games/msdos_Scorched_Earth_1991.jpg"
   },
   {
     "id": "msdos_Golden_Axe_1990",
@@ -453,12 +453,12 @@
       "en": "Golden Axe (1990)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Golden_Axe_1990",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 34932
+    "playCount": 34932,
+    "thumbnail": "/assets/images/games/msdos_Golden_Axe_1990.jpg"
   },
   {
     "id": "msdos_Jazz_Jackrabbit_1994",
@@ -466,13 +466,13 @@
       "en": "Jazz Jackrabbit (1994)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Jazz_Jackrabbit_1994",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "platformer",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 31492
+    "playCount": 31492,
+    "thumbnail": "/assets/images/games/msdos_Jazz_Jackrabbit_1994.jpg"
   },
   {
     "id": "DUKE3D_DOS",
@@ -480,13 +480,13 @@
       "en": "Duke Nukem 3D (DOS)"
     },
     "embedUrl": "https://archive.org/embed/DUKE3D_DOS",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "shooting",
       "action"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 21201
+    "playCount": 21201,
+    "thumbnail": "/assets/images/games/DUKE3D_DOS.jpg"
   },
   {
     "id": "battle_chess_1988",
@@ -494,12 +494,12 @@
       "en": "Battle Chess (1988)"
     },
     "embedUrl": "https://archive.org/embed/battle_chess_1988",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "strategy"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 42696
+    "playCount": 42696,
+    "thumbnail": "/assets/images/games/battle_chess_1988.jpg"
   },
   {
     "id": "msdos_Number_Munchers_1990",
@@ -507,13 +507,13 @@
       "en": "Number Munchers (1990)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Number_Munchers_1990",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "puzzle",
       "casual"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 2393
+    "playCount": 2393,
+    "thumbnail": "/assets/images/games/msdos_Number_Munchers_1990.jpg"
   },
   {
     "id": "msdos_Tetris_1986",
@@ -521,11 +521,11 @@
       "en": "Tetris (1986)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Tetris_1986",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": [
       "puzzle"
     ],
     "addedDate": "2025-11-06",
-    "playCount": 7961
+    "playCount": 7961,
+    "thumbnail": "/assets/images/games/msdos_Tetris_1986.jpg"
   }
 ]
