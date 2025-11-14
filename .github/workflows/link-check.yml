@@ -1,0 +1,20 @@
+name: 链接检查 Link Checker
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run Lychee link checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # 检查 html/md 文件中的链接；排除邮件链接；开启详细输出
+          args: --verbose --no-progress --exclude-mail "./**/*.html" "./**/*.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
