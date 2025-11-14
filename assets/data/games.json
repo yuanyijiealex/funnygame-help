@@ -228,7 +228,9 @@
       "en": "Tetris (IBM 1986)"
     },
     "embedUrl": "https://archive.org/embed/msdos_Tetris_IBM_1986",
-    "categories": "puzzle",
+    "categories": [
+      "puzzle"
+    ],
     "addedDate": "2025-11-06",
     "playCount": 20866,
     "thumbnail": "/assets/images/games/tetris-ibm-1986.jpg"
@@ -253,7 +255,9 @@
       "en": "Lotus III: The Ultimate Challenge"
     },
     "embedUrl": "https://archive.org/embed/msdos_Lotus_III_The_Ultimate_Challenge_1992",
-    "categories": "racing",
+    "categories": [
+      "racing"
+    ],
     "addedDate": "2025-11-06",
     "playCount": 16627,
     "thumbnail": "/assets/images/games/lotus-iii-1992.svg"
@@ -531,5 +535,555 @@
     "thumbnail": "/assets/images/games/msdos_Tetris_1986.jpg",
     "hidden": true,
     "redirectTo": "/games/tetris-ibm-1986.html"
+  },
+  {
+    "id": "bts-santa-claus-coloring-game",
+    "title": {
+      "en": "BTS Santa Claus Coloring | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/kihnl3n95b8x6e30lvu6pzkftukw66mq/",
+    "thumbnail": "/assets/images/games/bts-santa-claus-coloring-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "christmas-sweeper-game",
+    "title": {
+      "en": "Christmas Sweeper | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/4kyqjbb3yexewc5lsgyfoay6mrjoqwn2/",
+    "thumbnail": "/assets/images/games/christmas-sweeper-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "christmas-klondike-solitaire-game",
+    "title": {
+      "en": "Christmas Klondike Solitaire | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/nec2satwcl98s5rzw882mpofnijkkmk8/",
+    "thumbnail": "/assets/images/games/christmas-klondike-solitaire-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "snowfight-io-game",
+    "title": {
+      "en": "SnowFight.io | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/q2ibbexftbhzlrxex57ka753iss1ub7l/",
+    "thumbnail": "/assets/images/games/snowfight-io-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "santa-claus-funny-time-game",
+    "title": {
+      "en": "Santa Claus Funny Time | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/tfth5lmkqw4ccroc9exlx0mqke4cbnw5/",
+    "thumbnail": "/assets/images/games/santa-claus-funny-time-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "sweet-baby-girl-christmas-fun-holiday-game",
+    "title": {
+      "en": "Sweet Baby Girl Christmas - Fun Holiday | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/6ryfoq09syb2tgyc09gottbwhhxk1hb1/",
+    "thumbnail": "/assets/images/games/sweet-baby-girl-christmas-fun-holiday-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "anime-christmas-jigsaw-puzzle-2-game",
+    "title": {
+      "en": "Anime Christmas Jigsaw Puzzle 2 | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/c7aw13couqz8pjsubm4q4ar75d3q57vi/",
+    "thumbnail": "/assets/images/games/anime-christmas-jigsaw-puzzle-2-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "snowman-from-fire-game",
+    "title": {
+      "en": "Snowman From Fire | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/y9zg87e1bteat838q2crhrra6ybg6s2j/",
+    "thumbnail": "/assets/images/games/snowman-from-fire-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "christmas-snow-hidden-object-game",
+    "title": {
+      "en": "Christmas Snow Hidden Object | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/ktnh2bwcaxeoog77fl7rricz89h522ej/",
+    "thumbnail": "/assets/images/games/christmas-snow-hidden-object-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "christmas-block-collapse-game",
+    "title": {
+      "en": "Christmas Block Collapse | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/iv0cl7ne6sd244flk83qa4dlb389n0l6/",
+    "thumbnail": "/assets/images/games/christmas-block-collapse-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "christmas-2019-puzzle-game",
+    "title": {
+      "en": "Christmas 2019 Puzzle | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/cv8zdbnow24gwnm7t7lvqdsw4xsnp182/",
+    "thumbnail": "/assets/images/games/christmas-2019-puzzle-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "snowman-2020-puzzle-game",
+    "title": {
+      "en": "Snowman 2020 Puzzle | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/w8s0jrnl20jopibf7a2xgbr0ov55peol/",
+    "thumbnail": "/assets/images/games/snowman-2020-puzzle-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "runner-apocalypse-game",
+    "title": {
+      "en": "Runner Apocalypse | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/42g5ppsmph5ktkg7sjsc26bf5jkc7pel/",
+    "thumbnail": "/assets/images/games/runner-apocalypse-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "gt-racing-game",
+    "title": {
+      "en": "GT Racing | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/2pzz150ueqkyep3uzcox1alq16xx2i5k/",
+    "thumbnail": "/assets/images/games/gt-racing-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "brickbox-game",
+    "title": {
+      "en": "Brickbox | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/dpmf8vy4w6ehyn00ljqneuylr0usajgf/",
+    "thumbnail": "/assets/images/games/brickbox-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "scary-house-clown-evil-game",
+    "title": {
+      "en": "Scary House Clown Evil | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/44z7cekal1224m2ngzkxkekhgdmn001d/",
+    "thumbnail": "/assets/images/games/scary-house-clown-evil-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "baby-piano-children-song-game",
+    "title": {
+      "en": "Baby Piano Children Song | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/3m15irev7dru3ps10ferleycfsu0v30n/",
+    "thumbnail": "/assets/images/games/baby-piano-children-song-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "welding-simulation-3d-game",
+    "title": {
+      "en": "Welding Simulation 3D | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/34i5ksx0tqi5llssxv52qlkw0o5d825s/",
+    "thumbnail": "/assets/images/games/welding-simulation-3d-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "division-bird-image-uncover-game",
+    "title": {
+      "en": "Division Bird Image Uncover | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/sij6niosk21moo20lnljevjvtkn5l7vx/",
+    "thumbnail": "/assets/images/games/division-bird-image-uncover-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "astro-destroyer-game",
+    "title": {
+      "en": "Astro Destroyer | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/fkl51gyhmd5ldbn918v8xs72gpaolbwn/",
+    "thumbnail": "/assets/images/games/astro-destroyer-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "gold-miner-undersea-game",
+    "title": {
+      "en": "Gold Miner Undersea | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/4p7di6iayu94eggwmzfbsrseq53n4b7a/",
+    "thumbnail": "/assets/images/games/gold-miner-undersea-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "lollipop-stack-run-game",
+    "title": {
+      "en": "Lollipop Stack Run | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/yrj2f8dy1oszmu7fq4si9u9ajz6pkrb5/",
+    "thumbnail": "/assets/images/games/lollipop-stack-run-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "what-kind-of-santa-claus-are-you-game",
+    "title": {
+      "en": "What kind of Santa Claus are you | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/djhxmee66ztiky6p2to9j6o3wk75p452/",
+    "thumbnail": "/assets/images/games/what-kind-of-santa-claus-are-you-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "adventure-home-game",
+    "title": {
+      "en": "Adventure Home | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/6mw96kdp3ketqjyafnad8t2099h4z9tv/",
+    "thumbnail": "/assets/images/games/adventure-home-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "santa-racing-game",
+    "title": {
+      "en": "Santa Racing | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/tmyamchzaxtodvpsb6ncrrs1ck32g4du/",
+    "thumbnail": "/assets/images/games/santa-racing-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "christmas-food-click-2024-game",
+    "title": {
+      "en": "Christmas Food Click 2024 | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/10bkxqpja3z7chovl2o7aqlwut1zm9q2/",
+    "thumbnail": "/assets/images/games/christmas-food-click-2024-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "cleaner-race-game",
+    "title": {
+      "en": "Cleaner Race | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/y7pwif6rxy0sn74qsl8cb0o1m3h2y0nt/",
+    "thumbnail": "/assets/images/games/cleaner-race-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "war-machine-game",
+    "title": {
+      "en": "War Machine | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/6oksnxniq3756mkszruc2sj8f6oh6o80/",
+    "thumbnail": "/assets/images/games/war-machine-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "jewel-miner-quest-game",
+    "title": {
+      "en": "Jewel Miner Quest | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/dpnk0do4wordmnhcmejlqly9horc8dpi/",
+    "thumbnail": "/assets/images/games/jewel-miner-quest-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "princess-pomni-cosplay-asmr-game",
+    "title": {
+      "en": "Princess Pomni Cosplay ASMR | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/zs4qr814hhhcnizbj872n9ecuvb0n0ri/",
+    "thumbnail": "/assets/images/games/princess-pomni-cosplay-asmr-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "cubecombo-game",
+    "title": {
+      "en": "CubeCombo | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/8c9lxadlobjsnx41j7rh0ee11ytz8b5s/",
+    "thumbnail": "/assets/images/games/cubecombo-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "sweet-solve-game",
+    "title": {
+      "en": "Sweet Solve | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/leiasg9oe4sc50inmnmdp4lg328pc5f5/",
+    "thumbnail": "/assets/images/games/sweet-solve-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "poppy-strike-4-game",
+    "title": {
+      "en": "Poppy Strike 4 | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/vel5s0zugcbmee6ctd22fw9c2arhxc5y/",
+    "thumbnail": "/assets/images/games/poppy-strike-4-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "tic-tac-toe-puzzle-game",
+    "title": {
+      "en": "Tic Tac Toe Puzzle | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/tm4djwmsgxua64fxwbmn26bqryh60f6h/",
+    "thumbnail": "/assets/images/games/tic-tac-toe-puzzle-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "cartoon-pimple-pop-game",
+    "title": {
+      "en": "Cartoon Pimple Pop | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/tn3qwy8ivrill13ccmu3hdnwyfdxp6ry/",
+    "thumbnail": "/assets/images/games/cartoon-pimple-pop-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "xiblba-match-game",
+    "title": {
+      "en": "Xiblba Match | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/6x5iq6cnf029jhte5e88eflxeepclnd7/",
+    "thumbnail": "/assets/images/games/xiblba-match-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "the-adventure-of-finn-bonnie-game",
+    "title": {
+      "en": " The Adventure of Finn & Bonnie | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/a7e34jmeberc2e3gwkbhlvivhffkrwx2/",
+    "thumbnail": "/assets/images/games/the-adventure-of-finn-bonnie-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "skibidi-elastic-head-game",
+    "title": {
+      "en": "Skibidi Elastic Head | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/mzhcqhok1b5whltst1sscbgd85ewzn2q/",
+    "thumbnail": "/assets/images/games/skibidi-elastic-head-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "t-rex-n-y-online-game",
+    "title": {
+      "en": "T-REX N.Y Online | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/ws6yr977yxz1reiki6jem3prxcxfg6od/",
+    "thumbnail": "/assets/images/games/t-rex-n-y-online-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "fish-trip-game",
+    "title": {
+      "en": "Fish & trip | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/u92fzx3msocb8csc7ja5s85h6fvmawrd/",
+    "thumbnail": "/assets/images/games/fish-trip-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "swamp-attack-online-game",
+    "title": {
+      "en": "Swamp Attack Online | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/ihnz6hc69rab7n2cfzl5x30udswdh2dz/",
+    "thumbnail": "/assets/images/games/swamp-attack-online-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "zombie-tsunami-online-game",
+    "title": {
+      "en": "Zombie Tsunami Online | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/dwvcte397don0y485kcpytqjy9iw2qef/",
+    "thumbnail": "/assets/images/games/zombie-tsunami-online-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "among-us-the-imposter-game",
+    "title": {
+      "en": "Among us The imposter | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/c9kub5ivqm7fxsigqwngk5kap0ny310g/",
+    "thumbnail": "/assets/images/games/among-us-the-imposter-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "aquapark-shark-game",
+    "title": {
+      "en": "Aquapark Shark | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/tll0a54tsmdg7bmzvkm8pi0abrfrhwrp/",
+    "thumbnail": "/assets/images/games/aquapark-shark-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "world-war-zombie-game",
+    "title": {
+      "en": "World War Zombie | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/8ht58edn6drpz9d5oikezoqkkuqwvvm4/",
+    "thumbnail": "/assets/images/games/world-war-zombie-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "kid-ball-adventure-game",
+    "title": {
+      "en": "Kid Ball Adventure | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/30q2nhz4ns0p9q7nn6bk1lrmsbml8i0c/",
+    "thumbnail": "/assets/images/games/kid-ball-adventure-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "fastlane-revenge-online-game",
+    "title": {
+      "en": "Fastlane Revenge Online | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/a1fumc1k0bx2te6e4hmg530f3xkbb6ml/",
+    "thumbnail": "/assets/images/games/fastlane-revenge-online-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "super-rocket-buddy-game",
+    "title": {
+      "en": "Super Rocket Buddy | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/unyq7wdvi2bfsowowi91obhn48m9kuje/",
+    "thumbnail": "/assets/images/games/super-rocket-buddy-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "awesome-tanks-3-game-game",
+    "title": {
+      "en": "Awesome Tanks 3 Game | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/0o2e0sr042m9ocle1lxcwjjsfi36mfgu/",
+    "thumbnail": "/assets/images/games/awesome-tanks-3-game-game.jpg",
+    "categories": [
+      "action"
+    ]
+  },
+  {
+    "id": "rage-road-online-game",
+    "title": {
+      "en": "Rage Road Online | Play Now Online for Free"
+    },
+    "embedUrl": "https://uncached.gamemonetize.co/h1ayvkq968i9j6didymsbzv76lk1g01y/",
+    "thumbnail": "/assets/images/games/rage-road-online-game.jpg",
+    "categories": [
+      "action"
+    ]
   }
 ]
