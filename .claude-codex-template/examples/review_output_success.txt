@@ -1,0 +1,113 @@
+以下是我对该文件的审阅与改进。
+
+发现的问题列表
+- 类型定义与依赖
+  - 直接从 `antd/es/input/Search` 深层路径导入 `SearchProps`，属于非公开 API，未来升级存在不稳定风险。
+  - `onSearch` 仅做了字符串 `trim`，未对清除按钮的行为做处理，清除后无法触发重置。
+- React 18 最佳实践
+  - 事件处理函数未使用 `useCallback`，组件多次重渲染会造成回调引用变化。
+  - 组件未使用 `memo`，父组件频繁渲染时会导致不必要重渲染。
+- Ant Design 5 API 使用
+  - `onSearch` 的 `info.source === 'clear'` 未被利用，错过良好交互。
+- 代码质量与命名
+  - 注释中存在少量乱码（“�?/状�?”），影响可读性。
+  - 缺少可访问性属性（如 `aria-label`）。
+- 潜在 bug 或边界情况
+  - 用户点击清除按钮不会触发重置逻辑（常见需求是清空后重置列表）。
+  - 占位符和加载态合理，但未提供配置是否触发“清除即重置”能力。
+- 性能优化
+  - `useCallback` + `memo` 可避免不必要的子组件更新。
+
+具体改进建议
+- 类型
+  - 移除对 `antd/es/input/Search` 的深层类型导入，改用 `React.ComponentProps<typeof Search>['onSearch']` 推导类型，避免依赖内部路径。
+  - 新增可选属性 `triggerOnClear?: boolean`（默认 true），控制清除时是否触发空搜索以重置结果。
+- React 18
+  - 使用 `useCallback` 包装 `handleSearch`，并使用 `memo` 包装组件。
+- AntD 5
+  - 在 `onSearch` 中处理 `info?.source === 'clear'`，根据 `triggerOnClear` 决定是否触发空搜索。
+- 代码质量
+  - 修正中文注释乱码。
+  - 增加 `aria-label="企业搜索"` 以提升可访问性。
+- 其他
+  - 如项目采用新 JSX 转换，可移除 `import React`（视 tsconfig 而定，不强制）。
+
+修改后的代码
+- 文件：frontend/src/components/EnterpriseSearch.tsx
+
+```tsx
+import React, { useCallback, memo } from 'react';
+import { Input } from 'antd';
+
+const { Search } = Input;
+
+/**
+ * 企业搜索组件 Props 接口
+ */
+export interface EnterpriseSearchProps {
+  /**
+   * 搜索回调函数
+   * @param value 用户输入的搜索关键词(企业名称或统一社会信用代码)
+   */
+  onSearch: (value: string) => void;
+
+  /** 是否处于加载状态，默认 false */
+  loading?: boolean;
+
+  /** 自定义占位符文本，默认“请输入企业名称或统一社会信用代码” */
+  placeholder?: string;
+
+  /**
+   * 是否在点击清除按钮时触发一次空搜索（用于重置结果），默认 true
+   */
+  triggerOnClear?: boolean;
+}
+
+/**
+ * 企业搜索输入组件
+ * 提供企业名称或统一社会信用代码的搜索输入框，用于触发企业数据抓取和分析流程。
+ */
+export const EnterpriseSearch: React.FC<EnterpriseSearchProps> = memo(
+  ({
+    onSearch,
+    loading = false,
+    placeholder = '请输入企业名称或统一社会信用代码',
+    triggerOnClear = true,
+  }) => {
+    const handleSearch = useCallback<
+      NonNullable<React.ComponentProps<typeof Search>['onSearch']>
+    >(
+      (value, _event, info) => {
+        // 清除按钮触发时，根据配置决定是否下发空搜索用于重置
+        if (info?.source === 'clear') {
+          if (triggerOnClear) onSearch('');
+          return;
+        }
+
+        const trimmedValue = value.trim();
+        if (trimmedValue) {
+          onSearch(trimmedValue);
+        }
+      },
+      [onSearch, triggerOnClear],
+    );
+
+    return (
+      <Search
+        placeholder={placeholder}
+        allowClear
+        enterButton="搜索企业"
+        size="large"
+        loading={loading}
+        onSearch={handleSearch}
+        style={{ width: '100%' }}
+        aria-label="企业搜索"
+      />
+    );
+  },
+);
+```
+
+补充说明
+- 若更倾向避免 `React.FC`（以避免隐式 children、加强返回值约束），可改为普通函数声明：`function EnterpriseSearch(props: EnterpriseSearchProps): JSX.Element { ... }`。目前保留 `React.FC` 以尽量贴合现有风格。 
+- 如希望在清除时不触发重置，可将 `triggerOnClear` 设为 `false`。

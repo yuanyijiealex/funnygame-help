@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap' rel='stylesheet'>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLC1LGRRZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JSLC1LGRRZ');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - funnygame.com</title>
+  <meta name="description" content="Learn about funnygame.com's story, mission, and how we provide the best online HTML5 gaming experience for our users.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Us - funnygame.com">
+  <meta property="og:description" content="Learn about funnygame.com's story, mission, and how we provide the best online HTML5 gaming experience for our users.">
+  <meta property="og:image" content="https://funnygame.com/assets/images/og-about.jpg">
+  <meta property="og:url" content="https://funnygame.com/about.html">
+  <meta property="og:type" content="website">
+  
+  <!-- 样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">    <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+  
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 基础样式 */
+    :root {
+      --primary-red: #D12035;
+      --primary-blue: #2281C1;
+      --accent-yellow: #FFC107;
+      --light-gray: #F8F8F8;
+      --text-dark: #222222;
+      --text-light: #FFFFFF;
+      --background: #FFFFFF;
+      --border-color: #E0E0E0;
+      --category-bg: #F0F0F0;
+      --footer-bg: #222;
+      --footer-text: #bbb;
+    }
+    
+    body {
+      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light-gray);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* 顶部导航�?*/
+    .header {
+      background-color: var(--background);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary-red);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 25px;
+    }
+    
+    .nav-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary-blue);
+    }
+    
+    .nav-links a.active {
+      color: var(--primary-blue);
+      font-weight: 500;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-icon {
+      margin-left: 20px;
+      font-size: 18px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    
+    /* 页面标题区域 */
+    .page-title {
+      background-color: var(--primary-red);
+      color: var(--text-light);
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    .page-title h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .page-description {
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* 关于我们内容样式 */
+    .about-content {
+      background-color: var(--background);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin: 30px 0;
+      padding: 30px;
+    }
+    
+    .about-section {
+      margin-bottom: 30px;
+    }
+    
+    .about-section h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: var(--primary-blue);
+    }
+    
+    .about-section p {
+      margin-bottom: 15px;
+    }
+    
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .feature-item {
+      background-color: var(--light-gray);
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .feature-item h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--primary-red);
+    }
+    
+    /* 联系信息 */
+    .contact-info {
+      background-color: var(--background);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .contact-info h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: var(--primary-blue);
+    }
+    
+    .contact-detail {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    
+    .contact-label {
+      width: 100px;
+      font-weight: 500;
+    }
+    
+    /* 图标样式 */
+    .search-icon, .user-icon {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-dark);
+    }
+    
+    .search-icon:hover, .user-icon:hover {
+      fill: var(--primary-blue);
+    }
+    
+    /* 语言选择�?*/
+    .language-selector {
+      position: relative;
+      margin-left: 20px;
+    }
+    
+    .language-selector-btn {
+      display: flex;
+      align-items: center;
+      color: var(--text-dark);
+      font-size: 14px;
+      cursor: pointer;
+    }
+    
+    .language-selector-btn img {
+      width: 20px;
+      height: 14px;
+      margin-right: 4px;
+    }
+    
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      background-color: var(--background);
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 8px 0;
+      min-width: 150px;
+      z-index: 50;
+      display: none;
+    }
+    
+    .language-dropdown.active {
+      display: block;
+    }
+    
+    .language-option {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .language-option:hover {
+      background-color: var(--light-gray);
+    }
+    
+    .language-option img {
+      width: 20px;
+      height: 14px;
+      margin-right: 8px;
+    }
+    
+    /* 响应式调�?*/
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .page-title h1 {
+        font-size: 24px;
+      }
+      
+      .page-description {
+        font-size: 14px;
+      }
+      
+      .features-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+<style>
+/* Cyberpunk overrides for About page */
+body { background: var(--bg-dark) !important; color: var(--text-primary) !important; }
+.page-title { background: var(--bg-medium) !important; color: var(--text-primary) !important; border-bottom: 1px solid var(--border-primary); }
+.about-content, .feature-item, .contact-info { background: var(--bg-medium) !important; color: var(--text-primary) !important; border: 1px solid var(--border-primary); box-shadow: var(--shadow-glow); }
+.about-section h2, .contact-info h2 { color: var(--cyber-primary) !important; }
+.nav-links a { color: var(--text-secondary) !important; }
+.nav-links a:hover, .nav-links a.active { color: var(--cyber-primary) !important; }
+</style>
+  <link rel="stylesheet" href="/assets/css/stability.css"></head>
+
+<body>
+  <!-- 顶部导航�?-->
+  
+    <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap' rel='stylesheet'>
+    <div class="container nav-container">
+      <a href="/" class="logo">funnygame.com</a>
+      
+      <ul class='nav-links'>
+                <li><a href="/favorites.html" data-translate='nav_favorites' data-translate="nav_favorites">My Favorites</a></li>
+                <li><a href="/about.html" data-translate='nav_about' data-translate="nav_about">About Us</a></li>
+            </ul>
+      
+      <div class="nav-right">
+        <a href="/search" class="nav-icon">
+          <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </a>
+                <a href="/user" class="nav-icon">
+  <svg class="user-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>
+</a>
+        
+        
+          
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- 页面标题 -->
+  <section class="page-title">
+    <div class="container">
+      <h1 data-translate="about_us">About Us</h1>
+      <p class="page-description" data-translate="about_description">Learn about funnygame.com's story, mission, and how we provide the best online HTML5 gaming experience for our users.</p>
+    </div>
+  </section>
+  
+  <!-- 主要内容 -->
+  <main class="container">
+    <div class="about-content">
+      <div class="about-section">
+        <h2 data-translate="about_platform_title">About funnygame.com</h2>
+        <p data-translate="about_platform_p1">funnygame.com is a platform focused on HTML5 games, dedicated to providing quality, fun online gaming experiences. Whether you enjoy puzzle-solving, action-adventure, or casual relaxation games, you'll find suitable options on our platform.</p>
+        <p data-translate="about_platform_p2">Our goal is to become the best destination for HTML5 games, helping users easily discover and enjoy various excellent games through careful selection and categorization. All games can be played directly in the browser without downloading, providing a convenient gaming experience.</p>
+        <p data-translate="about_platform_p3">Thank you for choosing funnygame.com. We hope to bring joy and relaxation to your leisure time. If you have any questions or suggestions, please feel free to contact us.</p>
+      </div>
+      
+      <div class="about-section">
+        <h2 data-translate="platform_features">Platform Features</h2>
+        <div class="features-list">
+          <div class="feature-item">
+            <h3 data-translate="feature_curated_games">Curated Games</h3>
+            <p data-translate="feature_curated_games_desc">Carefully selected quality HTML5 games that you can play instantly without installation, saving you time searching for quality games.</p>
+          </div>
+          <div class="feature-item">
+            <h3 data-translate="feature_recommendations">Personalized Recommendations</h3>
+            <p data-translate="feature_recommendations_desc">Supports game collection features, recommends similar games based on your preferences, making it easy to find content you love.</p>
+          </div>
+          <div class="feature-item">
+            <h3 data-translate="feature_offline">Offline Access</h3>
+            <p data-translate="feature_offline_desc">Provides offline access support, some features are available without internet connection, so you can enjoy games anytime, anywhere.</p>
+          </div>
+          <div class="feature-item">
+            <h3 data-translate="feature_responsive">Responsive Design</h3>
+            <p data-translate="feature_responsive_desc">Smooth experience on mobile phones, tablets, and computers, adapting to devices with various screen sizes.</p>
+          </div>
+          <div class="feature-item">
+            <h3 data-translate="feature_categories">Game Categories</h3>
+            <p data-translate="feature_categories_desc">Game categorization system helps you quickly find content you're interested in, improving the efficiency of game discovery.</p>
+          </div>
+          <div class="feature-item">
+            <h3 data-translate="feature_updates">Regular Updates</h3>
+            <p data-translate="feature_updates_desc">Regularly updated with new games, continuously bringing you fresh experiences and enriching the platform's game content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p class="mb-6">If you have any questions, suggestions, or cooperation intentions, please contact us through the following ways:</p>
+      
+      <div class="contact-detail">
+        <div class="contact-label">Email:</div>
+        <div><a href="mailto:info@funnygame.com" class="text-blue-600 hover:underline">info@funnygame.com</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-label">WeChat:</div>
+        <div>FunnyGame Platform</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-label">Working Hours:</div>
+        <div>Monday to Friday 9:00-18:00</div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 funnygame.com • Free HTML5 Games Collection</p>
+        <p style="margin-top: 10px;">
+          <a href="/about.html" data-translate='footer_about' data-translate="nav_about" data-translate="footer_about">About</a> •
+          <a href="/privacy.html" data-translate='footer_privacy' data-translate="footer_privacy">Privacy</a> •
+          <a href="/terms.html" data-translate='footer_terms' data-translate="footer_terms">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>    <script src="/assets/js/achievements.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 语言选择器和翻译加载已在main.js中实�?    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

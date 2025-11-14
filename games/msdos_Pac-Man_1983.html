@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pac-Man (1983) - funnygame.com</title>
+  <meta name="description" content="Play Pac-Man (1983) - funnygame.com online in your browser.">
+  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css"/>
+  <style>
+    html,body{margin:0;height:100%;overflow:hidden;background:#000}
+    :root{ --w:1280; --h:960; --s: min(100vw/var(--w), 100vh/var(--h)); }
+    .frame-scaler{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:#000}
+    .frame-scaler iframe{ width: calc(var(--w)*1px); height: calc(var(--h)*1px); transform: scale(var(--s)); transform-origin:center center; border:0; background:#000 }
+    .game-controls{position:fixed; right:12px; bottom:12px; z-index:9999}
+    .game-controls button{ background:rgba(0,0,0,.55); color:#fff; border:1px solid rgba(255,255,255,.2); padding:8px 10px; border-radius:6px; cursor:pointer; font:14px/1 system-ui }
+    .game-controls button:hover{ background:rgba(0,0,0,.8) }
+  </style>
+</head>
+<body>
+  <div class="frame-scaler">
+    <iframe id="game-frame" src="https://archive.org/embed/msdos_Pac-Man_1983" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="no-referrer"></iframe>
+  </div>
+  <div class="game-controls"><button id="btn-retry">重试加载</button></div>
+  <script>
+    document.getElementById('btn-retry')?.addEventListener('click', function(){
+      const fr = document.getElementById('game-frame'); if(!fr) return; const u = fr.getAttribute('src'); fr.setAttribute('src', u);
+    });
+  </script>
+</body>
+</html>

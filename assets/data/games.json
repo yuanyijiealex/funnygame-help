@@ -1,0 +1,531 @@
+[
+  {
+    "id": "monster-survivors",
+    "title": {
+      "en": "Monster Survivors",
+      "zh-CN": "怪物幸存者",
+      "es": "Supervivientes de Monstruos",
+      "fr": "Survivants des Monstres"
+    },
+    "description": {
+      "en": "Fight against endless waves of monsters in this exciting survival game, upgrade your character and survive as long as possible.",
+      "zh-CN": "在这款刺激的生存游戏中对抗无尽的怪物浪潮，升级你的角色并尽可能长时间地存活下来。",
+      "es": "Enfréntate a oleadas interminables de monstruos en este emocionante juego de supervivencia, mejora tu personaje y sobrevive el mayor tiempo posible.",
+      "fr": "Affrontez des vagues infinies de monstres dans ce jeu de survie passionnant, améliorez votre personnage et survivez aussi longtemps que possible."
+    },
+    "longDescription": {
+      "en": "Monster Survivors is a challenging survival game where you face endless waves of monsters. Each wave is stronger than the previous one, requiring you to constantly upgrade your character, acquire new skills and weapons to meet the increasing difficulty. The game offers various character choices, each with unique abilities and attributes. Gain experience by defeating monsters to level up and choose to enhance your attack power, defense, or special abilities. Monster Survivors is easy to pick up but mastering all the strategies and techniques requires time and patience. How long can you survive the monster siege?",
+      "zh-CN": "《怪物幸存者》是一款充满挑战的生存游戏，你将面对无尽的怪物浪潮。每一波怪物都比前一波更强大，你需要不断升级你的角色，获取新的技能和武器来应对越来越困难的挑战。游戏提供多种角色选择，每个角色都有独特的技能和属性。通过击败怪物获得经验值来升级，并选择强化你的攻击力、防御力或特殊能力。《怪物幸存者》简单易上手，但要掌握游戏的所有策略和技巧则需要时间和耐心。你能在怪物的围攻中存活多久？",
+      "es": "Supervivientes de Monstruos es un juego de supervivencia desafiante donde te enfrentas a oleadas interminables de monstruos. Cada oleada es más fuerte que la anterior, lo que requiere que mejores constantemente tu personaje, adquieras nuevas habilidades y armas para enfrentar la creciente dificultad. El juego ofrece varias opciones de personajes, cada uno con habilidades y atributos únicos. Gana experiencia derrotando monstruos para subir de nivel y elige mejorar tu poder de ataque, defensa o habilidades especiales. Supervivientes de Monstruos es fácil de aprender, pero dominar todas las estrategias y técnicas requiere tiempo y paciencia. ¿Cuánto tiempo puedes sobrevivir al asedio de monstruos?",
+      "fr": "Survivants des Monstres est un jeu de survie stimulant où vous affrontez des vagues infinies de monstres. Chaque vague est plus forte que la précédente, ce qui vous oblige à améliorer constamment votre personnage, à acquérir de nouvelles compétences et armes pour faire face à la difficulté croissante. Le jeu propose différents choix de personnages, chacun avec des capacités et des attributs uniques. Gagnez de l'expérience en battant des monstres pour monter de niveau et choisissez d'améliorer votre puissance d'attaque, votre défense ou vos capacités spéciales. Survivants des Monstres est facile à prendre en main, mais maîtriser toutes les stratégies et techniques nécessite du temps et de la patience. Combien de temps pouvez-vous survivre au siège des monstres?"
+    },
+    "embedUrl": "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html",
+    "thumbnail": "/assets/images/games/monster-survivors.jpg",
+    "categories": [
+      "action",
+      "rpg"
+    ],
+    "tags": {
+      "en": [
+        "Survival",
+        "RPG",
+        "Upgrade System",
+        "Monsters",
+        "Combat"
+      ],
+      "zh-CN": [
+        "生存",
+        "角色扮演",
+        "升级系统",
+        "怪物",
+        "战斗"
+      ],
+      "es": [
+        "Supervivencia",
+        "RPG",
+        "Sistema de Mejoras",
+        "Monstruos",
+        "Combate"
+      ],
+      "fr": [
+        "Survie",
+        "RPG",
+        "Système d'Amélioration",
+        "Monstres",
+        "Combat"
+      ]
+    },
+    "rating": 4.8,
+    "playCount": 58642,
+    "addedDate": "2023-06-15",
+    "isFeatured": true,
+    "isNew": false,
+    "isMobileCompatible": true,
+    "controls": {
+      "en": {
+        "WASD": "Move",
+        "Mouse": "Aim and attack",
+        "Space": "Special ability",
+        "1-5": "Use items"
+      },
+      "zh-CN": {
+        "WASD": "移动",
+        "鼠标": "瞄准和攻击",
+        "空格键": "特殊技能",
+        "1-5": "使用物品"
+      },
+      "es": {
+        "WASD": "Moverse",
+        "Ratón": "Apuntar y atacar",
+        "Espacio": "Habilidad especial",
+        "1-5": "Usar objetos"
+      },
+      "fr": {
+        "WASD": "Déplacer",
+        "Souris": "Viser et attaquer",
+        "Espace": "Capacité spéciale",
+        "1-5": "Utiliser des objets"
+      }
+    },
+    "features": {
+      "en": [
+        "Endless Mode",
+        "Multiple Characters",
+        "Skill Tree System",
+        "Various Weapons",
+        "Achievement System"
+      ],
+      "zh-CN": [
+        "无尽模式",
+        "多角色选择",
+        "技能树系统",
+        "多种武器",
+        "成就系统"
+      ],
+      "es": [
+        "Modo Sin Fin",
+        "Múltiples Personajes",
+        "Sistema de Árbol de Habilidades",
+        "Armas Variadas",
+        "Sistema de Logros"
+      ],
+      "fr": [
+        "Mode Sans Fin",
+        "Personnages Multiples",
+        "Système d'Arbre de Compétences",
+        "Armes Variées",
+        "Système de Réalisations"
+      ]
+    },
+    "screenshots": [
+      "/assets/images/games/monster-survivors-1.jpg",
+      "/assets/images/games/monster-survivors-2.jpg",
+      "/assets/images/games/monster-survivors-3.jpg"
+    ],
+    "achievements": {
+      "en": [
+        {
+          "id": "first-win",
+          "title": "First Victory",
+          "description": "Survive for more than 5 minutes in Monster Survivors"
+        },
+        {
+          "id": "monster-slayer",
+          "title": "Monster Slayer",
+          "description": "Defeat more than 100 monsters"
+        },
+        {
+          "id": "ultimate-survivor",
+          "title": "Ultimate Survivor",
+          "description": "Survive for more than 30 minutes in a single game"
+        }
+      ],
+      "zh-CN": [
+        {
+          "id": "first-win",
+          "title": "初战告捷",
+          "description": "在怪物幸存者中存活超过5分钟"
+        },
+        {
+          "id": "monster-slayer",
+          "title": "怪物杀手",
+          "description": "击败超过100只怪物"
+        },
+        {
+          "id": "ultimate-survivor",
+          "title": "终极幸存者",
+          "description": "在一局游戏中存活超过30分钟"
+        }
+      ],
+      "es": [
+        {
+          "id": "first-win",
+          "title": "Primera Victoria",
+          "description": "Sobrevive más de 5 minutos en Supervivientes de Monstruos"
+        },
+        {
+          "id": "monster-slayer",
+          "title": "Asesino de Monstruos",
+          "description": "Derrota a más de 100 monstruos"
+        },
+        {
+          "id": "ultimate-survivor",
+          "title": "Superviviente Definitivo",
+          "description": "Sobrevive más de 30 minutos en una sola partida"
+        }
+      ],
+      "fr": [
+        {
+          "id": "first-win",
+          "title": "Première Victoire",
+          "description": "Survivez plus de 5 minutes dans Survivants des Monstres"
+        },
+        {
+          "id": "monster-slayer",
+          "title": "Tueur de Monstres",
+          "description": "Vaincre plus de 100 monstres"
+        },
+        {
+          "id": "ultimate-survivor",
+          "title": "Survivant Ultime",
+          "description": "Survivre plus de 30 minutes dans une seule partie"
+        }
+      ]
+    },
+    "similarGames": []
+  },
+  {
+    "id": "prince-of-persia",
+    "title": {
+      "en": "Prince of Persia"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Prince_of_Persia_1989",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "platformer",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 14440
+  },
+  {
+    "id": "doom-1993",
+    "title": {
+      "en": "DOOM (1993)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_DOOM_1993",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "shooting",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 36245
+  },
+  {
+    "id": "tetris-ibm-1986",
+    "title": {
+      "en": "Tetris (IBM 1986)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Tetris_IBM_1986",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "puzzle",
+    "addedDate": "2025-11-06",
+    "playCount": 20866
+  },
+  {
+    "id": "wolf3d-1992",
+    "title": {
+      "en": "Wolfenstein 3D"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Wolfenstein_3D_1992",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "shooting",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 35935
+  },
+  {
+    "id": "lotus-iii-1992",
+    "title": {
+      "en": "Lotus III: The Ultimate Challenge"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Lotus_III_The_Ultimate_Challenge_1992",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "racing",
+    "addedDate": "2025-11-06",
+    "playCount": 16627
+  },
+  {
+    "id": "msdos_Oregon_Trail_The_1990",
+    "title": {
+      "en": "The Oregon Trail (1990)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Oregon_Trail_The_1990",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "strategy",
+      "casual"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 48176
+  },
+  {
+    "id": "msdos_Oregon_Trail_Deluxe_The_1992",
+    "title": {
+      "en": "The Oregon Trail Deluxe (1992)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Oregon_Trail_Deluxe_The_1992",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "strategy"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 21649
+  },
+  {
+    "id": "msdos_Pac-Man_1983",
+    "title": {
+      "en": "Pac-Man (1983)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Pac-Man_1983",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "casual",
+      "puzzle"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 31837
+  },
+  {
+    "id": "msdos_SimCity_1989",
+    "title": {
+      "en": "SimCity (1989)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_SimCity_1989",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "strategy"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 20603
+  },
+  {
+    "id": "msdos_Mario_Teaches_Typing_1992",
+    "title": {
+      "en": "Mario Teaches Typing (1992)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Mario_Teaches_Typing_1992",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "casual"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 40446
+  },
+  {
+    "id": "msdos_Prehistorik_2_1993",
+    "title": {
+      "en": "Prehistorik 2 (1993)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Prehistorik_2_1993",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "platformer",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 47615
+  },
+  {
+    "id": "msdos_Disneys_Aladdin_1994",
+    "title": {
+      "en": "Disney's Aladdin (1994)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Disneys_Aladdin_1994",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "platformer",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 46830
+  },
+  {
+    "id": "Doom-2",
+    "title": {
+      "en": "DOOM II (1994)"
+    },
+    "embedUrl": "https://archive.org/embed/Doom-2",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "shooting",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 20812
+  },
+  {
+    "id": "msdos_4D_Prince_of_Persia_1994",
+    "title": {
+      "en": "4D Prince of Persia (1994)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_4D_Prince_of_Persia_1994",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "platformer",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 12067
+  },
+  {
+    "id": "msdos_Stunts_1990",
+    "title": {
+      "en": "Stunts (1990)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Stunts_1990",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "racing"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 39828
+  },
+  {
+    "id": "msdos_Ms._Pac-Man_1983",
+    "title": {
+      "en": "Ms. Pac-Man (1983)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Ms._Pac-Man_1983",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "casual",
+      "puzzle"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 31305
+  },
+  {
+    "id": "msdos_Donkey_Kong_1983",
+    "title": {
+      "en": "Donkey Kong (1983)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Donkey_Kong_1983",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "platformer"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 33898
+  },
+  {
+    "id": "msdos_Dune_2_-_The_Building_of_a_Dynasty_1992",
+    "title": {
+      "en": "Dune II (1992)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Dune_2_-_The_Building_of_a_Dynasty_1992",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "strategy"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 49131
+  },
+  {
+    "id": "msdos_Scorched_Earth_1991",
+    "title": {
+      "en": "Scorched Earth (1991)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Scorched_Earth_1991",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "strategy"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 3195
+  },
+  {
+    "id": "msdos_Golden_Axe_1990",
+    "title": {
+      "en": "Golden Axe (1990)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Golden_Axe_1990",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 34932
+  },
+  {
+    "id": "msdos_Jazz_Jackrabbit_1994",
+    "title": {
+      "en": "Jazz Jackrabbit (1994)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Jazz_Jackrabbit_1994",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "platformer",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 31492
+  },
+  {
+    "id": "DUKE3D_DOS",
+    "title": {
+      "en": "Duke Nukem 3D (DOS)"
+    },
+    "embedUrl": "https://archive.org/embed/DUKE3D_DOS",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "shooting",
+      "action"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 21201
+  },
+  {
+    "id": "battle_chess_1988",
+    "title": {
+      "en": "Battle Chess (1988)"
+    },
+    "embedUrl": "https://archive.org/embed/battle_chess_1988",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "strategy"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 42696
+  },
+  {
+    "id": "msdos_Number_Munchers_1990",
+    "title": {
+      "en": "Number Munchers (1990)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Number_Munchers_1990",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "puzzle",
+      "casual"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 2393
+  },
+  {
+    "id": "msdos_Tetris_1986",
+    "title": {
+      "en": "Tetris (1986)"
+    },
+    "embedUrl": "https://archive.org/embed/msdos_Tetris_1986",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": [
+      "puzzle"
+    ],
+    "addedDate": "2025-11-06",
+    "playCount": 7961
+  }
+]

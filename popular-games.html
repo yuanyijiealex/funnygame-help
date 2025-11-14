@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap' rel='stylesheet'>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLC1LGRRZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JSLC1LGRRZ');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popular Games - funnygame.com</title>
+  <meta name="description" content="Experience the most popular HTML5 games on funnygame.com. These fan-favorite games can be played directly in your browser without downloading.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Popular Games - funnygame.com">
+  <meta property="og:description" content="Experience the most popular HTML5 games on funnygame.com. These fan-favorite games can be played directly in your browser without downloading.">
+  <meta property="og:image" content="https://funnygame.com/assets/images/og-popular-games.jpg">
+  <meta property="og:url" content="https://funnygame.com/popular-games.html">
+  <meta property="og:type" content="website">
+  
+  <!-- 样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">    <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+  
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 基础样式 */
+    :root {
+      --primary-red: #D12035;
+      --primary-blue: #2281C1;
+      --accent-yellow: #FFC107;
+      --light-gray: #F8F8F8;
+      --text-dark: #222222;
+      --text-light: #FFFFFF;
+      --background: #FFFFFF;
+      --border-color: #E0E0E0;
+      --category-bg: #F0F0F0;
+      --footer-bg: #222;
+      --footer-text: #bbb;
+    }
+    
+    body {
+      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light-gray);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* 顶部导航�?*/
+    .header {
+      background-color: var(--background);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary-red);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 25px;
+    }
+    
+    .nav-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary-blue);
+    }
+    
+    .nav-links a.active {
+      color: var(--primary-blue);
+      font-weight: 500;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-icon {
+      margin-left: 20px;
+      font-size: 18px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    
+    /* 页面标题区域 */
+    .page-title {
+      background-color: var(--accent-yellow);
+      color: var(--text-dark);
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    .page-title h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .page-description {
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* 游戏网格 */
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px 0;
+    }
+    
+    .game-card {
+      background-color: var(--background);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .game-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    
+    .game-info {
+      padding: 15px;
+    }
+    
+    .game-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    
+    .game-category {
+      color: var(--primary-blue);
+      font-size: 14px;
+    }
+    
+    /* 图标样式 */
+    .search-icon, .user-icon {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-dark);
+    }
+    
+    .search-icon:hover, .user-icon:hover {
+      fill: var(--primary-blue);
+    }
+    
+    /* 响应式调�?*/
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+      
+      .page-title h1 {
+        font-size: 24px;
+      }
+      
+      .page-description {
+        font-size: 14px;
+      }
+    }
+    
+    /* 加载动画 */
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 5px solid var(--primary-blue);
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* 热门标签 */
+    .popular-badge {
+      background-color: var(--accent-yellow);
+      color: var(--text-dark);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-weight: bold;
+    }
+  </style>
+<style>
+/* Cyberpunk overrides for list pages */
+body { background: var(--bg-dark) !important; color: var(--text-primary) !important; }
+.page-title, .page-header { background: var(--bg-medium) !important; color: var(--text-primary) !important; border-bottom: 1px solid var(--border-primary); }
+.game-card, .content-card, .feature-card { background: var(--bg-medium) !important; color: var(--text-primary) !important; border: 1px solid var(--border-primary); box-shadow: var(--shadow-glow); }
+.section-title, .page-title h1, h1, h2 { color: var(--cyber-primary) !important; }
+.nav-links a { color: var(--text-secondary) !important; }
+.nav-links a:hover, .nav-links a.active { color: var(--cyber-primary) !important; }
+</style>
+  <link rel="stylesheet" href="/assets/css/stability.css"></head>
+
+<body>
+  <!-- 顶部导航�?-->
+  
+    <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap' rel='stylesheet'>
+    <div class="container nav-container">
+      <a href="/" class="logo">funnygame.com</a>
+      
+      <ul class='nav-links'>
+                <li><a href="/favorites.html" data-translate='nav_favorites' data-translate="nav_favorites">My Favorites</a></li>
+                <li><a href="/about.html" data-translate='nav_about' data-translate="nav_about" data-translate="footer_about">About</a></li>
+            </ul>
+      
+      <div class="nav-right">
+        <a href="/search" class="nav-icon">
+          <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </a>
+                <a href="/user" class="nav-icon">
+  <svg class="user-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>
+</a>
+        
+        
+          
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- 页面标题 -->
+  <section class="page-title">
+    <div class="container">
+      <h1 data-translate="popular_games">Popular Games</h1>
+      <p class="page-description">Explore the most-loved games on funnygame.com, highly rated by our users for their excellent gameplay and fun factor.</p>
+    </div>
+  </section>
+  
+  <!-- 游戏列表 -->
+  <main class="container">
+    <div id="games-container" class="games-grid">
+      <!-- 加载动画 -->
+      <div class="flex justify-center items-center col-span-full py-12">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 funnygame.com • Free HTML5 Games Collection</p>
+        <p style="margin-top: 10px;">
+          <a href="/about.html" data-translate='footer_about' data-translate="nav_about" data-translate="footer_about">About</a> •
+          <a href="/privacy.html" data-translate='footer_privacy' data-translate="footer_privacy">Privacy</a> •
+          <a href="/terms.html" data-translate='footer_terms' data-translate="footer_terms">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>    <script src="/assets/js/achievements.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 加载热门游戏
+      loadGames('games-container', 'popular');
+      
+      // 语言选择器已在main.js中初始化
+      // 下面的代码可以删除，因为main.js中已经包含了这些功能
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

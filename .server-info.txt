@@ -1,0 +1,6 @@
+pid=12520
+port=8080
+url=http://127.0.0.1:8080/
+root=D:\product\游戏站备份\funnygame-help-main
+ts=2025-11-06 13:23:26
+ok=True

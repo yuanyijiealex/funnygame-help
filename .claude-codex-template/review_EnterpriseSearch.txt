@@ -1,0 +1,116 @@
+以下是对 frontend/src/components/EnterpriseSearch.tsx 的审阅与改进建议。
+
+发现的问题列表
+- 注释存在编码/字符问题：多处出现 “�?”，可读性受影响，建议统一 UTF-8 编码并修正注释文案。
+- 事件处理类型定义冗长：useCallback 使用了内联泛型 NonNullable<React.ComponentProps<typeof Search>['onSearch']>，可读性较差。
+- React.FC 的使用：会隐式包含 children，很多项目建议不强依赖 React.FC（非必须修改，看团队规范）。
+- 清空与空提交的 UX：目前仅在点击清空时（allowClear）可触发重置，按回车提交空值不会触发，可能不符合某些重置需求。
+- a11y 改进空间：可以增加 aria-busy 以反映 loading 状态。
+- 输入边界与语义：未限制最大长度；未声明 type="search"、autoComplete 等，有小幅改进空间。
+- memo 的收益有限：该组件简单，memo 的收益取决于父组件 props 稳定性；不过保留也没问题。
+
+具体改进建议
+- 修正注释编码和文案，统一 UTF-8。
+- 提供更清晰的类型别名，简化 useCallback 的类型声明。
+- 新增可选属性 allowEmptySubmit（默认 false）：允许提交空值时触发一次空搜索，用于统一“重置”体验。
+- 补充 a11y 与输入语义：
+  - 增加 aria-busy={loading}
+  - 设置 type="search"、maxLength（如 128）与 autoComplete="off"、name
+- 是否保留 React.FC 与 memo 取决于团队规范；这里保留，尽量小改。
+- 如需更进一步：将搜索按钮文案和 aria-label 也作为可配置 props，以便 i18n（可按需再扩展）。
+
+修改后的代码
+请注意：保留了现有导出形式与行为，新增的 allowEmptySubmit 向后兼容（默认不改变现有行为）。
+
+路径：frontend/src/components/EnterpriseSearch.tsx
+
+import React, { useCallback, memo } from 'react';
+import { Input } from 'antd';
+
+const { Search } = Input;
+
+/**
+ * 企业搜索组件 Props 接口
+ */
+export interface EnterpriseSearchProps {
+  /**
+   * 搜索回调函数
+   * @param value 用户输入的搜索关键词（企业名称或统一社会信用代码）
+   */
+  onSearch: (value: string) => void;
+
+  /** 是否处于加载状态，默认 false */
+  loading?: boolean;
+
+  /** 自定义占位符文本，默认“请输入企业名称或统一社会信用代码” */
+  placeholder?: string;
+
+  /**
+   * 是否在点击清除按钮时触发一次空搜索（用于重置结果），默认 true
+   */
+  triggerOnClear?: boolean;
+
+  /**
+   * 是否允许提交空值（例如仅空格或直接回车）。允许时会下发空搜索用于重置结果，默认 false。
+   */
+  allowEmptySubmit?: boolean;
+}
+
+/**
+ * 企业搜索输入组件
+ * 提供企业名称或统一社会信用代码的搜索输入框，用于触发企业数据抓取和分析流程。
+ */
+export const EnterpriseSearch: React.FC<EnterpriseSearchProps> = memo(
+  ({
+    onSearch,
+    loading = false,
+    placeholder = '请输入企业名称或统一社会信用代码',
+    triggerOnClear = true,
+    allowEmptySubmit = false,
+  }) => {
+    type SearchOnSearch = NonNullable<
+      React.ComponentProps<typeof Search>['onSearch']
+    >;
+
+    const handleSearch = useCallback<SearchOnSearch>(
+      (value, _event, info) => {
+        // 清除按钮触发时，根据配置决定是否下发空搜索用于重置
+        if (info?.source === 'clear') {
+          if (triggerOnClear) onSearch('');
+          return;
+        }
+
+        const trimmedValue = value.trim();
+        if (trimmedValue || allowEmptySubmit) {
+          onSearch(trimmedValue);
+        }
+      },
+      [onSearch, triggerOnClear, allowEmptySubmit],
+    );
+
+    return (
+      <Search
+        placeholder={placeholder}
+        allowClear
+        enterButton="搜索企业"
+        size="large"
+        loading={loading}
+        onSearch={handleSearch}
+        style={{ width: '100%' }}
+        aria-label="企业搜索"
+        aria-busy={loading}
+        type="search"
+        maxLength={128}
+        autoComplete="off"
+        name="enterprise-search"
+      />
+    );
+  },
+);
+
+补充说明
+- 如果团队规范不使用 React.FC，可将导出改为具名函数组件并显式返回 JSX.Element。
+- 如需，我可以继续：
+  - 将按钮文案、aria-label 抽成 props 以便 i18n；
+  - 添加单元测试或 Storybook 示例；
+  - 在父级联动中演示 allowEmptySubmit/triggerOnClear 的差异效果。

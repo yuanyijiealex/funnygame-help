@@ -1,0 +1,19 @@
+/* Stability overrides: disable all animations and transitions */
+html, body { scroll-behavior: auto !important; }
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Avoid hover transforms causing jank */
+a, button, .nav-links a, .logo { transform: none !important; }
+
+/* Ensure images render steadily */
+img { opacity: 1 !important; visibility: visible !important; }
+
+/* Remove backdrop/filters that may cause repaint flash */
+* { filter: none !important; backdrop-filter: none !important; }
+
+/* Disable smooth scrolling calls impact */
+:root { scroll-behavior: auto !important; }
+

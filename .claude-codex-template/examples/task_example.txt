@@ -1,0 +1,27 @@
+# 任务指令示例
+
+## 错误示例(太长,导致 Codex 陷入思考循环)
+
+任务: 创建完整的企业搜索功能,包括前端组件、后端API、数据库迁移、单元测试、集成测试、文档...
+(内容过长,超过100行)
+
+## 正确示例(简洁明确)
+
+任务: 创建 React 组件 frontend/src/components/EnterpriseSearch.tsx
+
+功能:
+1. 搜索输入框(Ant Design Search)
+2. onSearch 回调
+3. loading 状态支持
+
+技术:
+- React 18 + TypeScript
+- Ant Design 5
+
+验收:
+- TypeScript 无错误
+- 符合 Ant Design API
+
+禁止:
+- 不创建测试文件
+- 不修改其他文件

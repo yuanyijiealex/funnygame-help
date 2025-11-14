@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed Source Checker - funnygame.com</title>
+  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+  <style>
+    .tool-container { max-width: 1100px; margin: 20px auto; padding: 16px; background: var(--bg-medium); border:1px solid var(--border-primary); border-radius: 8px; }
+    .source-row { display:grid; grid-template-columns: 220px 1fr 160px 160px; gap: 10px; align-items:center; padding:8px; border-bottom:1px solid var(--border-primary); }
+    .header { font-weight:700; background: var(--bg-dark); }
+    .badge { display:inline-block; padding:2px 8px; border-radius: 10px; font-size: 12px; }
+    .ok { background:#114d2a; color:#9cffb4; }
+    .fail { background:#4d1111; color:#ffb4b4; }
+    .pending { background:#3a3a3a; color:#ddd; }
+    .probe-frame { width:100%; height:180px; border:1px solid var(--border-primary); border-radius:6px; }
+    .actions { display:flex; gap:8px; }
+    button { padding:6px 10px; border:1px solid var(--border-primary); background: var(--bg-dark); color: var(--text-primary); border-radius: 4px; cursor:pointer; }
+    button:hover { border-color: var(--cyber-primary); }
+    .note { color: var(--text-secondary); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-container">
+      <a class="logo" href="/">funnygame.com</a>
+      <ul class="nav-links">
+        <li><a href="/favorites.html" data-translate="nav_favorites">My Favorites</a></li>
+        <li><a href="/about.html" data-translate="nav_about">About Us</a></li>
+      </ul>
+      <div class="nav-right"></div>
+    </div>
+  </header>
+
+  <main class="tool-container">
+    <h1>Embed Source Checker</h1>
+    <p class="note">Checks reachability and basic iframe heuristics. Click the button below.</p>
+
+    <div id="rows"></div>
+
+    <div class="actions" style="margin-top:12px">
+      <button id="run-all">Run All Checks</button>
+    </div>
+
+    <div id="frameHost" style="margin-top:12px"></div>
+  </main>
+
+  <script>
+    const sources = [
+      { name: 'OnlineGames.io (cloud)', host: 'cloud.onlinegames.io', probe: 'https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html' },
+      { name: 'GameMonetize', host: 'html5.gamemonetize.com', probe: 'https://html5.gamemonetize.com' },
+      { name: 'GameDistribution', host: 'html5.gamedistribution.com', probe: 'https://html5.gamedistribution.com' },
+      { name: 'Lagged', host: 'lagged.com', probe: 'https://lagged.com' }
+    ];
+
+    function badge(text, cls){ return `<span class="badge ${cls}">${text}</span>`; }
+
+    function render(){
+      const rows = document.getElementById('rows');
+      rows.innerHTML = `
+        <div class="source-row header">
+          <div>Source</div><div>Probe URL</div><div>Reachable</div><div>Iframe</div>
+        </div>
+        ${sources.map(s=>`
+          <div class="source-row" data-host="${s.host}">
+            <div>${s.name}<br/><small style="color:var(--text-secondary)">${s.host}</small></div>
+            <div><a href="${s.probe}" target="_blank" style="color:var(--cyber-primary)">${s.probe}</a></div>
+            <div class="reach">${badge('Pending','pending')}</div>
+            <div class="frame">${badge('Pending','pending')}</div>
+          </div>`).join('')}
+      `;
+    }
+
+    async function checkReach(url, cell){
+      const set = ok => cell.innerHTML = ok ? badge('OK','ok') : badge('Fail','fail');
+      try{
+        const ctrl = new AbortController();
+        const t = setTimeout(()=>ctrl.abort(), 6000);
+        await fetch(url, { mode:'no-cors', signal: ctrl.signal, cache:'no-store' });
+        clearTimeout(t);
+        set(true);
+      }catch(e){ set(false); }
+    }
+
+    function checkIframe(url, cell){
+      const set = ok => cell.innerHTML = ok ? badge('OK','ok') : badge('Fail','fail');
+      const host = document.getElementById('frameHost');
+      const frame = document.createElement('iframe');
+      frame.className = 'probe-frame';
+      frame.referrerPolicy = 'no-referrer';
+      frame.sandbox = 'allow-scripts allow-same-origin';
+      let done=false; const timer=setTimeout(()=>{ if(!done){ done=true; set(false); host.removeChild(frame);} }, 8000);
+      frame.addEventListener('load', ()=>{ if(!done){ done=true; clearTimeout(timer); set(true); host.removeChild(frame);} });
+      frame.addEventListener('error', ()=>{ if(!done){ done=true; clearTimeout(timer); set(false); host.removeChild(frame);} });
+      frame.src = url; host.appendChild(frame);
+    }
+
+    function runAll(){
+      document.querySelectorAll('.source-row').forEach(row =>{
+        const host = row.getAttribute('data-host');
+        const src = sources.find(s=>s.host===host);
+        const reachCell = row.querySelector('.reach');
+        const frameCell = row.querySelector('.frame');
+        checkReach('https://'+host+'/', reachCell);
+        checkIframe(src.probe, frameCell);
+      });
+    }
+
+    render();
+    document.getElementById('run-all').addEventListener('click', runAll);
+  </script>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

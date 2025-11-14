@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>离线模式 - funnygame.com</title>
+
+  <!-- 赛博朋克主题 -->
+  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+  <link rel="stylesheet" href="/assets/css/stability.css">
+
+  <!-- 字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    .offline-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .offline-icon {
+      font-size: 80px;
+      color: var(--cyber-primary);
+      margin-bottom: 30px;
+      animation: pulse 2s infinite;
+    }
+
+    .offline-title {
+      font-size: 48px;
+      color: var(--cyber-primary);
+      margin-bottom: 20px;
+      font-family: 'Orbitron', monospace;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .offline-description {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .retry-btn {
+      background: transparent;
+      border: 2px solid var(--cyber-primary);
+      color: var(--cyber-primary);
+      padding: 15px 40px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', monospace;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .retry-btn:hover {
+      background: var(--cyber-primary);
+      color: var(--bg-dark);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      background: var(--cyber-secondary);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="offline-container">
+    <div class="offline-icon">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L23 23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M9 9V7C9 5.93913 9.42143 4.92172 10.1716 4.17157C10.9217 3.42143 11.9391 3 13 3C14.0609 3 15.0783 3.42143 15.8284 4.17157C16.5786 4.92172 17 5.93913 17 7V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <rect x="3" y="9" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="16" r="1" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <h1 class="offline-title">离线模式</h1>
+
+    <p class="offline-description">
+      <span class="status-indicator"></span>
+      网络连接已断开 • 您当前处于离线状态 • 请检查网络连接后重试
+    </p>
+
+    <button class="retry-btn" onclick="window.location.reload()">
+      重新连接
+    </button>
+
+    <div style="margin-top: 60px; color: var(--text-muted);">
+      <p style="font-size: 14px; margin-bottom: 10px;">funnygame.com</p>
+      <p style="font-size: 12px;">赛博朋克游戏平台</p>
+    </div>
+  </div>
+
+  <script>
+    // 检查网络状态
+    function updateOnlineStatus() {
+      if (navigator.onLine) {
+        window.location.reload();
+      }
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+
+    // 每5秒检查一次网络状态
+    setInterval(updateOnlineStatus, 5000);
+  </script>
+  <script src="/assets/js/main.js"></script></body>
+</html>
+
+
+
+

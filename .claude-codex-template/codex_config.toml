@@ -1,0 +1,7 @@
+# Codex 配置文件
+# 将此内容添加到 ~/.codex/config.toml
+
+[default]
+model = "gpt-5"              # 使用 GPT-5 模型
+ask_for_approval = "never"   # 从不请求批准,自动执行
+sandbox = "danger-full-access" # 完全访问权限,能读写项目文件

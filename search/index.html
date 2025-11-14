@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <link rel='stylesheet' href='/assets/css/cyberpunk-theme.css'>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLC1LGRRZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JSLC1LGRRZ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索游戏 - funnygame.com</title>
+    <meta name="description" content="在funnygame.com上搜索并找到您喜欢的免费在线游戏。">
+    <meta property="og:title" content="搜索游戏 - funnygame.com">
+    <meta property="og:description" content="在funnygame.com上搜索并找到您喜欢的免费在线游戏。">
+    <meta property="og:url" content="https://funnygame.com/search">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/stability.css"></head>
+<body>
+    
+    <link rel='stylesheet' href='/assets/css/cyberpunk-theme.css'>
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/logo.png" alt="funnygame.com">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    
+                    <li><a href="/categories/action.html">动作游戏</a></li>
+                    <li><a href="/categories/puzzle.html">益智游戏</a></li>
+                    <li><a href="/search" class="active">搜索</a></li>
+                    <li><a href="/favorites.html" data-translate='nav_favorites' data-translate="nav_favorites">My Favorites</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="search-toggle">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="theme-toggle" title="切换深色/浅色模式">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-page">
+            <div class="search-page-header">
+                <h1>搜索游戏</h1>
+                <form action="/search" method="get" class="search-page-form">
+                    <input type="text" name="q" value="{{query}}" placeholder="输入游戏名称或类型...">
+                    <button type="submit"><i class="fas fa-search"></i> 搜索</button>
+                </form>
+            </div>
+
+            {{#if query}}
+            <div class="search-results-header">
+                <h2>搜索 "{{query}}" 的结果</h2>
+                <p>找到 {{total}} 个游戏</p>
+            </div>
+            
+            <div class="category-filters">
+                <div class="filter">
+                    <label for="category-filter">分类:</label>
+                    <select id="category-filter" class="category-filter">
+                        <option value="all">所有分类</option>
+                        {{#each categories}}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="sort-filter">排序方式:</label>
+                    <select id="sort-filter" class="sort-filter">
+                        <option value="relevance">相关度</option>
+                        <option value="popular">热门程度</option>
+                        <option value="newest">最新添加</option>
+                        <option value="rating">评分</option>
+                    </select>
+                </div>
+            </div>
+            
+            {{#if results.length}}
+            <div class="games-grid search-results">
+                {{#each results}}
+                <div class="game-card" 
+                     data-rating="{{rating}}" 
+                     data-date="{{addedDate}}" 
+                     data-popularity="{{playCount}}"
+                     data-categories="{{categories}}">
+                    <a href="/games/{{id}}.html" class="game-card-link">
+                        <div class="game-card-cover">
+                            <picture>
+                                <source srcset="{{webpPath thumbnail}}" type="image/webp">
+                                <img src="{{thumbnail}}" alt="{{title}}">
+                            </picture>
+                            {{#if isNew}}<span class="badge new-badge">新游戏</span>{{/if}}
+                            {{#if isFeatured}}<span class="badge featured-badge">精选</span>{{/if}}
+                        </div>
+                        <div class="game-card-info">
+                            <h3 class="game-card-title">{{title}}</h3>
+                            <div class="game-card-meta">
+                                <div class="game-card-rating">
+                                    <div class="stars">
+                                        <span class="stars-filled" style="width: {{multiply rating 20}}%"></span>
+                                    </div>
+                                    <span class="rating-text">{{rating}}</span>
+                                </div>
+                                <div class="game-card-plays">
+                                    <i class="fas fa-gamepad"></i> {{formatNumber playCount}}
+                                </div>
+                            </div>
+                            <div class="game-card-categories">
+                                {{#each categories}}
+                                <span class="category-tag">{{this}}</span>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+            {{else}}
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <h3>未找到与 "{{query}}" 相关的游戏</h3>
+                <p>尝试使用不同的关键词或浏览我们的分类。</p>
+                <div class="category-links">
+                    {{#each categories}}
+                    <a href="/categories/{{this}}.html" class="category-link">{{this}}</a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+            
+            {{#if pagination}}
+            <div class="pagination">
+                {{#if pagination.prev}}
+                <a href="{{pagination.prev}}" class="page-link prev">« 上一页</a>
+                {{else}}
+                <span class="page-link prev disabled">« 上一页</span>
+                {{/if}}
+                
+                {{#each pagination.pages}}
+                {{#if this.current}}
+                <span class="page-link current">{{this.number}}</span>
+                {{else}}
+                <a href="{{this.url}}" class="page-link">{{this.number}}</a>
+                {{/if}}
+                {{/each}}
+                
+                {{#if pagination.next}}
+                <a href="{{pagination.next}}" class="page-link next">下一页 »</a>
+                {{else}}
+                <span class="page-link next disabled">下一页 »</span>
+                {{/if}}
+            </div>
+            {{/if}}
+            
+            {{else}}
+            <div class="search-suggestions">
+                <h2>热门搜索</h2>
+                <div class="suggestion-tags">
+                    <a href="/search?q=动作" class="suggestion-tag">动作</a>
+                    <a href="/search?q=射击" class="suggestion-tag">射击</a>
+                    <a href="/search?q=益智" class="suggestion-tag">益智</a>
+                    <a href="/search?q=策略" class="suggestion-tag">策略</a>
+                    <a href="/search?q=冒险" class="suggestion-tag">冒险</a>
+                    <a href="/search?q=赛车" class="suggestion-tag">赛车</a>
+                    <a href="/search?q=多人" class="suggestion-tag">多人</a>
+                    <a href="/search?q=io" class="suggestion-tag">IO</a>
+                </div>
+                
+                <h2>热门分类</h2>
+                <div class="popular-categories">
+                    {{#each popularCategories}}
+                    <div class="popular-category">
+                        <a href="/categories/{{this.id}}.html">
+                            <div class="category-icon">
+                                <i class="{{this.icon}}"></i>
+                            </div>
+                            <h3>{{this.name}}</h3>
+                            <p>{{this.count}} 个游戏</p>
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>导航</h3>
+                    <ul>
+                        
+                        <li><a href="/categories/action.html">动作游戏</a></li>
+                        <li><a href="/categories/puzzle.html">益智游戏</a></li>
+                        <li><a href="/categories/strategy.html">策略游戏</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>关于</h3>
+                    <ul>
+                        <li><a href="/about.html" data-translate='nav_about' data-translate="nav_about">About Us</a></li>
+                        <li><a href="/contact.html">联系我们</a></li>
+                        <li><a href="/sitemap.html">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <p>有任何问题或建议？请通过邮件联系我们:</p>
+                    <a href="mailto:info@funnygame.com">info@funnygame.com</a>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2023</span> funnygame.com. 保留所有权利.</p>
+                <div class="footer-links">
+                    <a href='/terms.html' data-translate='footer_terms'>Terms</a>
+                    <a href='/privacy.html' data-translate='footer_privacy'>Privacy</a>
+                    <a href="/cookie.html">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>    <script src="/assets/js/achievements.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新页脚中的年份
+            document.querySelector('.current-year').textContent = new Date().getFullYear();
+            
+            // 排序和过滤功能
+            const categoryFilter = document.getElementById('category-filter');
+            const sortFilter = document.getElementById('sort-filter');
+            const gamesGrid = document.querySelector('.games-grid');
+            
+            if (categoryFilter && sortFilter && gamesGrid) {
+                function filterAndSortGames() {
+                    const categoryValue = categoryFilter.value;
+                    const sortValue = sortFilter.value;
+                    const gameCards = Array.from(document.querySelectorAll('.game-card'));
+                    
+                    gameCards.forEach(card => {
+                        if (categoryValue === 'all' || card.getAttribute('data-categories').includes(categoryValue)) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    const visibleCards = gameCards.filter(card => card.style.display !== 'none');
+                    
+                    visibleCards.sort((a, b) => {
+                        if (sortValue === 'newest') {
+                            return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+                        } else if (sortValue === 'rating') {
+                            return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
+                        } else if (sortValue === 'popular') {
+                            return parseInt(b.getAttribute('data-popularity')) - parseInt(a.getAttribute('data-popularity'));
+                        }
+                        return 0; // relevance (default)
+                    });
+                    
+                    // 清空并重新添加排序后的游戏卡片
+                    gamesGrid.innerHTML = '';
+                    visibleCards.forEach(card => gamesGrid.appendChild(card));
+                }
+                
+                categoryFilter.addEventListener('change', filterAndSortGames);
+                sortFilter.addEventListener('change', filterAndSortGames);
+            }
+        });
+    </script>
+    <!-- 注册Service Worker以支持离线功能 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker 注册成功，范围: ', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('Service Worker 注册失败: ', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
