@@ -106,10 +106,10 @@ function loadGames(containerId, category) {
   if (!container) return;
   fetch('/assets/data/games.json').then(r=>r.json()).then(data => {
     let list = [];
-    if (category === 'featured') list = data.filter(g => g.isFeatured).slice(0,6);
-    else if (category === 'new') list = data.sort((a,b)=>new Date(b.addedDate)-new Date(a.addedDate)).slice(0,6);
-    else if (category === 'popular') list = data.sort((a,b)=> (b.playCount||0)-(a.playCount||0)).slice(0,6);
-    else list = data.filter(g => (g.categories||[]).includes(category)).slice(0,6);
+    const visible=(Array.isArray(data)?data:[]).filter(g=>!g.hidden); if (category === 'featured') list = visible.filter(g => g.isFeatured).slice(0,6);
+    else if (category === 'new') list = visible.sort((a,b)=>new Date(b.addedDate)-new Date(a.addedDate)).slice(0,6);
+    else if (category === 'popular') list = visible.sort((a,b)=> (b.playCount||0)-(a.playCount||0)).slice(0,6);
+    else list = visible.filter(g => (g.categories||[]).includes(category)).slice(0,6);
     container.innerHTML = list.map(g => {
       const id = g.id; const t = g.title; const title = (typeof t==='object')?(t['en']||t['zh-CN']||Object.values(t)[0]):t;
       const local = `/assets/images/games/${id}.jpg`;
@@ -149,7 +149,7 @@ function initSearchOverlay() {
   document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') close(); });
   function normalize(t){ return (t||'').toString().toLowerCase(); }
   function render(items){ if(!items.length){ results.innerHTML = '<div class="search-empty">No results</div>'; return; }
-    results.innerHTML = items.slice(0,20).map(g=>{ const id=g.id||''; const t=g.title; const title=(typeof t==='object')?(t['en']||t['zh-CN']||Object.values(t)[0]):(t||id); const local=`/assets/images/games/${id}.jpg`; const isPlaceholder=(g.thumbnail||'').toLowerCase().includes('game-placeholder'); const thumb=(!g.thumbnail||isPlaceholder)?local:g.thumbnail; return `
+    results.innerHTML = items.filter(g=>!g.hidden).slice(0,20).map(g=>{ const id=g.id||''; const t=g.title; const title=(typeof t==='object')?(t['en']||t['zh-CN']||Object.values(t)[0]):(t||id); const local=`/assets/images/games/${id}.jpg`; const isPlaceholder=(g.thumbnail||'').toLowerCase().includes('game-placeholder'); const thumb=(!g.thumbnail||isPlaceholder)?local:g.thumbnail; return `
       <a class="search-item" href="/games/${id}.html"><img class="search-thumb" src="${thumb}" alt="${title}" onerror="this.onerror=null; this.src='${local}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.png')}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.svg')}'; this.onerror=function(){ this.src='/assets/images/game-placeholder.svg'; }; }; };"><span class="search-title">${title}</span></a>`; }).join(''); }
   let timer=null; input.addEventListener('input',()=>{ const q=normalize(input.value); clearTimeout(timer); timer=setTimeout(()=>{ if(!q){ results.innerHTML=''; return; } ensureIndex().then(list=>{ const matched=list.filter(g=>{ const id=normalize(g.id); const t=g.title; const title=(typeof t==='object')?normalize(t['en']||t['zh-CN']||Object.values(t)[0]):normalize(t); const cats=Array.isArray(g.categories)?normalize(g.categories.join(' ')):''; return id.includes(q)||title.includes(q)||cats.includes(q); }); render(matched); }); },120); });
 }
@@ -209,4 +209,6 @@ function initLoginStatusBanner(){ try{ const host=document.querySelector('.nav-r
 
 function loadTranslations(lang){ fetch(`/assets/js/translations/${lang}.json`).then(r=>r.ok?r.json():{}).then(tr=>applyTranslations(tr)).catch(()=>{}); }
 function applyTranslations(tr){ if(!tr) return; document.querySelectorAll('[data-translate]').forEach(el=>{ const k=el.getAttribute('data-translate'); if(tr[k]) el.textContent=tr[k]; }); document.querySelectorAll('[data-translate-placeholder]').forEach(el=>{ const k=el.getAttribute('data-translate-placeholder'); if(tr[k]) el.setAttribute('placeholder', tr[k]); }); }
+
+
 
