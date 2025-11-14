@@ -112,10 +112,12 @@ function loadGames(containerId, category) {
     else list = data.filter(g => (g.categories||[]).includes(category)).slice(0,6);
     container.innerHTML = list.map(g => {
       const id = g.id; const t = g.title; const title = (typeof t==='object')?(t['en']||t['zh-CN']||Object.values(t)[0]):t;
-      const thumb = g.thumbnail || `/assets/images/games/${id}.jpg`;
+      const local = `/assets/images/games/${id}.jpg`;
+      const isPlaceholder = (g.thumbnail||'').toLowerCase().includes('game-placeholder');
+      const thumb = (!g.thumbnail || isPlaceholder) ? local : g.thumbnail;
       return `
         <a class="game-card" href="/games/${id}.html">
-          <img class="game-image" src="${thumb}" alt="${title}" onerror="this.onerror=null; this.src='/assets/images/game-placeholder.svg';">
+          <img class="game-image" src="${thumb}" alt="${title}" onerror="this.onerror=null; this.src='${local}'; this.onerror=function(){this.src='/assets/images/game-placeholder.svg';};">
           <div class="game-info"><div class="game-title">${title}</div></div>
         </a>`;
     }).join('');
@@ -147,8 +149,8 @@ function initSearchOverlay() {
   document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') close(); });
   function normalize(t){ return (t||'').toString().toLowerCase(); }
   function render(items){ if(!items.length){ results.innerHTML = '<div class="search-empty">No results</div>'; return; }
-    results.innerHTML = items.slice(0,20).map(g=>{ const id=g.id||''; const t=g.title; const title=(typeof t==='object')?(t['en']||t['zh-CN']||Object.values(t)[0]):(t||id); const thumb=g.thumbnail||`/assets/images/games/${id}.jpg`; return `
-      <a class="search-item" href="/games/${id}.html"><img class="search-thumb" src="${thumb}" alt="${title}"><span class="search-title">${title}</span></a>`; }).join(''); }
+    results.innerHTML = items.slice(0,20).map(g=>{ const id=g.id||''; const t=g.title; const title=(typeof t==='object')?(t['en']||t['zh-CN']||Object.values(t)[0]):(t||id); const local=`/assets/images/games/${id}.jpg`; const isPlaceholder=(g.thumbnail||'').toLowerCase().includes('game-placeholder'); const thumb=(!g.thumbnail||isPlaceholder)?local:g.thumbnail; return `
+      <a class="search-item" href="/games/${id}.html"><img class="search-thumb" src="${thumb}" alt="${title}" onerror="this.onerror=null; this.src='${local}'; this.onerror=function(){this.src='/assets/images/game-placeholder.svg';};"><span class="search-title">${title}</span></a>`; }).join(''); }
   let timer=null; input.addEventListener('input',()=>{ const q=normalize(input.value); clearTimeout(timer); timer=setTimeout(()=>{ if(!q){ results.innerHTML=''; return; } ensureIndex().then(list=>{ const matched=list.filter(g=>{ const id=normalize(g.id); const t=g.title; const title=(typeof t==='object')?normalize(t['en']||t['zh-CN']||Object.values(t)[0]):normalize(t); const cats=Array.isArray(g.categories)?normalize(g.categories.join(' ')):''; return id.includes(q)||title.includes(q)||cats.includes(q); }); render(matched); }); },120); });
 }
 
