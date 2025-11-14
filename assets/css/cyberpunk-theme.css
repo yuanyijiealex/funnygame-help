@@ -281,6 +281,13 @@ body::before {
   letter-spacing: 1px;
 }
 
+/* Home cards: title colors (readable, consistent palette) */
+.game-info { padding: 12px; text-align: center; }
+.game-title { font-size: 14px; font-weight: 600; color: var(--cyber-blue); text-decoration: none; }
+a.game-card:visited .game-title { color: var(--cyber-accent); }
+a.game-card:hover .game-title,
+a.game-card:focus .game-title { color: var(--cyber-primary); }
+
 /* 游戏卡片悬停效果 */
 .game-card::before {
   content: '';
