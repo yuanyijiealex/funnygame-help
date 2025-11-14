@@ -365,7 +365,9 @@
     ],
     "addedDate": "2025-11-06",
     "playCount": 20812,
-    "thumbnail": "/assets/images/games/Doom-2.jpg"
+    "thumbnail": "/assets/images/games/Doom-2.jpg",
+    "hidden": true,
+    "redirectTo": "/games/doom-1993.html"
   },
   {
     "id": "msdos_4D_Prince_of_Persia_1994",
