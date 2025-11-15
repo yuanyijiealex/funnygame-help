@@ -73,10 +73,10 @@ $games | ConvertTo-Json -Depth 6 | Set-Content -Path $gamesJsonPath -Encoding UT
 
 # Generate game page
 $tpl = Get-Content -Raw -Path $tplPath
-$html = $tpl -replace '{{ID}}', [Regex]::Escape($Id)
-$html = $html -replace '{{TITLE_EN}}', [Regex]::Escape($TitleEn)
-$html = $html -replace '{{EMBED_URL}}', [Regex]::Escape($EmbedUrl)
-$html = $html -replace '{{THUMB}}', [Regex]::Escape($thumbRel)
+$html = $tpl.Replace('{{ID}}', $Id)
+$html = $html.Replace('{{TITLE_EN}}', $TitleEn)
+$html = $html.Replace('{{EMBED_URL}}', $EmbedUrl)
+$html = $html.Replace('{{THUMB}}', $thumbRel)
 
 $outPath = Join-Path $gamesDir "$Id.html"
 Set-Content -Path $outPath -Value $html -Encoding UTF8
@@ -84,4 +84,6 @@ Set-Content -Path $outPath -Value $html -Encoding UTF8
 Write-Output "ADDED: $Id"
 Write-Output "PAGE:  $outPath"
 Write-Output "THUMB: $thumbRel"
+
+
 
