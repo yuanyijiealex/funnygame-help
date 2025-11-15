@@ -1,133 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>funnygame.com - Free HTML5 Gaming Platform</title>
-  <meta name="description" content="Free HTML5 gaming platform • Curated games • Play instantly.">
-
-  <!-- 预加载关键资源 -->
-  
-  
-
-  <!-- 赛博朋克主题 -->
-  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
-  <link rel="stylesheet" href="/assets/css/stability.css">
-
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- 字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <!-- 通知容器 -->
-  <div id="notification-container" class="fixed top-0 right-0 p-4 z-50"></div>
-
-  <!-- 极简导航栏 -->
-  <header class="header">
-    <div class="container">
-      <div class="nav-container">
-        <a href="/" class="logo" style="font-family: 'Orbitron', monospace;">funnygame.com</a>
-
-        <!-- 简化的导航 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>funnygame.com - Free HTML5 Gaming Platform</title>
+  <meta name="description" content="Free HTML5 gaming platform • Curated games • Play instantly.">
+
+  <!-- 预加载关键资源 -->
+  
+  
+
+  <!-- 赛博朋克主题 -->
+  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+  <link rel="stylesheet" href="/assets/css/stability.css">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 通知容器 -->
+  <div id="notification-container" class="fixed top-0 right-0 p-4 z-50"></div>
+
+  <!-- 极简导航栏 -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-container">
+        <a href="/" class="logo" style="font-family: 'Orbitron', monospace;">funnygame.com</a>
+
+        <!-- 简化的导航 -->
         <nav class='nav-links'>
-          <a href="/favorites.html" data-translate='nav_favorites' data-translate="nav_favorites">My Favorites</a>
-          <a href="/about.html" data-translate='nav_about' data-translate="nav_about" data-translate="footer_about">About</a>
-        </nav>
-
-        <div class="nav-right">
-          <!-- 语言选择器 -->
-          
-            
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- 英雄区域 - 极简设计 -->
-  <section class="hero-banner">
-    <div class="container">
-      <h1 class="hero-title">funnygame.com</h1>
-      <p class="hero-description" data-translate="hero_tagline">Free HTML5 games • Curated • Play instantly</p>
-      <p class="hero-description" style="margin-top:10px"><span data-translate="login_sync_cta">Sign in to sync favorites and history across devices.</span> <a href="/user" class="footer-link" style="margin-left:8px;" data-translate="go_sign_in">Sign In</a></p>
-    </div>
-  </section>
-
-  <!-- 游戏区域 -->
-  <main class="games-section">
-    <div class="container">
-      <!-- 特色游戏 -->
-      <section id="featured" class="game-category">
-        <h2 class="section-title">Featured Games</h2>
-        <div class="games-grid" id="featured-games">
-          <!-- 游戏卡片将通过JavaScript动态加载 -->
-        </div>
-      </section>
-
-      <!-- 动作游戏 -->
-      <section id="action" class="game-category">
-        <h2 class="section-title">Action Games</h2>
-        <div class="games-grid" id="action-games">
-          <!-- 游戏卡片将通过JavaScript动态加载 -->
-        </div>
-      </section>
-
-      <!-- 益智游戏 -->
-      <section id="puzzle" class="game-category">
-        <h2 class="section-title">Puzzle Games</h2>
-        <div class="games-grid" id="puzzle-games">
-          <!-- 游戏卡片将通过JavaScript动态加载 -->
-        </div>
-      </section>
-
-      <!-- 竞速游戏 -->
-      <section id="racing" class="game-category">
-        <h2 class="section-title">Racing Games</h2>
-        <div class="games-grid" id="racing-games">
-          <!-- 游戏卡片将通过JavaScript动态加载 -->
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- 极简底部 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>&copy; 2025 funnygame.com • Free HTML5 Games Collection</p>
-        <p style="margin-top: 10px;"><a href="/about.html" data-translate='footer_about' data-translate="nav_about" data-translate="footer_about">About</a> · <a href="/privacy.html" data-translate='footer_privacy' data-translate="footer_privacy">Privacy</a> · <a href="/terms.html" data-translate='footer_terms' data-translate="footer_terms">Terms</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>  <script src="/assets/js/user-interactions.js"></script>
-
-  
-<script>document.addEventListener("DOMContentLoaded",function(){try{loadGames("featured-games","featured");loadGames("action-games","action");loadGames("puzzle-games","puzzle");loadGames("racing-games","racing");}catch(e){console.error("loadGames error",e);}});</script></body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <a href="/all-games.html">All Games</a>
+          <a href="/favorites.html" data-translate='nav_favorites' data-translate="nav_favorites">My Favorites</a>
+          <a href="/about.html" data-translate='nav_about' data-translate="nav_about" data-translate="footer_about">About</a>
+        </nav>
+
+        <div class="nav-right">
+          <!-- 语言选择器 -->
+          
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 - 极简设计 -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1 class="hero-title">funnygame.com</h1>
+      <p class="hero-description" data-translate="hero_tagline">Free HTML5 games • Curated • Play instantly</p>
+      <p class="hero-description" style="margin-top:10px"><span data-translate="login_sync_cta">Sign in to sync favorites and history across devices.</span> <a href="/user" class="footer-link" style="margin-left:8px;" data-translate="go_sign_in">Sign In</a></p>
+    </div>
+  </section>
+
+  <!-- 游戏区域 -->
+  <main class="games-section">
+    <div class="container">
+      <!-- 特色游戏 -->
+      <section id="featured" class="game-category">
+        <h2 class="section-title">Featured Games</h2>
+        <div class="games-grid" id="featured-games">
+          <!-- 游戏卡片将通过JavaScript动态加载 -->
+        </div>
+      </section>
+
+      <!-- 动作游戏 -->
+      <section id="action" class="game-category">
+        <h2 class="section-title">Action Games</h2>
+        <div class="games-grid" id="action-games">
+          <!-- 游戏卡片将通过JavaScript动态加载 -->
+        </div>
+      </section>
+
+      <!-- 益智游戏 -->
+      <section id="puzzle" class="game-category">
+        <h2 class="section-title">Puzzle Games</h2>
+        <div class="games-grid" id="puzzle-games">
+          <!-- 游戏卡片将通过JavaScript动态加载 -->
+        </div>
+      </section>
+
+      <!-- 竞速游戏 -->
+      <section id="racing" class="game-category">
+        <h2 class="section-title">Racing Games</h2>
+        <div class="games-grid" id="racing-games">
+          <!-- 游戏卡片将通过JavaScript动态加载 -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 极简底部 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 funnygame.com • Free HTML5 Games Collection</p>
+        <p style="margin-top: 10px;"><a href="/about.html" data-translate='footer_about' data-translate="nav_about" data-translate="footer_about">About</a> · <a href="/privacy.html" data-translate='footer_privacy' data-translate="footer_privacy">Privacy</a> · <a href="/terms.html" data-translate='footer_terms' data-translate="footer_terms">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="/assets/js/main.js"></script>  <script src="/assets/js/user-interactions.js"></script>
+
+  
+<script>document.addEventListener("DOMContentLoaded",function(){try{loadGames("featured-games","featured");loadGames("action-games","action");loadGames("puzzle-games","puzzle");loadGames("racing-games","racing");}catch(e){console.error("loadGames error",e);}});</script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
