@@ -1,108 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>funnygame.com - Free HTML5 Gaming Platform</title>
-  <meta name="description" content="Free HTML5 gaming platform • Curated games • Play instantly.">
-
-  <!-- 预加载关键资源 -->
-  
-  
-
-  <!-- 赛博朋克主题 -->
-  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
-  <link rel="stylesheet" href="/assets/css/stability.css">
-
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- 字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <!-- 通知容器 -->
-  <div id="notification-container" class="fixed top-0 right-0 p-4 z-50"></div>
-
-  <!-- 极简导航栏 -->
-  <header class="header">
-    <div class="container">
-      <div class="nav-container">
-        <a href="/" class="logo" style="font-family: 'Orbitron', monospace;">funnygame.com</a>
-
-        <!-- 简化的导航 -->
-        <nav class='nav-links'>
-          <a href="/all-games.html">All Games</a>
-          <a href="/favorites.html" data-translate='nav_favorites' data-translate="nav_favorites">My Favorites</a>
-          <a href="/about.html" data-translate='nav_about' data-translate="nav_about" data-translate="footer_about">About</a>
-        </nav>
-
-        <div class="nav-right">
-          <!-- 语言选择器 -->
-          
-            
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- 英雄区域 - 极简设计 -->
-  <section class="hero-banner">
-    <div class="container">
-      <h1 class="hero-title">funnygame.com</h1>
-      <p class="hero-description" data-translate="hero_tagline">Free HTML5 games • Curated • Play instantly</p>
-      <p class="hero-description" style="margin-top:10px"><span data-translate="login_sync_cta">Sign in to sync favorites and history across devices.</span> <a href="/user" class="footer-link" style="margin-left:8px;" data-translate="go_sign_in">Sign In</a></p>
-    </div>
-  </section>
-
-  <!-- 游戏区域 -->
-  <main class="games-section">
-  <div class="container">
-    <section id="home-categories-container"></section>
-  </div>
-</main>
-
-  <!-- 极简底部 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>&copy; 2025 funnygame.com • Free HTML5 Games Collection</p>
-        <p style="margin-top: 10px;"><a href="/about.html" data-translate='footer_about' data-translate="nav_about" data-translate="footer_about">About</a> · <a href="/privacy.html" data-translate='footer_privacy' data-translate="footer_privacy">Privacy</a> · <a href="/terms.html" data-translate='footer_terms' data-translate="footer_terms">Terms</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="/assets/js/main.js"></script>  <script src="/assets/js/user-interactions.js"></script>
-
-  
-<script>document.addEventListener("DOMContentLoaded",function(){try{loadGames("featured-games","featured");loadGames("action-games","action");loadGames("puzzle-games","puzzle");loadGames("racing-games","racing");}catch(e){console.error("loadGames error",e);}});</script></body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Games - funnygame.com</title>
+  <meta name="description" content="Browse all free HTML5 games on funnygame.com. Play instantly in your browser without downloads.">
+  <meta property="og:title" content="All Games - funnygame.com">
+  <meta property="og:description" content="Browse all free HTML5 games on funnygame.com. Play instantly in your browser without downloads.">
+  <meta property="og:image" content="https://funnygame.com/assets/images/og-featured.jpg">
+  <meta property="og:url" content="https://funnygame.com/all-games.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+  <link rel="stylesheet" href="/assets/css/stability.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    .page-header { background: var(--bg-medium); border-bottom: 1px solid var(--border-primary); }
+    .toolbar { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px }
+    .games-grid { display:grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap:16px; padding:20px 0 }
+    .game-card { display:block; border:1px solid var(--border-primary); background:var(--bg-medium); border-radius:8px; overflow:hidden; box-shadow: var(--shadow-glow); transition:transform .2s }
+    .game-card:hover { transform: translateY(-3px) }
+    .game-image { width:100%; height:150px; object-fit:cover }
+    .game-info { padding:12px }
+    .game-title { font-weight:600; color: var(--text-primary) }
+    .filters { display:flex; gap:8px; align-items:center }
+    .select, .input { background:var(--bg-dark); color:var(--text-primary); border:1px solid var(--border-primary); border-radius:6px; padding:8px 10px; min-width:160px }
+    .count { color: var(--text-secondary); font-size: 14px }
+    @media (max-width:768px){ .games-grid { grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" style="font-family: 'Orbitron', monospace;">funnygame.com</a>
+      <ul class="nav-links">
+        <li><a href="/all-games.html" class="active">All Games</a></li>
+        <li><a href="/favorites.html" data-translate="nav_favorites">My Favorites</a></li>
+        <li><a href="/about.html" data-translate="nav_about">About</a></li>
+      </ul>
+      <div class="nav-right"></div>
+    </div>
+  </header>
 
+  <section class="page-header">
+    <div class="container">
+      <h1>All Games</h1>
+      <div class="toolbar">
+        <div class="filters">
+          <select id="cat" class="select" aria-label="Category">
+            <option value="all">All categories</option>
+            <option value="action">Action</option>
+            <option value="puzzle">Puzzle</option>
+            <option value="racing">Racing</option>
+            <option value="rpg">RPG</option>
+            <option value="shooting">Shooting</option>
+            <option value="strategy">Strategy</option>
+            <option value="platformer">Platformer</option>
+            <option value="casual">Casual</option>
+          </select>
+          <select id="sort" class="select" aria-label="Sort by">
+            <option value="newest">Newest</option>
+            <option value="popular">Most Played</option>
+            <option value="rating">Top Rated</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+        <input id="q" class="input" placeholder="Search games..." />
+        <div class="count" id="count"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="games-grid" id="list"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 funnygame.com · Free HTML5 Games Collection</p>
+        <p style="margin-top:10px;"><a href="/about.html" data-translate="footer_about">About</a> · <a href="/privacy.html" data-translate="footer_privacy">Privacy</a> · <a href="/terms.html" data-translate="footer_terms">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const S = {
+      data: [],
+      filt: { cat:'all', sort:'newest', q:'' }
+    };
+    function titleOf(t){
+      if (!t) return '';
+      if (typeof t === 'string') return t;
+      return t['en'] || t['zh-CN'] || Object.values(t)[0] || '';
+    }
+    function normalize(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,' '); }
+    function render(){
+      const list = document.getElementById('list');
+      const count = document.getElementById('count');
+      const q = normalize(S.filt.q);
+      let items = (S.data||[]).filter(g=>!g.hidden);
+      if (S.filt.cat && S.filt.cat !== 'all') items = items.filter(g => (g.categories||[]).includes(S.filt.cat));
+      if (q) items = items.filter(g => {
+        const id = normalize(g.id);
+        const tt = normalize(titleOf(g.title));
+        const cats = normalize((g.categories||[]).join(' '));
+        return id.includes(q) || tt.includes(q) || cats.includes(q);
+      });
+      const sort = S.filt.sort;
+      items.sort((a,b)=>{
+        if (sort==='popular') return (b.playCount||0) - (a.playCount||0);
+        if (sort==='rating') return (b.rating||0) - (a.rating||0);
+        if (sort==='title') return titleOf(a.title).localeCompare(titleOf(b.title));
+        return new Date(b.addedDate||0)-new Date(a.addedDate||0);
+      });
+      count.textContent = `${items.length} games`;
+      list.innerHTML = items.map(g=>{
+        const id = g.id;
+        const t = titleOf(g.title) || id;
+        const local = `/assets/images/games/${id}.jpg`;
+        const isPlaceholder = (g.thumbnail||'').toLowerCase().includes('game-placeholder');
+        const thumb = (!g.thumbnail || isPlaceholder) ? local : g.thumbnail;
+        return `
+          <a class="game-card" href="/games/${id}.html">
+            <img class="game-image" loading="lazy" src="${thumb}" alt="${t}"
+                 onerror="this.onerror=null; this.src='${local}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.png')}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.svg')}'; this.onerror=function(){ this.src='/assets/images/game-placeholder.svg'; }; }; }">
+            <div class="game-info"><div class="game-title">${t}</div></div>
+          </a>`;
+      }).join('');
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      fetch('/assets/data/games.json').then(r=>r.json()).then(data=>{ S.data = Array.isArray(data)?data:[]; render(); });
+      document.getElementById('cat').addEventListener('change', e=>{ S.filt.cat = e.target.value; render(); });
+      document.getElementById('sort').addEventListener('change', e=>{ S.filt.sort = e.target.value; render(); });
+      const qi = document.getElementById('q');
+      let t=null; qi.addEventListener('input', e=>{ clearTimeout(t); t=setTimeout(()=>{ S.filt.q = e.target.value || ''; render(); }, 120); });
+    });
+  </script>
+</body>
+</html>
 
 
