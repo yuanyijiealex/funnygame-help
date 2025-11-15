@@ -212,3 +212,37 @@ function applyTranslations(tr){ if(!tr) return; document.querySelectorAll('[data
 
 
 
+
+function loadAllCategoriesHome(){
+  const mount = document.getElementById('home-categories-container');
+  if(!mount) return;
+  fetch('/assets/data/games.json').then(r=>r.json()).then(data=>{
+    const visible = (Array.isArray(data)?data:[]).filter(g=>!g.hidden);
+    const featured = visible.filter(g=>g.isFeatured);
+    const PRESET = ['featured','action','puzzle','racing','rpg','shooting','platformer','strategy','casual'];
+    const present = new Set();
+    visible.forEach(g=>{ (g.categories||[]).forEach(c=>present.add(c)); });
+    const extra = Array.from(present).filter(c=>!PRESET.includes(c)).sort();
+    const order = [];
+    if (featured.length) order.push('featured');
+    PRESET.forEach(c=>{ if(c!=='featured' && present.has(c)) order.push(c); });
+    extra.forEach(c=>order.push(c));
+    const titleOf = (t)=>{ if(!t) return ''; if(typeof t==='string') return t; return t['en']||t['zh-CN']||Object.values(t)[0]||''; };
+    const card = (g)=>{
+      const id=g.id; const t=titleOf(g.title)||id; const local=`/assets/images/games/${id}.jpg`;
+      const isPlaceholder = (g.thumbnail||'').toLowerCase().includes('game-placeholder');
+      const thumb = (!g.thumbnail || isPlaceholder) ? local : g.thumbnail;
+      return `<a class="game-card" href="/games/${id}.html"><img class="game-image" src="${thumb}" alt="${t}" onerror="this.onerror=null; this.src='${local}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.png')}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.svg')}'; this.onerror=function(){ this.src='/assets/images/game-placeholder.svg'; }; }; }"><div class="game-info"><div class="game-title">${t}</div></div></a>`;
+    };
+    const label = (c)=> c==='featured' ? 'Featured Games' : (c.charAt(0).toUpperCase()+c.slice(1)+' Games');
+    let html = '';
+    order.forEach(c=>{
+      const list = (c==='featured') ? featured : visible.filter(g=> (g.categories||[]).includes(c));
+      if(!list.length) return;
+      html += `<section class="game-category"><h2 class="section-title">${label(c)}</h2><div class="games-grid">` + list.map(card).join('') + `</div></section>`;
+    });
+    mount.innerHTML = html;
+  }).catch(()=>{});
+}
+
+document.addEventListener('DOMContentLoaded', function(){ try { if(document.getElementById('home-categories-container')) loadAllCategoriesHome(); } catch(e){} });
