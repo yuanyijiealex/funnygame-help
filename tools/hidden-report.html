@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Games Report - funnygame.com</title>
+  <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+  <style>
+    body { padding: 24px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid var(--border-primary); text-align: left; }
+    .hint { color: var(--text-secondary); margin-bottom: 12px; }
+    .links a { margin-right: 10px; }
+  </style>
+  <script>
+    async function loadHidden(){
+      const res = await fetch('/assets/data/games.json');
+      const data = await res.json();
+      const hidden = (Array.isArray(data)?data:[]).filter(g=>g.hidden);
+      const tbody = document.querySelector('tbody');
+      tbody.innerHTML = hidden.map(g=>{
+        const id = g.id; const t = (typeof g.title==='string')?g.title:(g.title['en']||Object.values(g.title)[0]||id);
+        const ret = 'https://www.retrogames.cc/search.html?keyword='+encodeURIComponent(t);
+        const plc = 'https://playclassic.games/?s='+encodeURIComponent(t);
+        return `<tr><td>${id}</td><td>${t}</td><td>${g.embedUrl||''}</td><td class="links"><a target="_blank" href="${ret}">Retrogames search</a><a target="_blank" href="${plc}">Playclassic search</a></td></tr>`
+      }).join('');
+      document.getElementById('count').textContent = String(hidden.length);
+    }
+    document.addEventListener('DOMContentLoaded', loadHidden);
+  </script>
+  <link rel="stylesheet" href="/assets/css/stability.css">
+</head>
+<body>
+  <h1>Hidden Games Report</h1>
+  <p class="hint">Below are games currently hidden by QA. Use the search links to find a working mirror, then update <code>assets/data/games.json</code> (set <code>embedUrl</code> and <code>hidden=false</code>), or run <code>scripts/auto-hide-unavailable.ps1</code> again.</p>
+  <p>Total: <span id="count">0</span></p>
+  <table>
+    <thead><tr><th>ID</th><th>Title</th><th>Current embed</th><th>Repair links</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</body>
+</html>
