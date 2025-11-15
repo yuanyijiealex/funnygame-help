@@ -260,7 +260,8 @@
     ],
     "addedDate": "2025-11-06",
     "playCount": 16627,
-    "thumbnail": "/assets/images/games/lotus-iii-1992.svg"
+    "thumbnail": "/assets/images/games/lotus-iii-1992.svg",
+    "hidden": true
   },
   {
     "id": "msdos_Oregon_Trail_The_1990",
@@ -1525,7 +1526,7 @@
     },
     "embedUrl": "https://gamemonetize.com/favi.png",
     "categories": "action",
-    "thumbnail": "/assets/images/games/html-game.jpg"
+    "thumbnail": "/assets/images/game-placeholder.svg"
   },
   {
     "id": "how-to-make-a-website-for-your-game",
@@ -1561,7 +1562,7 @@
     },
     "embedUrl": "https://gamemonetize.com/favi.png",
     "categories": "action",
-    "thumbnail": "/assets/images/games/embedded-game.jpg"
+    "thumbnail": "/assets/images/game-placeholder.svg"
   },
   {
     "id": "all-game",
