@@ -123,7 +123,7 @@
         const thumb = (!g.thumbnail || isPlaceholder) ? local : g.thumbnail;
         return `
           <a class="game-card" href="/games/${id}.html">
-            <img class="game-image" src="${thumb}" alt="${t}"
+            <img class="game-image" loading="lazy" src="${thumb}" alt="${t}"
                  onerror="this.onerror=null; this.src='${local}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.png')}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.svg')}'; this.onerror=function(){ this.src='/assets/images/game-placeholder.svg'; }; }; }">
             <div class="game-info"><div class="game-title">${t}</div></div>
           </a>`;
@@ -139,3 +139,4 @@
   </script>
 </body>
 </html>
+

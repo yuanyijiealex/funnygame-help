@@ -1508,7 +1508,8 @@
     },
     "embedUrl": "https://uncached.gamemonetize.co/vjek9l7covdtw9o7q9bkyjoxk4dn7yx5/",
     "thumbnail": "/assets/images/games/free-game.jpg",
-    "categories": "action"
+    "categories": "action",
+    "hidden": true
   },
   {
     "id": "free-html5-game",
@@ -1544,7 +1545,8 @@
     },
     "embedUrl": "https://uncached.gamemonetize.co/ynr7xbuxdloaio54v92rvtn95nxnbfjj/",
     "thumbnail": "/assets/images/games/best-game.jpg",
-    "categories": "action"
+    "categories": "action",
+    "hidden": true
   },
   {
     "id": "embed-game",
@@ -1553,7 +1555,8 @@
     },
     "embedUrl": "https://uncached.gamemonetize.co/rq167agdmq01tejm9q6wwxdgq08yjdjn/",
     "thumbnail": "/assets/images/games/embed-game.jpg",
-    "categories": "action"
+    "categories": "action",
+    "hidden": true
   },
   {
     "id": "embedded-game",
@@ -1571,7 +1574,8 @@
     },
     "embedUrl": "https://uncached.gamemonetize.co/ikqt9slh1cyue0h6yj2o0i90bv43xv3f/",
     "thumbnail": "/assets/images/games/all-game.jpg",
-    "categories": "action"
+    "categories": "action",
+    "hidden": true
   },
   {
     "id": "unblocked-game",
