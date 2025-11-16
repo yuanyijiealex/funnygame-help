@@ -4530,5 +4530,187 @@
     "description": {
       "en": "Play  online."
     }
+  },
+  {
+    "id": "yegor256-jo",
+    "title": {
+      "en": "jo"
+    },
+    "embedUrl": "https://yegor256.github.io/jo/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1300000,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "christophmark-pendulum",
+    "title": {
+      "en": "pendulum"
+    },
+    "embedUrl": "https://christophmark.github.io/pendulum/pendulum/index.html",
+    "thumbnail": "https://christophmark.github.io/pendulum/pendulum/touch-icon-192x192.png",
+    "categories": "action",
+    "playCount": 1299700,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "blackaslight-docscripts",
+    "title": {
+      "en": "DocScripts"
+    },
+    "embedUrl": "https://BlackAsLight.github.io/DocScripts",
+    "thumbnail": "https://blackaslight.github.io/favicon-32x32.png",
+    "categories": "action",
+    "playCount": 1299400,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "mshsheikh-the-adventure-bee",
+    "title": {
+      "en": "The Adventure Bee"
+    },
+    "embedUrl": "https://tab-mshsheikh.vercel.app",
+    "thumbnail": "https://tab-mshsheikh.vercel.app/img/iconBee.png",
+    "categories": "action",
+    "playCount": 1299100,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "mcarlomagno-cardrivingresnet",
+    "title": {
+      "en": "CarDrivingResNet"
+    },
+    "embedUrl": "https://mcarlomagno.github.io/CarDrivingResNet/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1298800,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "ryanbranco-checkers",
+    "title": {
+      "en": "Checkers"
+    },
+    "embedUrl": "https://RyanBranco.github.io/Checkers",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1298500,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "jackytea-webgl-render",
+    "title": {
+      "en": "webgl render"
+    },
+    "embedUrl": "https://webgl-render.netlify.app/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1298200,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "ksalehi-pianohero",
+    "title": {
+      "en": "PianoHero"
+    },
+    "embedUrl": "https://ksalehi.github.io/PianoHero",
+    "thumbnail": "http://downloadicons.net/sites/default/files/music-icon-66405.png",
+    "categories": "action",
+    "playCount": 1297900,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "ionmateus-poliguard",
+    "title": {
+      "en": "poliguard"
+    },
+    "embedUrl": "https://ionmateus.github.io/poliguard/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1297600,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "denishrana09-nft-browser-game",
+    "title": {
+      "en": "nft browser game"
+    },
+    "embedUrl": "https://denish-nft-game.netlify.app/",
+    "thumbnail": "https://s3.amazonaws.com/cdn.buildspace.so/courses/nft-game/metadata.png",
+    "categories": "action",
+    "playCount": 1297300,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "scriptraccoon-mahjong-solitaire",
+    "title": {
+      "en": "mahjong solitaire"
+    },
+    "embedUrl": "https://mahjong-solitaire.netlify.app/",
+    "thumbnail": "https://mahjong-solitaire.netlify.app/img/screenshot.png",
+    "categories": "action",
+    "playCount": 1297000,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "masonanders-wormhole",
+    "title": {
+      "en": "Wormhole"
+    },
+    "embedUrl": "https://masonanders.github.io/Wormhole/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1296700,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "antonio-r1-racing-js",
+    "title": {
+      "en": "racing js"
+    },
+    "embedUrl": "https://antonio-r1.github.io/racing-js/",
+    "thumbnail": "https://antonio-r1.github.io/racing-js/favicon.ico",
+    "categories": "action",
+    "playCount": 1296400,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "samlaubscher-stellar-drift-game-m2",
+    "title": {
+      "en": "Stellar Drift Game M2"
+    },
+    "embedUrl": "https://samlaubscher.github.io/Stellar-Drift-Game-M2/",
+    "thumbnail": "https://samlaubscher.github.io/Stellar-Drift-Game-M2/favicon.ico",
+    "categories": "action",
+    "playCount": 1296100,
+    "description": {
+      "en": "Play  online."
+    }
   }
 ]
