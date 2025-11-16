@@ -4277,9 +4277,12 @@
       "en": "tower game"
     },
     "embedUrl": "https://iamkun.github.io/tower_game/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "https://iamkun.github.io/tower_game/assets/favicon.png",
     "categories": "action",
-    "playCount": 1400000
+    "playCount": 1400000,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "henshmi-classic-pool-game",
@@ -4289,7 +4292,10 @@
     "embedUrl": "https://henshmi.github.io/Classic-Pool-Game/",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1399700
+    "playCount": 1399700,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "luciopanepinto-pacman",
@@ -4297,9 +4303,12 @@
       "en": "pacman"
     },
     "embedUrl": "https://pacman-e281c.firebaseapp.com/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "https://pacman-e281c.firebaseapp.com/img/preview.png",
     "categories": "action",
-    "playCount": 1399400
+    "playCount": 1399400,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "makaroni4-guitar-bro",
@@ -4307,9 +4316,12 @@
       "en": "guitar bro"
     },
     "embedUrl": "https://makaroni4.github.io/guitar_bro/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "https://makaroni4.github.io/guitar_bro/img/og.png",
     "categories": "action",
-    "playCount": 1399100
+    "playCount": 1399100,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "ruben3d-retroflightsim",
@@ -4319,7 +4331,10 @@
     "embedUrl": "https://ruben3d.github.io/retroflightsim/dist",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1398800
+    "playCount": 1398800,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "cmfcmf-anno2018",
@@ -4329,7 +4344,10 @@
     "embedUrl": "https://cmfcmf.github.io/Anno2018",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1398500
+    "playCount": 1398500,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "milsaware-javascript-roulette",
@@ -4339,7 +4357,10 @@
     "embedUrl": "https://milsaware.github.io/javascript-roulette/",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1398200
+    "playCount": 1398200,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "ffalt-mah",
@@ -4347,9 +4368,12 @@
       "en": "mah"
     },
     "embedUrl": "https://ffalt.github.io/mah/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "https://ffalt.github.io/mah/assets/app/favicon-32x32.png",
     "categories": "action",
-    "playCount": 1397900
+    "playCount": 1397900,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "jerrychan7-webmc",
@@ -4357,9 +4381,12 @@
       "en": "WebMC"
     },
     "embedUrl": "https://jerrychan7.github.io/WebMC/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "https://jerrychan7.github.io/WebMC/#",
     "categories": "action",
-    "playCount": 1397600
+    "playCount": 1397600,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "juniortour-es6-mario",
@@ -4369,7 +4396,10 @@
     "embedUrl": "https://JuniorTour.github.io/es6-mario",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1397300
+    "playCount": 1397300,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "ojaswy-blastar",
@@ -4379,7 +4409,10 @@
     "embedUrl": "https://ojaswy.github.io/Blastar/",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1397000
+    "playCount": 1397000,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "steve245270533-character-simulator",
@@ -4387,9 +4420,12 @@
       "en": "character simulator"
     },
     "embedUrl": "https://steve245270533.github.io/character-simulator/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "https://steve245270533.github.io/character-simulator/favicon.ico",
     "categories": "action",
-    "playCount": 1396700
+    "playCount": 1396700,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "fkitsantas-horse-racing-game-javascript",
@@ -4399,7 +4435,10 @@
     "embedUrl": "https://fkitsantas.github.io/Horse-Racing-Game-JavaScript/",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1396400
+    "playCount": 1396400,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "vidio-boy-eaglercraft1-5-2",
@@ -4409,7 +4448,10 @@
     "embedUrl": "https://vidio-boy.github.io/Eaglercraft1.5.2",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1396100
+    "playCount": 1396100,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "milsaware-wordled",
@@ -4417,9 +4459,12 @@
       "en": "wordled"
     },
     "embedUrl": "https://milsaware.github.io/wordled/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "https://wordled.online/assets/img/screenshots/game%20board.png",
     "categories": "action",
-    "playCount": 1395800
+    "playCount": 1395800,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "pubnubdevelopers-ninja-multiplayer-platformer",
@@ -4429,7 +4474,10 @@
     "embedUrl": "https://PubNubDevelopers.github.io/Ninja-Multiplayer-Platformer",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1395500
+    "playCount": 1395500,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "danialdezfouli-spacecraft-game",
@@ -4437,9 +4485,12 @@
       "en": "spacecraft game"
     },
     "embedUrl": "https://spacecraft.vercel.app",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "data:image/png;base64,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",
     "categories": "action",
-    "playCount": 1395200
+    "playCount": 1395200,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "hlorenzi-galaxy",
@@ -4449,7 +4500,10 @@
     "embedUrl": "https://hlorenzi.github.io/galaxy",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1394900
+    "playCount": 1394900,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "chrinkus-squares",
@@ -4459,7 +4513,10 @@
     "embedUrl": "https://chrinkus.github.io/squares/",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1394600
+    "playCount": 1394600,
+    "description": {
+      "en": "Play  online."
+    }
   },
   {
     "id": "mikecheng1208-html5gameliveexample",
@@ -4469,6 +4526,9 @@
     "embedUrl": "https://MikeCheng1208.github.io/Html5GameLiveExample",
     "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
-    "playCount": 1394300
+    "playCount": 1394300,
+    "description": {
+      "en": "Play  online."
+    }
   }
 ]
