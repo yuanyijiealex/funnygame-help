@@ -1,0 +1,156 @@
+{
+  "timestamp": "2025-11-16T20:06:35",
+  "pending_selfhost": [
+    {
+      "full_name": "pixijs/pixijs",
+      "suggested_id": "pixijs-pixijs-selfhost",
+      "stars": "46052",
+      "license": "MIT"
+    },
+    {
+      "full_name": "libgdx/libgdx",
+      "suggested_id": "libgdx-libgdx-selfhost",
+      "stars": "24518",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "phaserjs/phaser-ce-examples",
+      "suggested_id": "phaserjs-phaser-ce-examples-selfhost",
+      "stars": "1783",
+      "license": ""
+    },
+    {
+      "full_name": "gamelab/kiwi.js",
+      "suggested_id": "gamelab-kiwi.js-selfhost",
+      "stars": "1446",
+      "license": "MIT"
+    },
+    {
+      "full_name": "digitalfruit/limejs",
+      "suggested_id": "digitalfruit-limejs-selfhost",
+      "stars": "1391",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "quark-dev-team/quarkjs",
+      "suggested_id": "quark-dev-team-quarkjs-selfhost",
+      "stars": "520",
+      "license": "MIT"
+    },
+    {
+      "full_name": "Jerenaux/phaserquest",
+      "suggested_id": "jerenaux-phaserquest-selfhost",
+      "stars": "382",
+      "license": "MIT"
+    },
+    {
+      "full_name": "Arcticjs/Arctic.js",
+      "suggested_id": "arcticjs-arctic.js-selfhost",
+      "stars": "373",
+      "license": "MIT"
+    },
+    {
+      "full_name": "haxegon/haxegon",
+      "suggested_id": "haxegon-haxegon-selfhost",
+      "stars": "194",
+      "license": "MIT"
+    },
+    {
+      "full_name": "nicupavel/openpanzer",
+      "suggested_id": "nicupavel-openpanzer-selfhost",
+      "stars": "171",
+      "license": ""
+    },
+    {
+      "full_name": "jwill/html5-game-book",
+      "suggested_id": "jwill-html5-game-book-selfhost",
+      "stars": "158",
+      "license": ""
+    },
+    {
+      "full_name": "fjsantosb/Molecule",
+      "suggested_id": "fjsantosb-molecule-selfhost",
+      "stars": "148",
+      "license": "MIT"
+    },
+    {
+      "full_name": "endel/joy.js",
+      "suggested_id": "endel-joy.js-selfhost",
+      "stars": "138",
+      "license": "MIT"
+    },
+    {
+      "full_name": "tlmader/theodoric",
+      "suggested_id": "tlmader-theodoric-selfhost",
+      "stars": "83",
+      "license": ""
+    },
+    {
+      "full_name": "mrgriscom/minesweepr",
+      "suggested_id": "mrgriscom-minesweepr-selfhost",
+      "stars": "72",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "dmcinnes/dead-valley",
+      "suggested_id": "dmcinnes-dead-valley-selfhost",
+      "stars": "64",
+      "license": ""
+    },
+    {
+      "full_name": "abdoutech19/hangman-game",
+      "suggested_id": "abdoutech19-hangman-game-selfhost",
+      "stars": "45",
+      "license": "MIT"
+    },
+    {
+      "full_name": "plinko-team/plinko",
+      "suggested_id": "plinko-team-plinko-selfhost",
+      "stars": "44",
+      "license": ""
+    },
+    {
+      "full_name": "kikito/luv.js",
+      "suggested_id": "kikito-luv.js-selfhost",
+      "stars": "43",
+      "license": "MIT"
+    },
+    {
+      "full_name": "naoxink/devlife",
+      "suggested_id": "naoxink-devlife-selfhost",
+      "stars": "36",
+      "license": "MIT"
+    },
+    {
+      "full_name": "roboshoes/marblerun",
+      "suggested_id": "roboshoes-marblerun-selfhost",
+      "stars": "32",
+      "license": "MIT"
+    },
+    {
+      "full_name": "HTML5-Games/html5-games.github.io",
+      "suggested_id": "html5-games-html5-games.github.io-selfhost",
+      "stars": "32",
+      "license": ""
+    },
+    {
+      "full_name": "lukefisklennon/tanksmith.io",
+      "suggested_id": "lukefisklennon-tanksmith.io-selfhost",
+      "stars": "25",
+      "license": ""
+    }
+  ],
+  "completed_selfhost": [
+    "tommalbran-games-selfhost",
+    "takahirox-toho-like-js-selfhost",
+    "priler-dino3d-selfhost"
+  ],
+  "external_thumbnails": [
+    "makaroni4-guitar-bro",
+    "milsaware-wordled",
+    "blackaslight-docscripts",
+    "ksalehi-pianohero",
+    "denishrana09-nft-browser-game"
+  ],
+  "last_audit_csv": "D:\\product\\游戏站备份\\funnygame-help-main\\temp\\qa-full-audit-20251116-1447.csv"
+}
