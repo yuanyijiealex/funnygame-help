@@ -4270,5 +4270,205 @@
     "thumbnail": "/assets/images/games/funny-walk-fail-run-game.jpg",
     "categories": null,
     "playCount": 1318500
+  },
+  {
+    "id": "iamkun-tower-game",
+    "title": {
+      "en": "tower game"
+    },
+    "embedUrl": "https://iamkun.github.io/tower_game/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1400000
+  },
+  {
+    "id": "henshmi-classic-pool-game",
+    "title": {
+      "en": "Classic Pool Game"
+    },
+    "embedUrl": "https://henshmi.github.io/Classic-Pool-Game/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1399700
+  },
+  {
+    "id": "luciopanepinto-pacman",
+    "title": {
+      "en": "pacman"
+    },
+    "embedUrl": "https://pacman-e281c.firebaseapp.com/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1399400
+  },
+  {
+    "id": "makaroni4-guitar-bro",
+    "title": {
+      "en": "guitar bro"
+    },
+    "embedUrl": "https://makaroni4.github.io/guitar_bro/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1399100
+  },
+  {
+    "id": "ruben3d-retroflightsim",
+    "title": {
+      "en": "retroflightsim"
+    },
+    "embedUrl": "https://ruben3d.github.io/retroflightsim/dist",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1398800
+  },
+  {
+    "id": "cmfcmf-anno2018",
+    "title": {
+      "en": "Anno2018"
+    },
+    "embedUrl": "https://cmfcmf.github.io/Anno2018",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1398500
+  },
+  {
+    "id": "milsaware-javascript-roulette",
+    "title": {
+      "en": "javascript roulette"
+    },
+    "embedUrl": "https://milsaware.github.io/javascript-roulette/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1398200
+  },
+  {
+    "id": "ffalt-mah",
+    "title": {
+      "en": "mah"
+    },
+    "embedUrl": "https://ffalt.github.io/mah/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1397900
+  },
+  {
+    "id": "jerrychan7-webmc",
+    "title": {
+      "en": "WebMC"
+    },
+    "embedUrl": "https://jerrychan7.github.io/WebMC/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1397600
+  },
+  {
+    "id": "juniortour-es6-mario",
+    "title": {
+      "en": "es6 mario"
+    },
+    "embedUrl": "https://JuniorTour.github.io/es6-mario",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1397300
+  },
+  {
+    "id": "ojaswy-blastar",
+    "title": {
+      "en": "Blastar"
+    },
+    "embedUrl": "https://ojaswy.github.io/Blastar/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1397000
+  },
+  {
+    "id": "steve245270533-character-simulator",
+    "title": {
+      "en": "character simulator"
+    },
+    "embedUrl": "https://steve245270533.github.io/character-simulator/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1396700
+  },
+  {
+    "id": "fkitsantas-horse-racing-game-javascript",
+    "title": {
+      "en": "Horse Racing Game JavaScript"
+    },
+    "embedUrl": "https://fkitsantas.github.io/Horse-Racing-Game-JavaScript/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1396400
+  },
+  {
+    "id": "vidio-boy-eaglercraft1-5-2",
+    "title": {
+      "en": "Eaglercraft1.5.2"
+    },
+    "embedUrl": "https://vidio-boy.github.io/Eaglercraft1.5.2",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1396100
+  },
+  {
+    "id": "milsaware-wordled",
+    "title": {
+      "en": "wordled"
+    },
+    "embedUrl": "https://milsaware.github.io/wordled/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1395800
+  },
+  {
+    "id": "pubnubdevelopers-ninja-multiplayer-platformer",
+    "title": {
+      "en": "Ninja Multiplayer Platformer"
+    },
+    "embedUrl": "https://PubNubDevelopers.github.io/Ninja-Multiplayer-Platformer",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1395500
+  },
+  {
+    "id": "danialdezfouli-spacecraft-game",
+    "title": {
+      "en": "spacecraft game"
+    },
+    "embedUrl": "https://spacecraft.vercel.app",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1395200
+  },
+  {
+    "id": "hlorenzi-galaxy",
+    "title": {
+      "en": "galaxy"
+    },
+    "embedUrl": "https://hlorenzi.github.io/galaxy",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1394900
+  },
+  {
+    "id": "chrinkus-squares",
+    "title": {
+      "en": "squares"
+    },
+    "embedUrl": "https://chrinkus.github.io/squares/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1394600
+  },
+  {
+    "id": "mikecheng1208-html5gameliveexample",
+    "title": {
+      "en": "Html5GameLiveExample"
+    },
+    "embedUrl": "https://MikeCheng1208.github.io/Html5GameLiveExample",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1394300
   }
 ]
