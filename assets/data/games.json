@@ -4980,7 +4980,7 @@
       "en": "TomMalbran Games (Self-hosted)"
     },
     "embedUrl": "/assets/games-content/tommalbran-games/index.html",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "/assets/games-content/tommalbran-games/puzzle/images/art/2.jpg",
     "categories": "action"
   },
   {
@@ -4989,7 +4989,7 @@
       "en": "Toho Like JS (Self-hosted)"
     },
     "embedUrl": "/assets/games-content/takahirox-toho-like-js/index.html",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "/assets/games-content/takahirox-toho-like-js/image/title_bg.png",
     "categories": "action"
   },
   {
@@ -4998,7 +4998,7 @@
       "en": "Dino 3D (Self-hosted)"
     },
     "embedUrl": "/assets/games-content/priler-dino3d/index.html",
-    "thumbnail": "/assets/images/game-placeholder.svg",
+    "thumbnail": "/assets/games-content/priler-dino3d/media/3d-title.png",
     "categories": "action"
   }
 ]
