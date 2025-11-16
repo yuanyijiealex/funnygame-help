@@ -1,0 +1,12 @@
+{
+  "name": "funnygame-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^23.7.0"
+  },
+  "scripts": {
+    "google": "node google-top-sites-puppeteer.mjs"
+  }
+}
+
