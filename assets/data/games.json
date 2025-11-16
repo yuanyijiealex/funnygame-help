@@ -4973,5 +4973,32 @@
     "description": {
       "en": "Play  online."
     }
+  },
+  {
+    "id": "tommalbran-games-selfhost",
+    "title": {
+      "en": "TomMalbran Games (Self-hosted)"
+    },
+    "embedUrl": "/assets/games-content/tommalbran-games/index.html",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action"
+  },
+  {
+    "id": "takahirox-toho-like-js-selfhost",
+    "title": {
+      "en": "Toho Like JS (Self-hosted)"
+    },
+    "embedUrl": "/assets/games-content/takahirox-toho-like-js/index.html",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action"
+  },
+  {
+    "id": "priler-dino3d-selfhost",
+    "title": {
+      "en": "Dino 3D (Self-hosted)"
+    },
+    "embedUrl": "/assets/games-content/priler-dino3d/index.html",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action"
   }
 ]
