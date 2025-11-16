@@ -1265,7 +1265,8 @@
     "embedUrl": "https://uncached.gamemonetize.co/q5b8pfuo0rhucj7un9t3pzr94vh5oc8x/",
     "thumbnail": "/assets/images/games/rocket-fest-game.jpg",
     "categories": "action",
-    "playCount": 1441000
+    "playCount": 1441000,
+    "hidden": true
   },
   {
     "id": "goldrush-game",
@@ -4277,7 +4278,7 @@
       "en": "tower game"
     },
     "embedUrl": "https://iamkun.github.io/tower_game/",
-    "thumbnail": "https://iamkun.github.io/tower_game/assets/favicon.png",
+    "thumbnail": "/assets/images/games/iamkun-tower-game.jpg",
     "categories": "action",
     "playCount": 1400000,
     "description": {
@@ -4303,7 +4304,7 @@
       "en": "pacman"
     },
     "embedUrl": "https://pacman-e281c.firebaseapp.com/",
-    "thumbnail": "https://pacman-e281c.firebaseapp.com/img/preview.png",
+    "thumbnail": "/assets/images/games/luciopanepinto-pacman.jpg",
     "categories": "action",
     "playCount": 1399400,
     "description": {
@@ -4368,7 +4369,7 @@
       "en": "mah"
     },
     "embedUrl": "https://ffalt.github.io/mah/",
-    "thumbnail": "https://ffalt.github.io/mah/assets/app/favicon-32x32.png",
+    "thumbnail": "/assets/images/games/ffalt-mah.jpg",
     "categories": "action",
     "playCount": 1397900,
     "description": {
@@ -4381,7 +4382,7 @@
       "en": "WebMC"
     },
     "embedUrl": "https://jerrychan7.github.io/WebMC/",
-    "thumbnail": "https://jerrychan7.github.io/WebMC/#",
+    "thumbnail": "/assets/images/games/jerrychan7-webmc.jpg",
     "categories": "action",
     "playCount": 1397600,
     "description": {
@@ -4420,7 +4421,7 @@
       "en": "character simulator"
     },
     "embedUrl": "https://steve245270533.github.io/character-simulator/",
-    "thumbnail": "https://steve245270533.github.io/character-simulator/favicon.ico",
+    "thumbnail": "/assets/images/games/steve245270533-character-simulator.jpg",
     "categories": "action",
     "playCount": 1396700,
     "description": {
@@ -4550,7 +4551,7 @@
       "en": "pendulum"
     },
     "embedUrl": "https://christophmark.github.io/pendulum/pendulum/index.html",
-    "thumbnail": "https://christophmark.github.io/pendulum/pendulum/touch-icon-192x192.png",
+    "thumbnail": "/assets/images/games/christophmark-pendulum.jpg",
     "categories": "action",
     "playCount": 1299700,
     "description": {
@@ -4576,7 +4577,7 @@
       "en": "The Adventure Bee"
     },
     "embedUrl": "https://tab-mshsheikh.vercel.app",
-    "thumbnail": "https://tab-mshsheikh.vercel.app/img/iconBee.png",
+    "thumbnail": "/assets/images/games/mshsheikh-the-adventure-bee.jpg",
     "categories": "action",
     "playCount": 1299100,
     "description": {
@@ -4667,7 +4668,7 @@
       "en": "mahjong solitaire"
     },
     "embedUrl": "https://mahjong-solitaire.netlify.app/",
-    "thumbnail": "https://mahjong-solitaire.netlify.app/img/screenshot.png",
+    "thumbnail": "/assets/images/games/scriptraccoon-mahjong-solitaire.jpg",
     "categories": "action",
     "playCount": 1297000,
     "description": {
@@ -4693,7 +4694,7 @@
       "en": "racing js"
     },
     "embedUrl": "https://antonio-r1.github.io/racing-js/",
-    "thumbnail": "https://antonio-r1.github.io/racing-js/favicon.ico",
+    "thumbnail": "/assets/images/games/antonio-r1-racing-js.jpg",
     "categories": "action",
     "playCount": 1296400,
     "description": {
@@ -4706,7 +4707,7 @@
       "en": "Stellar Drift Game M2"
     },
     "embedUrl": "https://samlaubscher.github.io/Stellar-Drift-Game-M2/",
-    "thumbnail": "https://samlaubscher.github.io/Stellar-Drift-Game-M2/favicon.ico",
+    "thumbnail": "/assets/images/games/samlaubscher-stellar-drift-game-m2.jpg",
     "categories": "action",
     "playCount": 1296100,
     "description": {
