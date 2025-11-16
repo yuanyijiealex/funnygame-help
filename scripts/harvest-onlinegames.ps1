@@ -54,7 +54,15 @@ function Harvest-Game($url){
 }
 
 $site = 'https://www.onlinegames.io/sitemap.xml'
-$urls = Get-UrlsFromSitemap $site | Where-Object { $_ -match '/game/' } | Select-Object -First ($Count*3)
+# collect candidate game URLs from sitemap; include per-game pages and exclude site root and obvious feeds
+$urls = Get-UrlsFromSitemap $site | Where-Object {
+  try { $u = [Uri]$_ } catch { return $false }
+  if($u.Host -notmatch 'onlinegames\.io') { return $false }
+  $p = $u.AbsolutePath.Trim()
+  if($p -eq '/' -or $p -like '/*feed*' -or $p -like '/*tag*' -or $p -like '/*category*') { return $false }
+  # most game pages are like /slug/
+  return $p.EndsWith('/') -and ($p.Split('/').Count -ge 2)
+} | Select-Object -Unique | Select-Object -First ($Count*6)
 
 $results = @()
 foreach($u in $urls){

@@ -2,7 +2,7 @@ param(
   [Parameter(Mandatory=$true)][string]$Id,
   [Parameter(Mandatory=$true)][string]$TitleEn,
   [Parameter(Mandatory=$true)][string]$EmbedUrl,
-  [Parameter(Mandatory=$true)][string]$CategoriesCsv,
+  [string]$CategoriesCsv = '',
   [string]$ThumbnailUrl,
   [string]$TitleZh = '',
   [string]$TitleEs = '',

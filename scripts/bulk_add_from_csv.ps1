@@ -7,17 +7,29 @@ $ErrorActionPreference = 'Stop'
 
 if(-not (Test-Path $CsvPath)) { throw "CSV not found: $CsvPath" }
 $rows = Import-Csv -Path $CsvPath
+$ok = 0; $skip = 0; $fail = 0
 foreach($r in $rows){
-  & (Join-Path (Split-Path -Parent $PSCommandPath) 'add_game.ps1') `
-    -Id $r.id `
-    -TitleEn $r.title_en `
-    -EmbedUrl $r.embed_url `
-    -CategoriesCsv $r.categories `
-    -ThumbnailUrl $r.thumbnail_url `
-    -TitleZh ($r.title_zh) `
-    -TitleEs ($r.title_es) `
-    -TitleFr ($r.title_fr)
+  try {
+    & (Join-Path (Split-Path -Parent $PSCommandPath) 'add_game.ps1') `
+      -Id $r.id `
+      -TitleEn $r.title_en `
+      -EmbedUrl $r.embed_url `
+      -CategoriesCsv $r.categories `
+      -ThumbnailUrl $r.thumbnail_url `
+      -TitleZh ($r.title_zh) `
+      -TitleEs ($r.title_es) `
+      -TitleFr ($r.title_fr)
+    $ok++
+  }
+  catch {
+    if($_.Exception.Message -match 'Game id already exists'){
+      Write-Warning $_.Exception.Message
+      $skip++
+    } else {
+      Write-Warning "Failed: $($r.id) - $($_.Exception.Message)"
+      $fail++
+    }
+  }
 }
 
-Write-Output "DONE: $($rows.Count) games processed"
-
+Write-Output "DONE: total=$($rows.Count), added=$ok, skipped=$skip, failed=$fail"

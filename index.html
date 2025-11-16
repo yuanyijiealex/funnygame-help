@@ -57,9 +57,9 @@
             <option value="platformer">Platformer</option>
             <option value="casual">Casual</option>
           </select>
-          <select id="sort" class="select" aria-label="Sort by">
+      <select id="sort" class="select" aria-label="Sort by">
             <option value="newest">Newest</option>
-            <option value="popular">Most Played</option>
+            <option value="popular" selected>Most Played</option>
             <option value="rating">Top Rated</option>
             <option value="title">Title</option>
           </select>
@@ -87,7 +87,7 @@
   <script>
     const S = {
       data: [],
-      filt: { cat:'all', sort:'newest', q:'' }
+      filt: { cat:'all', sort:'popular', q:'' }
     };
     function titleOf(t){
       if (!t) return '';
@@ -114,6 +114,19 @@
         if (sort==='title') return titleOf(a.title).localeCompare(titleOf(b.title));
         return new Date(b.addedDate||0)-new Date(a.addedDate||0);
       });
+      // Pin specific games to the top regardless of sort
+      const PIN_TOP = ['monster-survivors'];
+      if (PIN_TOP && PIN_TOP.length) {
+        const pinSet = new Set(PIN_TOP);
+        const pinned = [];
+        const others = [];
+        for (const g of items) {
+          (pinSet.has(g.id) ? pinned : others).push(g);
+        }
+        // keep PIN_TOP order within pinned
+        pinned.sort((a,b)=> PIN_TOP.indexOf(a.id) - PIN_TOP.indexOf(b.id));
+        items = pinned.concat(others);
+      }
       count.textContent = `${items.length} games`;
       list.innerHTML = items.map(g=>{
         const id = g.id;
