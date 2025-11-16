@@ -4713,5 +4713,265 @@
     "description": {
       "en": "Play  online."
     }
+  },
+  {
+    "id": "killedbyapixel-littlejs",
+    "title": {
+      "en": "LittleJS"
+    },
+    "embedUrl": "https://KilledByAPixel.github.io/LittleJS",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1200000,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "maxbittker-sandspiel",
+    "title": {
+      "en": "sandspiel"
+    },
+    "embedUrl": "https://sandspiel.club",
+    "thumbnail": "/assets/images/games/maxbittker-sandspiel.jpg",
+    "categories": "action",
+    "playCount": 1199700,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "renzorlive-vimmaster",
+    "title": {
+      "en": "vimmaster"
+    },
+    "embedUrl": "https://vim-master.com",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1199400,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "evanbacon-expo-crossy-road",
+    "title": {
+      "en": "Expo Crossy Road"
+    },
+    "embedUrl": "https://crossyroad.expo.app",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1199100,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "mattsurabian-duckhunt-js",
+    "title": {
+      "en": "DuckHunt JS"
+    },
+    "embedUrl": "https://duckhuntjs.com",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1198800,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "scottschiller-armoralley",
+    "title": {
+      "en": "ArmorAlley"
+    },
+    "embedUrl": "https://armor-alley.net/",
+    "thumbnail": "/assets/images/games/scottschiller-armoralley.jpg",
+    "categories": "action",
+    "playCount": 1198500,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "mugen87-dive",
+    "title": {
+      "en": "dive"
+    },
+    "embedUrl": "https://raw.githack.com/Mugen87/dive/master/app/index.html",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1198200,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "apoorvlathey-crypto-car-battle",
+    "title": {
+      "en": "Crypto Car Battle"
+    },
+    "embedUrl": "https://apoorvlathey.com/projects/crypto-car-battle",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1197900,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "space2pacman-elpy",
+    "title": {
+      "en": "elpy"
+    },
+    "embedUrl": "https://space2pacman-misc.github.io/elpy-examples/docs/",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1197600,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "mugen87-nier",
+    "title": {
+      "en": "nier"
+    },
+    "embedUrl": "https://raw.githack.com/Mugen87/nier/master/app/index.html",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1197300,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "serprex-openetg",
+    "title": {
+      "en": "openEtG"
+    },
+    "embedUrl": "https://etg.dek.im",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1197000,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "selenite-cc-selenite-old",
+    "title": {
+      "en": "selenite old"
+    },
+    "embedUrl": "https://selenite.cc",
+    "thumbnail": "/assets/images/games/selenite-cc-selenite-old.jpg",
+    "categories": "action",
+    "playCount": 1196700,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "druidman-minecraft-clone-opengl",
+    "title": {
+      "en": "minecraft clone opengl"
+    },
+    "embedUrl": "https://minecraftplus.vercel.app",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1196400,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "maechler-kurve",
+    "title": {
+      "en": "kurve"
+    },
+    "embedUrl": "https://achtungkurve.com",
+    "thumbnail": "/assets/images/games/maechler-kurve.jpg",
+    "categories": "action",
+    "playCount": 1196100,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "speps-tt",
+    "title": {
+      "en": "tt"
+    },
+    "embedUrl": "https://torustrooper.xyz",
+    "thumbnail": "/assets/images/games/speps-tt.jpg",
+    "categories": "action",
+    "playCount": 1195800,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "gonnavis-annihilate",
+    "title": {
+      "en": "annihilate"
+    },
+    "embedUrl": "https://raw.githack.com/gonnavis/annihilate/dev/index.html",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1195500,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "jalbam-crossbrowdy",
+    "title": {
+      "en": "CrossBrowdy"
+    },
+    "embedUrl": "https://crossbrowdy.com/",
+    "thumbnail": "/assets/images/games/jalbam-crossbrowdy.jpg",
+    "categories": "action",
+    "playCount": 1195200,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "akon47-shoot-game",
+    "title": {
+      "en": "shoot game"
+    },
+    "embedUrl": "https://shootgame.kimhwan.kr/",
+    "thumbnail": "/assets/images/games/akon47-shoot-game.jpg",
+    "categories": "action",
+    "playCount": 1194900,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "dinodevs-gladiatuscrazyaddon",
+    "title": {
+      "en": "GladiatusCrazyAddon"
+    },
+    "embedUrl": "https://gladiatus.dinodevs.com",
+    "thumbnail": "/assets/images/game-placeholder.svg",
+    "categories": "action",
+    "playCount": 1194600,
+    "description": {
+      "en": "Play  online."
+    }
+  },
+  {
+    "id": "omgimanerd-how-to-build-a-multiplayer-browser-game",
+    "title": {
+      "en": "how to build a multiplayer browser game"
+    },
+    "embedUrl": "https://medium.com/@omgimanerd/how-to-build-a-multiplayer-browser-game-4a793818c29b#.mea2a1qc6",
+    "thumbnail": "/assets/images/games/omgimanerd-how-to-build-a-multiplayer-browser-game.jpg",
+    "categories": "action",
+    "playCount": 1194300,
+    "description": {
+      "en": "Play  online."
+    }
   }
 ]
