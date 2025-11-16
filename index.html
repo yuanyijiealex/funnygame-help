@@ -46,17 +46,7 @@
       <h1>All Games</h1>
       <div class="toolbar">
         <div class="filters">
-          <select id="cat" class="select" aria-label="Category">
-            <option value="all">All categories</option>
-            <option value="action">Action</option>
-            <option value="puzzle">Puzzle</option>
-            <option value="racing">Racing</option>
-            <option value="rpg">RPG</option>
-            <option value="shooting">Shooting</option>
-            <option value="strategy">Strategy</option>
-            <option value="platformer">Platformer</option>
-            <option value="casual">Casual</option>
-          </select>
+          <select id="cat" class="select" aria-label="Category"></select>
       <select id="sort" class="select" aria-label="Sort by">
             <option value="newest">Newest</option>
             <option value="popular" selected>Most Played</option>
@@ -95,7 +85,19 @@
       return t['en'] || t['zh-CN'] || Object.values(t)[0] || '';
     }
     function normalize(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,' '); }
-    function render(){
+        function ensureCategoryOptions(){
+      const sel = document.getElementById('cat');
+      if (!sel) return;
+      const cats = new Set();
+      (S.data||[]).forEach(g => {
+        const gc = Array.isArray(g.categories) && g.categories.length ? g.categories : ['uncategorized'];
+        gc.forEach(c => cats.add(String(c)));
+      });
+      const opts = ['all', ...Array.from(cats).sort((a,b)=>a.localeCompare(b))];
+      const cur = S.filt.cat || 'all';
+      sel.innerHTML = opts.map(v=>`<option value="${v}">${v==='all'?'All categories':v}</option>`).join('');
+      sel.value = opts.includes(cur) ? cur : 'all';
+    }function render(){
       const list = document.getElementById('list');
       const count = document.getElementById('count');
       const q = normalize(S.filt.q);
@@ -143,7 +145,7 @@
       }).join('');
     }
     document.addEventListener('DOMContentLoaded', ()=>{
-      fetch('/assets/data/games.json').then(r=>r.json()).then(data=>{ S.data = Array.isArray(data)?data:[]; render(); });
+      fetch('/assets/data/games.json').then(r=>r.json()).then(data=>{ S.data = Array.isArray(data)?data:[]; ensureCategoryOptions(); render(); });
       document.getElementById('cat').addEventListener('change', e=>{ S.filt.cat = e.target.value; render(); });
       document.getElementById('sort').addEventListener('change', e=>{ S.filt.sort = e.target.value; render(); });
       const qi = document.getElementById('q');
@@ -152,6 +154,11 @@
   </script>
 </body>
 </html>
+
+
+
+
+
 
 
 
