@@ -12,9 +12,9 @@ function New-SitemapXml([string[]]$paths, [string]$outFile, [string]$baseUrl){
   $ns = $xml.CreateAttribute('xmlns'); $ns.Value = 'http://www.sitemaps.org/schemas/sitemap/0.9'; $null = $urlset.Attributes.Append($ns)
   foreach($rel in $paths){
     $url = $xml.CreateElement('url')
-    foreach($kv in @{'loc'=("$baseUrl/" + ($rel -replace '\\','/')); 'lastmod'=(Get-Date (Get-Item (Join-Path $SiteRoot $rel)).LastWriteTimeUtc -Format 'yyyy-MM-ddTHH:mm:ssZ'); 'changefreq'='weekly'}){
-      $node=$xml.CreateElement($kv.Keys); $node.InnerText=$kv.Values; $null=$url.AppendChild($node)
-    }
+    $locEl = $xml.CreateElement('loc'); $locEl.InnerText = ("$baseUrl/" + ($rel -replace '\\','/')); $null=$url.AppendChild($locEl)
+    $lmEl  = $xml.CreateElement('lastmod'); $lmEl.InnerText = (Get-Date (Get-Item (Join-Path $SiteRoot $rel)).LastWriteTimeUtc -Format 'yyyy-MM-ddTHH:mm:ssZ'); $null=$url.AppendChild($lmEl)
+    $cfEl  = $xml.CreateElement('changefreq'); $cfEl.InnerText = 'weekly'; $null=$url.AppendChild($cfEl)
     $null=$urlset.AppendChild($url)
   }
   $null=$xml.AppendChild($urlset)
