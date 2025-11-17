@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap' rel='stylesheet'>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLC1LGRRZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JSLC1LGRRZ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>益智游戏 - funnygame.help</title>
+    <meta name="description" content="在 funnygame.help 浏览益智游戏 分类的免费HTML5在线游戏。">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="益智游戏 - funnygame.help">
+    <meta property="og:description" content="在 funnygame.help 浏览益智游戏 分类的免费HTML5在线游戏。">
+    <meta property="og:image" content="https://funnygame.help/assets/images/og-puzzle.jpg">
+    <meta property="og:url" content="https://funnygame.help/zh/categories/puzzle.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://funnygame.help/zh/categories/puzzle.html">
+    
+    <!-- 样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">    <link rel="stylesheet" href="/assets/css/cyberpunk-theme.css">
+    
+    <!-- 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-red: #D12035;
+            --primary-blue: #2281C1;
+            --accent-yellow: #FFC107;
+            --light-gray: #F8F8F8;
+            --text-dark: #222222;
+            --text-light: #FFFFFF;
+            --background: #FFFFFF;
+            --border-color: #E0E0E0;
+            --category-bg: #F0F0F0;
+            --footer-bg: #222;
+            --footer-text: #bbb;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-gray);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* 顶部导航栏 */
+        .header {
+            background-color: var(--background);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-icon {
+            margin-left: 20px;
+            font-size: 18px;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+        
+        /* 页面标题区域 */
+        .page-title {
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .page-description {
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* 游戏网格 */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px 0;
+        }
+        
+        .game-card {
+            background-color: var(--background);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .game-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .game-info {
+            padding: 15px;
+        }
+        
+        .game-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .game-category {
+            color: var(--primary-blue);
+            font-size: 14px;
+        }
+        
+        /* 图标样式 */
+        .search-icon, .user-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--text-dark);
+        }
+        
+        .search-icon:hover, .user-icon:hover {
+            fill: var(--primary-blue);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            
+            .page-title h1 {
+                font-size: 24px;
+            }
+            
+            .page-description {
+                font-size: 14px;
+            }
+        }
+        
+        /* 加载动画 */
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid var(--primary-blue);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 语言选择器样式 */
+        .language-selector {
+            position: relative;
+            margin-left: 15px;
+            z-index: 100;
+        }
+        
+        .language-selector-btn {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .language-selector-btn img {
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            object-fit: cover;
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            width: 150px;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .language-dropdown.active {
+            display: block;
+        }
+        
+        .language-option {
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .language-option:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .language-option img {
+            width: 20px;
+            height: 15px;
+            margin-right: 10px;
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            object-fit: cover;
+        }
+    </style>
+  <link rel="stylesheet" href="/assets/css/stability.css"></head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    
+    <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap' rel='stylesheet'>
+        <div class="container nav-container">
+            <a href="/" class="logo" data-translate="site_name">funnygame.help</a>
+            
+            <ul class='nav-links'>
+                <li><a href="/favorites.html" data-translate='nav_favorites' data-translate="nav_favorites">My Favorites</a></li>
+                <li><a href="/about.html" data-translate='nav_about' data-translate="nav_about">About Us</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <a href="/search" class="nav-icon">
+                    <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </a>
+                <a href="/user" class="nav-icon">
+  <svg class="user-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>
+</a>
+                
+                <!-- 语言选择器 -->
+                
+                    
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 页面标题 -->
+    <section class="page-title">
+        <div class="container">
+            <h1 data-translate="puzzle_title">益智游戏</h1>
+            <p class="page-description" data-translate="puzzle_description">探索各种智力挑战游戏，锻炼您的大脑，解决谜题，享受益智游戏的乐趣。</p>
+        </div>
+    </section>
+    
+    <!-- 游戏列表 -->
+    <main class="container">
+        <div id="games-container" class="games-grid">
+            <!-- 加载动画 -->
+            <div class="flex justify-center items-center col-span-full py-12">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-gray-300 py-10">
+        <div class="container mx-auto px-4">
+            <div class="footer-columns">
+                <!-- 站点信息 -->
+                <div class="footer-column">
+                    <div class="footer-title" data-translate="site_name">funnygame.help</div>
+                    <p data-translate="footer_description">funnygame.help提供免费的HTML5游戏，无需下载，直接在浏览器中玩。</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/funnygamehelp">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.1 10.1 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/funnygamehelp">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/funnygamehelp">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="https://discord.gg/funnygamehelp">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.3 13.3 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                            </svg>
+                        </a>
+                        <a href="https://tiktok.com/@funnygamehelp">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 快速链接 -->
+                <div class="footer-column">
+                    <div class="footer-title" data-translate="quick_links">快速链接</div>
+                    <ul class="footer-links">
+                        
+                        <li><a href="/featured-games.html" data-translate="nav_featured">特色游戏</a></li>
+                        <li><a href="/new-games.html" data-translate="nav_new">新游戏</a></li>
+                        <li><a href="/popular-games.html" data-translate="nav_popular">热门游戏</a></li>
+                        <li><a href="/about.html" data-translate='nav_about' data-translate="nav_about">About Us</a></li>
+                        <li><a href="/contact.html" data-translate="nav_contact">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 法律信息 -->
+                <div class="footer-column">
+                    <div class="footer-title" data-translate="legal_info">法律信息</div>
+                    <ul class="footer-links">
+                        <li><a href='/privacy.html' data-translate='footer_privacy'>Privacy</a></li>
+                        <li><a href='/terms.html' data-translate='footer_terms'>Terms</a></li>
+                        <li><a href="/cookies.html" data-translate="cookie_policy">Cookie政策</a></li>
+                        <li><a href="/sitemap.html" data-translate="sitemap">网站地图</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 联系信息 -->
+                <div class="footer-column">
+                    <div class="footer-title" data-translate="contact_us">联系我们</div>
+                    <p data-translate="contact_description">有问题或建议？欢迎联系我们。</p>
+                    <a href="mailto:info@funnygame.help" class="contact-link">info@funnygame.help</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p data-translate="copyright">&copy; <span id="current-year">2023</span> funnygame.help. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 更新当前年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // 语言选择器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 语言选择器
+            const languageSelectorBtn = document.getElementById('language-selector-btn');
+            const languageDropdown = document.getElementById('language-dropdown');
+            if (languageSelectorBtn && languageDropdown) {
+                languageSelectorBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    languageDropdown.classList.toggle('active');
+                });
+                
+                // 点击其他地方关闭下拉菜单
+                document.addEventListener('click', function(event) {
+                    if (!languageSelectorBtn.contains(event.target) && !languageDropdown.contains(event.target)) {
+                        languageDropdown.classList.remove('active');
+                    }
+                });
+                
+                // 选择语言时设置 cookie
+                const languageOptions = languageDropdown.querySelectorAll('.language-option');
+                languageOptions.forEach(option => {
+                    option.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        document.cookie = `lang=${lang}; path=/; max-age=${60*60*24*30}`;
+                        location.reload();
+                    });
+                });
+                
+                // 加载当前语言
+                loadSelectedLanguage();
+            }
+            
+            // 动态加载游戏数据
+            const gamesContainer = document.getElementById('games-container');
+            
+            // 加载益智游戏数据
+            fetch('/assets/data/games.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('无法加载游戏数据');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // 清除加载动画
+                    gamesContainer.innerHTML = '';
+                    
+                    // 筛选益智游戏（categories字段中包含'puzzle'的游戏）
+                    const puzzleGames = data.filter(game => game.categories && game.categories.includes('puzzle'));
+                    
+                    // 如果没有游戏，显示提示
+                    if (puzzleGames.length === 0) {
+                        gamesContainer.innerHTML = '<p class="col-span-full text-center py-8">暂无益智游戏，请稍后再来查看。</p>';
+                        return;
+                    }
+                    
+                    // 渲染游戏卡片
+                    puzzleGames.forEach(game => {
+                        const gameCard = document.createElement('div');
+                        gameCard.className = 'game-card';
+                        
+                        gameCard.innerHTML = `
+                            <a href="/games/${game.id}.html">
+                                <img src="${game.thumbnail || `/assets/images/games/${game.id}.jpg`}" alt="${game.title}" class="game-image">
+                                <div class="game-info">
+                                    <h3 class="game-title">${game.title}</h3>
+                                    <div class="game-category">益智游戏</div>
+                                </div>
+                            </a>
+                        `;
+                        
+                        gamesContainer.appendChild(gameCard);
+                    });
+                })
+                .catch(error => {
+                    console.error('加载游戏数据失败:', error);
+                    gamesContainer.innerHTML = '<p class="col-span-full text-center py-8">加载游戏数据时出错，请刷新页面重试。</p>';
+                });
+        });
+        
+        /**
+         * 加载选定的语言
+         */
+        function loadSelectedLanguage() {
+            const userLang = getCookie('lang') || navigator.language || navigator.userLanguage;
+            const lang = userLang.substring(0, 2) === 'zh' ? 'zh-CN' : userLang.substring(0, 2);
+            
+            // 更新语言选择器界面
+            const langSelector = document.getElementById('language-selector-btn');
+            if (langSelector && ['en', 'zh-CN', 'es', 'fr'].includes(lang)) {
+                const flagImg = `/assets/images/flags/${lang === 'zh-CN' ? 'cn' : lang}.png`;
+                langSelector.querySelector('img').setAttribute('src', flagImg);
+                langSelector.querySelector('span').textContent = lang === 'zh-CN' ? 'CN' : lang.toUpperCase();
+            }
+        }
+        
+        /**
+         * 获取cookie值
+         */
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+    </script>
+    
+    <!-- Service Worker 注册 -->
+    <script>
+        // 检查是否支持 Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // 添加版本参数以避免缓存问题
+                navigator.serviceWorker.register('/service-worker.js?v=3')
+                    .then(function(registration) {
+                        console.log('服务工作者注册成功:', registration);
+                    })
+                    .catch(function(error) {
+                        console.error('服务工作者注册失败:', error);
+                    });
+            });
+        }
+    </script>
+  <script src="/assets/js/main.js"></script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
