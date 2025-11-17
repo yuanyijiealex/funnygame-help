@@ -1,5 +1,5 @@
 param(
-  [string]$Host = 'funnygame.help',
+  [string]$SiteHost = 'funnygame.help',
   [string]$Key = '2d825571af7849398cae10ac72fc2d57',
   [string]$Sitemap = 'https://funnygame.help/sitemap.xml',
   [int]$BatchSize = 100,
@@ -28,15 +28,15 @@ function Get-UrlsFromSitemap([string]$smap){
     }
   }
   # Normalize and keep only same host
-  $prefix = "https://$Host/"
+  $prefix = "https://${SiteHost}/"
   $list = $list | Where-Object { $_ -like "$prefix*" } | Select-Object -Unique
   return $list
 }
 
 function Submit-IndexNow([string[]]$urls){
   if (-not $urls -or $urls.Count -eq 0){ return }
-  $keyLocation = "https://$Host/$Key.txt"
-  $body = @{ host=$Host; key=$Key; keyLocation=$keyLocation; urlList=$urls } | ConvertTo-Json -Depth 4
+  $keyLocation = "https://${SiteHost}/$Key.txt"
+  $body = @{ host=$SiteHost; key=$Key; keyLocation=$keyLocation; urlList=$urls } | ConvertTo-Json -Depth 4
   try {
     $r = Invoke-WebRequest -Uri 'https://www.bing.com/indexnow' -Method POST -ContentType 'application/json' -Body $body -TimeoutSec 60
     Write-Host ("Posted {0} URLs -> {1}" -f $urls.Count, $r.StatusCode) -ForegroundColor Green
@@ -58,3 +58,4 @@ try {
   Write-Error $_.Exception.Message
   exit 1
 }
+
