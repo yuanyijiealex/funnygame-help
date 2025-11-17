@@ -1,19 +1,26 @@
 param(
-  [string]$SiteRoot = "D:\\product\\游戏站备份\\funnygame-help-main",
+  [string]$SiteRoot = (Resolve-Path "$PSScriptRoot\..\").Path,
   [string]$BaseUrl = "https://funnygame.help"
 )
 
 $ErrorActionPreference = 'Stop'
-$files = Get-ChildItem -Path $SiteRoot -Recurse -File -Include *.html |
-  Where-Object { $_.FullName -notmatch '\\(temp|sources|tools|docs|\.git|\.github)\\' }
+
+# Normalize absolute root with trailing path separator
+$root = (Resolve-Path $SiteRoot).Path
+if (-not $root.EndsWith([IO.Path]::DirectorySeparatorChar)) { $root += [IO.Path]::DirectorySeparatorChar }
+
+# Only index site pages; exclude tooling/temp and embedded vendor content
+$files = Get-ChildItem -Path $root -Recurse -File -Include *.html |
+  Where-Object { $_.FullName -notmatch '\\(temp|sources|tools|docs|\.git|\.github|assets\\games-content)\\' }
 
 $urls = @()
 foreach($f in $files){
-  $rel = $f.FullName.Substring($SiteRoot.Length).TrimStart([IO.Path]::DirectorySeparatorChar)
+  $full = $f.FullName
+  $rel = if ($full.StartsWith($root)) { $full.Substring($root.Length) } else { $f.Name }
   $rel = $rel -replace '\\','/'
   $loc = if($rel -ieq 'index.html'){ "$BaseUrl/" } else { "$BaseUrl/$rel" }
   $lastmod = (Get-Date $f.LastWriteTimeUtc -Format 'yyyy-MM-ddTHH:mm:ssZ')
-  $priority = if($rel -ieq 'index.html'){ '1.0' } elseif($rel -like 'games/*'){ '0.6' } elseif($rel -like 'categories/*'){ '0.7' } else { '0.5' }
+  $priority = if($rel -ieq 'index.html'){ '1.0' } elseif($rel -like 'categories/*'){ '0.7' } elseif($rel -like 'games/*'){ '0.6' } elseif($rel -like 'zh/*'){ '0.6' } else { '0.5' }
   $urls += [pscustomobject]@{ loc=$loc; lastmod=$lastmod; changefreq='weekly'; priority=$priority }
 }
 
@@ -28,6 +35,6 @@ foreach($u in $urls){
   $urlset.AppendChild($url) | Out-Null
 }
 $xml.AppendChild($urlset) | Out-Null
-$outPath = Join-Path $SiteRoot 'sitemap.xml'
+$outPath = Join-Path $root 'sitemap.xml'
 $xml.Save($outPath)
 Write-Host "Generated: $outPath (" $urls.Count ")"
