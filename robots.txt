@@ -4,3 +4,4 @@ Allow: /
 Sitemap: https://funnygame.help/sitemap.xml
 Sitemap: https://funnygame.help/sitemap-main.xml
 
+Sitemap: https://funnygame.help/sitemap-20251117.xml
