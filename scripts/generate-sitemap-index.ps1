@@ -40,6 +40,8 @@ $all = Get-ChildItem -Path $SiteRoot -Recurse -File -Include *.html |
   Where-Object { $_.FullName -notmatch '\\(temp|sources|tools|docs|\.git|\.github|assets\\games-content)\\' }
 
 $rel = $all | ForEach-Object { $_.FullName.Substring($SiteRoot.Length).TrimStart([IO.Path]::DirectorySeparatorChar) }
+# Normalize to forward slashes for pattern matching
+ $rel = $rel | ForEach-Object { $_ -replace  '\\','/' }
 
 $rootFiles = $rel | Where-Object { $_ -notlike 'games/*' -and $_ -notlike 'categories/*' -and $_ -notlike 'zh/*' }
 $catFiles  = $rel | Where-Object { $_ -like 'categories/*' }
@@ -47,6 +49,7 @@ $gameFiles = $rel | Where-Object { $_ -like 'games/*' }
 $zhFiles   = $rel | Where-Object { $_ -like 'zh/*' }
 
 $sitemaps = @()
+Write-Host ("Counts: root=" + $rootFiles.Count + " cats=" + $catFiles.Count + " games=" + $gameFiles.Count + " zh=" + $zhFiles.Count)
 if($rootFiles.Count){ New-SitemapXml -paths $rootFiles -outFile 'sitemap-root.xml' -baseUrl $BaseUrl; $sitemaps += 'sitemap-root.xml' }
 if($catFiles.Count){ New-SitemapXml -paths $catFiles -outFile 'sitemap-categories.xml' -baseUrl $BaseUrl; $sitemaps += 'sitemap-categories.xml' }
 
@@ -79,3 +82,5 @@ if($content -notmatch 'sitemap-index.xml'){
 }
 
 Write-Host "Generated sitemaps:"; $sitemaps | ForEach-Object { Write-Host " - $_" }
+
+
