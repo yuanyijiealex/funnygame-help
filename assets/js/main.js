@@ -2,16 +2,7 @@
  * funnygame.com main JavaScript (stable rebuild)
  */
 
-document.addEventListener('DOMContentLoaded', function() {  try {
-    var hasLangPref = (document.cookie.indexOf('lang=')>=0) || (localStorage.getItem('lang')) || (new URLSearchParams(location.search).get('lang'));
-    var isZh = (navigator.language||'').toLowerCase().indexOf('zh')===0;
-    if (!hasLangPref && isZh && location.pathname === '/') {
-      // Avoid bot redirection heuristically
-      var ua=(navigator.userAgent||'').toLowerCase();
-      var isBot = /bot|spider|crawl|slurp|bing|duckduck|baidu|sogou/.test(ua);
-      if (!isBot) { location.replace('/zh/'); return; }
-    }
-  } catch(e){}
+document.addEventListener('DOMContentLoaded', function() {
   initializeLanguageSelector();
   initializeMobileMenu();
   updateCurrentYear();
@@ -254,62 +245,4 @@ function loadAllCategoriesHome(){
   }).catch(()=>{});
 }
 
-document.addEventListener('DOMContentLoaded', function(){ try { if(document.getElementById('home-categories-container')) buildHomeCategoriesCollapsible(); } catch(e){} });
-
-
-function buildHomeCategoriesCollapsible(){
-  const mount = document.getElementById('home-categories-container');
-  if(!mount) return;
-  fetch('/assets/data/games.json').then(r=>r.json()).then(data=>{
-    const visible = (Array.isArray(data)?data:[]).filter(g=>!g.hidden);
-    const featured = visible.filter(g=>g.isFeatured);
-    const PRESET = ['featured','action','puzzle','racing','rpg','shooting','platformer','strategy','casual'];
-    const present = new Set();
-    visible.forEach(g=>{ (g.categories||[]).forEach(c=>present.add(c)); });
-    const extra = Array.from(present).filter(c=>!PRESET.includes(c)).sort();
-    const order = [];
-    if (featured.length) order.push('featured');
-    PRESET.forEach(c=>{ if(c!=='featured' && present.has(c)) order.push(c); });
-    extra.forEach(c=>order.push(c));
-    const titleOf = (t)=>{ if(!t) return ''; if(typeof t==='string') return t; return t['en']||t['zh-CN']||Object.values(t)[0]||''; };
-    const makeId = (c)=>`cat-${c}`;
-    const renderCards = (list, limit) => list.slice(0, limit).map(g=>{
-      const id=g.id; const t=titleOf(g.title)||id; const local=`/assets/images/games/${id}.jpg`;
-      const isPlaceholder = (g.thumbnail||'').toLowerCase().includes('game-placeholder');
-      const thumb = (!g.thumbnail || isPlaceholder) ? local : g.thumbnail;
-      return `<a class="game-card" href="/games/${id}.html"><img class="game-image" loading="lazy" src="${thumb}" alt="${t}" onerror="this.onerror=null; this.src='${local}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.png')}'; this.onerror=function(){ this.onerror=null; this.src='${local.replace('.jpg','.svg')}'; this.onerror=function(){ this.src='/assets/images/game-placeholder.svg'; }; }; }"><div class="game-info"><div class="game-title">${t}</div></div></a>`;
-    }).join('');
-    let html='';
-    order.forEach(c=>{
-      const list = (c==='featured') ? featured : visible.filter(g=> (g.categories||[]).includes(c));
-      if(!list.length) return;
-      const secId = makeId(c);
-      const collapsed = list.length > 24;
-      const initial = collapsed ? 24 : list.length;
-      html += `<section class="game-category" data-cat="${c}"><div class="section-title-row" style="display:flex; align-items:center; justify-content:space-between;"><h2 class="section-title" style="margin:0">${c==='featured' ? 'Featured Games' : (c.charAt(0).toUpperCase()+c.slice(1)+' Games')}</h2><button class="cat-toggle" data-target="${secId}" data-collapsed="${collapsed ? 'true' : 'false'}" style="background:var(--bg-medium); color:var(--text-primary); border:1px solid var(--border-primary); border-radius:6px; padding:6px 10px; cursor:pointer; display:${collapsed ? 'inline-block' : 'none'};">Show all (${list.length})</button></div><div class="games-grid" id="${secId}" data-total="${list.length}" data-collapsed="${collapsed ? 'true' : 'false'}">${renderCards(list, initial)}</div></section>`;
-    });
-    mount.innerHTML = html;
-    mount.addEventListener('click', (e)=>{
-      const btn = e.target.closest('.cat-toggle');
-      if(!btn) return;
-      const targetId = btn.getAttribute('data-target');
-      const grid = document.getElementById(targetId);
-      if(!grid) return;
-      const cat = (grid.parentElement && grid.parentElement.getAttribute('data-cat')) || '';
-      const list = (cat==='featured') ? visible.filter(g=>g.isFeatured) : visible.filter(g=> (g.categories||[]).includes(cat));
-      const collapsed = grid.getAttribute('data-collapsed') !== 'false';
-      if(collapsed){
-        grid.innerHTML = renderCards(list, list.length);
-        grid.setAttribute('data-collapsed','false');
-        btn.setAttribute('data-collapsed','false');
-        btn.textContent = 'Collapse';
-      } else {
-        const initial = Math.min(24, list.length);
-        grid.innerHTML = renderCards(list, initial);
-        grid.setAttribute('data-collapsed','true');
-        btn.setAttribute('data-collapsed','true');
-        btn.textContent = `Show all (${list.length})`;
-      }
-    });
-  }).catch(()=>{});
-}
+document.addEventListener('DOMContentLoaded', function() {
