@@ -34,11 +34,11 @@
         "Combat"
       ],
       "zh-CN": [
-        "生存",
+        "Monster Survivors",
         "角色扮演",
         "升级系统",
-        "怪物",
-        "战斗"
+        "Monster Survivors",
+        "Monster Survivors"
       ],
       "es": [
         "Supervivencia",
@@ -254,14 +254,14 @@
     "title": {
       "en": "Lotus III: The Ultimate Challenge"
     },
-    "embedUrl": "https://archive.org/embed/msdos_Lotus_III_The_Ultimate_Challenge_1992",
+    "embedUrl": "https://www.retrogames.cc/embed/pc-games/lotusiiitheultimatechallenge.html",
     "categories": [
       "racing"
     ],
     "addedDate": "2025-11-06",
     "playCount": 16627,
     "thumbnail": "/assets/images/games/lotus-iii-1992.svg",
-    "hidden": true
+    "hidden": false
   },
   {
     "id": "msdos_Oregon_Trail_The_1990",
@@ -371,7 +371,7 @@
     "addedDate": "2025-11-06",
     "playCount": 20812,
     "thumbnail": "/assets/images/games/Doom-2.jpg",
-    "hidden": true,
+    "hidden": false,
     "redirectTo": "/games/doom-1993.html"
   },
   {
@@ -534,7 +534,7 @@
     "addedDate": "2025-11-06",
     "playCount": 7961,
     "thumbnail": "/assets/images/games/msdos_Tetris_1986.jpg",
-    "hidden": true,
+    "hidden": false,
     "redirectTo": "/games/tetris-ibm-1986.html"
   },
   {
@@ -1266,7 +1266,7 @@
     "thumbnail": "/assets/images/games/rocket-fest-game.jpg",
     "categories": "action",
     "playCount": 1441000,
-    "hidden": true
+    "hidden": false
   },
   {
     "id": "goldrush-game",
@@ -1626,8 +1626,8 @@
     },
     "embedUrl": "https://gamemonetize.com/favi.png",
     "categories": "action",
-    "thumbnail": "/assets/images/game-placeholder.svg",
-    "playCount": 1422500
+    "playCount": 1422500,
+    "thumbnail": "/assets/images/games/html-game.jpg"
   },
   {
     "id": "how-to-make-a-website-for-your-game",
@@ -1668,8 +1668,8 @@
     },
     "embedUrl": "https://gamemonetize.com/favi.png",
     "categories": "action",
-    "thumbnail": "/assets/images/game-placeholder.svg",
-    "playCount": 1420500
+    "playCount": 1420500,
+    "thumbnail": "/assets/images/games/embedded-game.jpg"
   },
   {
     "id": "all-game",
@@ -4291,12 +4291,12 @@
       "en": "Classic Pool Game"
     },
     "embedUrl": "https://henshmi.github.io/Classic-Pool-Game/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1399700,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/henshmi-classic-pool-game.jpg"
   },
   {
     "id": "luciopanepinto-pacman",
@@ -4330,12 +4330,12 @@
       "en": "retroflightsim"
     },
     "embedUrl": "https://ruben3d.github.io/retroflightsim/dist",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1398800,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/ruben3d-retroflightsim.jpg"
   },
   {
     "id": "cmfcmf-anno2018",
@@ -4343,12 +4343,12 @@
       "en": "Anno2018"
     },
     "embedUrl": "https://cmfcmf.github.io/Anno2018",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1398500,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/cmfcmf-anno2018.jpg"
   },
   {
     "id": "milsaware-javascript-roulette",
@@ -4356,12 +4356,12 @@
       "en": "javascript roulette"
     },
     "embedUrl": "https://milsaware.github.io/javascript-roulette/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1398200,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/milsaware-javascript-roulette.jpg"
   },
   {
     "id": "ffalt-mah",
@@ -4395,12 +4395,12 @@
       "en": "es6 mario"
     },
     "embedUrl": "https://JuniorTour.github.io/es6-mario",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1397300,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/juniortour-es6-mario.jpg"
   },
   {
     "id": "ojaswy-blastar",
@@ -4408,12 +4408,12 @@
       "en": "Blastar"
     },
     "embedUrl": "https://ojaswy.github.io/Blastar/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1397000,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/ojaswy-blastar.jpg"
   },
   {
     "id": "steve245270533-character-simulator",
@@ -4434,12 +4434,12 @@
       "en": "Horse Racing Game JavaScript"
     },
     "embedUrl": "https://fkitsantas.github.io/Horse-Racing-Game-JavaScript/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1396400,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/fkitsantas-horse-racing-game-javascript.jpg"
   },
   {
     "id": "vidio-boy-eaglercraft1-5-2",
@@ -4447,12 +4447,12 @@
       "en": "Eaglercraft1.5.2"
     },
     "embedUrl": "https://vidio-boy.github.io/Eaglercraft1.5.2",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1396100,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/vidio-boy-eaglercraft1-5-2.jpg"
   },
   {
     "id": "milsaware-wordled",
@@ -4473,12 +4473,12 @@
       "en": "Ninja Multiplayer Platformer"
     },
     "embedUrl": "https://PubNubDevelopers.github.io/Ninja-Multiplayer-Platformer",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1395500,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/pubnubdevelopers-ninja-multiplayer-platformer.jpg"
   },
   {
     "id": "danialdezfouli-spacecraft-game",
@@ -4499,12 +4499,12 @@
       "en": "galaxy"
     },
     "embedUrl": "https://hlorenzi.github.io/galaxy",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1394900,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/hlorenzi-galaxy.jpg"
   },
   {
     "id": "chrinkus-squares",
@@ -4512,12 +4512,12 @@
       "en": "squares"
     },
     "embedUrl": "https://chrinkus.github.io/squares/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1394600,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/chrinkus-squares.jpg"
   },
   {
     "id": "mikecheng1208-html5gameliveexample",
@@ -4525,12 +4525,12 @@
       "en": "Html5GameLiveExample"
     },
     "embedUrl": "https://MikeCheng1208.github.io/Html5GameLiveExample",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1394300,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/mikecheng1208-html5gameliveexample.jpg"
   },
   {
     "id": "yegor256-jo",
@@ -4538,12 +4538,12 @@
       "en": "jo"
     },
     "embedUrl": "https://yegor256.github.io/jo/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1300000,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/yegor256-jo.jpg"
   },
   {
     "id": "christophmark-pendulum",
@@ -4590,12 +4590,12 @@
       "en": "CarDrivingResNet"
     },
     "embedUrl": "https://mcarlomagno.github.io/CarDrivingResNet/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1298800,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/mcarlomagno-cardrivingresnet.jpg"
   },
   {
     "id": "ryanbranco-checkers",
@@ -4603,12 +4603,12 @@
       "en": "Checkers"
     },
     "embedUrl": "https://RyanBranco.github.io/Checkers",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1298500,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/ryanbranco-checkers.jpg"
   },
   {
     "id": "jackytea-webgl-render",
@@ -4616,12 +4616,12 @@
       "en": "webgl render"
     },
     "embedUrl": "https://webgl-render.netlify.app/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1298200,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/jackytea-webgl-render.jpg"
   },
   {
     "id": "ksalehi-pianohero",
@@ -4642,12 +4642,12 @@
       "en": "poliguard"
     },
     "embedUrl": "https://ionmateus.github.io/poliguard/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1297600,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/ionmateus-poliguard.jpg"
   },
   {
     "id": "denishrana09-nft-browser-game",
@@ -4681,12 +4681,12 @@
       "en": "Wormhole"
     },
     "embedUrl": "https://masonanders.github.io/Wormhole/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1296700,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/masonanders-wormhole.jpg"
   },
   {
     "id": "antonio-r1-racing-js",
@@ -4720,12 +4720,12 @@
       "en": "LittleJS"
     },
     "embedUrl": "https://KilledByAPixel.github.io/LittleJS",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1200000,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/killedbyapixel-littlejs.jpg"
   },
   {
     "id": "maxbittker-sandspiel",
@@ -4746,12 +4746,12 @@
       "en": "vimmaster"
     },
     "embedUrl": "https://vim-master.com",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1199400,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/renzorlive-vimmaster.jpg"
   },
   {
     "id": "evanbacon-expo-crossy-road",
@@ -4759,12 +4759,12 @@
       "en": "Expo Crossy Road"
     },
     "embedUrl": "https://crossyroad.expo.app",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1199100,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/evanbacon-expo-crossy-road.jpg"
   },
   {
     "id": "mattsurabian-duckhunt-js",
@@ -4772,12 +4772,12 @@
       "en": "DuckHunt JS"
     },
     "embedUrl": "https://duckhuntjs.com",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1198800,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/mattsurabian-duckhunt-js.jpg"
   },
   {
     "id": "scottschiller-armoralley",
@@ -4798,12 +4798,12 @@
       "en": "dive"
     },
     "embedUrl": "https://raw.githack.com/Mugen87/dive/master/app/index.html",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1198200,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/mugen87-dive.jpg"
   },
   {
     "id": "apoorvlathey-crypto-car-battle",
@@ -4811,12 +4811,12 @@
       "en": "Crypto Car Battle"
     },
     "embedUrl": "https://apoorvlathey.com/projects/crypto-car-battle",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1197900,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/apoorvlathey-crypto-car-battle.jpg"
   },
   {
     "id": "space2pacman-elpy",
@@ -4824,12 +4824,12 @@
       "en": "elpy"
     },
     "embedUrl": "https://space2pacman-misc.github.io/elpy-examples/docs/",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1197600,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/space2pacman-elpy.jpg"
   },
   {
     "id": "mugen87-nier",
@@ -4837,12 +4837,12 @@
       "en": "nier"
     },
     "embedUrl": "https://raw.githack.com/Mugen87/nier/master/app/index.html",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1197300,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/mugen87-nier.jpg"
   },
   {
     "id": "serprex-openetg",
@@ -4850,12 +4850,12 @@
       "en": "openEtG"
     },
     "embedUrl": "https://etg.dek.im",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1197000,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/serprex-openetg.jpg"
   },
   {
     "id": "selenite-cc-selenite-old",
@@ -4876,12 +4876,12 @@
       "en": "minecraft clone opengl"
     },
     "embedUrl": "https://minecraftplus.vercel.app",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1196400,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/druidman-minecraft-clone-opengl.jpg"
   },
   {
     "id": "maechler-kurve",
@@ -4915,12 +4915,12 @@
       "en": "annihilate"
     },
     "embedUrl": "https://raw.githack.com/gonnavis/annihilate/dev/index.html",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1195500,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/gonnavis-annihilate.jpg"
   },
   {
     "id": "jalbam-crossbrowdy",
@@ -4954,12 +4954,12 @@
       "en": "GladiatusCrazyAddon"
     },
     "embedUrl": "https://gladiatus.dinodevs.com",
-    "thumbnail": "/assets/images/game-placeholder.svg",
     "categories": "action",
     "playCount": 1194600,
     "description": {
       "en": "Play  online."
-    }
+    },
+    "thumbnail": "/assets/images/games/dinodevs-gladiatuscrazyaddon.jpg"
   },
   {
     "id": "omgimanerd-how-to-build-a-multiplayer-browser-game",
@@ -4981,7 +4981,8 @@
     },
     "embedUrl": "/assets/games-content/tommalbran-games/index.html",
     "thumbnail": "/assets/games-content/tommalbran-games/puzzle/images/art/2.jpg",
-    "categories": "action"
+    "categories": "action",
+    "hidden": true
   },
   {
     "id": "takahirox-toho-like-js-selfhost",
@@ -4990,7 +4991,8 @@
     },
     "embedUrl": "/assets/games-content/takahirox-toho-like-js/index.html",
     "thumbnail": "/assets/games-content/takahirox-toho-like-js/image/title_bg.png",
-    "categories": "action"
+    "categories": "action",
+    "hidden": true
   },
   {
     "id": "priler-dino3d-selfhost",
@@ -4999,6 +5001,7 @@
     },
     "embedUrl": "/assets/games-content/priler-dino3d/index.html",
     "thumbnail": "/assets/games-content/priler-dino3d/media/3d-title.png",
-    "categories": "action"
+    "categories": "action",
+    "hidden": true
   }
 ]
