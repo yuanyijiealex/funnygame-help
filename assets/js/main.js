@@ -2,7 +2,16 @@
  * funnygame.com main JavaScript (stable rebuild)
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {  try {
+    var hasLangPref = (document.cookie.indexOf('lang=')>=0) || (localStorage.getItem('lang')) || (new URLSearchParams(location.search).get('lang'));
+    var isZh = (navigator.language||'').toLowerCase().indexOf('zh')===0;
+    if (!hasLangPref && isZh && location.pathname === '/') {
+      // Avoid bot redirection heuristically
+      var ua=(navigator.userAgent||'').toLowerCase();
+      var isBot = /bot|spider|crawl|slurp|bing|duckduck|baidu|sogou/.test(ua);
+      if (!isBot) { location.replace('/zh/'); return; }
+    }
+  } catch(e){}
   initializeLanguageSelector();
   initializeMobileMenu();
   updateCurrentYear();

@@ -29,7 +29,14 @@
     document.addEventListener('DOMContentLoaded', loadHidden);
   </script>
   <link rel="stylesheet" href="/assets/css/stability.css">
-</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XT6WHD4TZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+  gtag('config', 'G-3XT6WHD4TZ');
+</script></head>
 <body>
   <h1>Hidden Games Report</h1>
   <p class="hint">Below are games currently hidden by QA. Use the search links to find a working mirror, then update <code>assets/data/games.json</code> (set <code>embedUrl</code> and <code>hidden=false</code>), or run <code>scripts/auto-hide-unavailable.ps1</code> again.</p>
