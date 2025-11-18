@@ -1,2 +1,9 @@
 # funnygame-help ignore
 assets/js/config.js
+
+# ignore vendor game sources and temp
+assets/games-content/
+temp/
+*.bak
+scripts/add-ga.ps1
+
